@@ -1,0 +1,41 @@
+# /sinapsis/backend/docker-compose.yml
+# version: '3.8'
+
+services:
+  db_proceso:
+    image: postgres:15-alpine
+    container_name: sinapsis_postgres
+    restart: always
+    env_file:
+      - .env  # Aquí le decimos a Docker que lea tus contraseñas secretas
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # --- NUEVO: MySQL para alojar el MCR 3.0 (release 2016) ---
+  db_mcr:
+    image: mysql:8.0
+    container_name: sinapsis_mcr
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: sinapsis_root
+      MYSQL_DATABASE: mcr30
+      MYSQL_USER: sinapsis
+      MYSQL_PASSWORD: sinapsis_pass
+    ports:
+      - "3307:3306"   # 3307 en el host evita choques con un MySQL local
+    volumes:
+      - mcrdata:/var/lib/mysql
+      # Monta el MCR descomprimido para poder cargar los .tsv con LOAD DATA INFILE.
+      # Ruta relativa: docker-compose.yml está en backend/, el MCR en database/mcr/
+      - ../database/mcr:/mcr_files
+    command:
+      - --secure-file-priv=/mcr_files
+      - --local-infile=1
+      - --character-set-server=utf8
+      - --collation-server=utf8_bin
+
+volumes:
+  pgdata:   # Esto asegura que los datos no se borren si apagas el contenedor
+  mcrdata:  # Volumen persistente para el MCR

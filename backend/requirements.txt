@@ -1,0 +1,25 @@
+# ==========================================
+# DEPENDENCIAS DEL BACKEND - SINAPSIS
+# ==========================================
+
+# 1. Framework API y Servidor
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# 2. Base de Datos y ORM
+SQLAlchemy==2.0.28
+psycopg2-binary==2.9.9
+
+# 3. Variables de Entorno
+python-dotenv==1.0.1
+
+# 4. Web Scraping (Fase 0 y Fase 1)
+requests==2.31.0
+beautifulsoup4==4.12.3
+
+# 5. Procesamiento de Lenguaje Natural (PLN) e IA
+# (Se instalarán para cuando lleguemos a la Fase de Vectorización)
+nltk==3.8.1
+spacy==3.7.4
+scikit-learn==1.4.1.post1
+numpy==1.26.4

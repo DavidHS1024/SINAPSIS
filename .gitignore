@@ -1,0 +1,36 @@
+# /sinapsis/.gitignore
+
+# Entornos virtuales
+venv/
+env/
+
+# Variables de entorno y secretos
+.env
+.env.*
+
+# Cache de Python
+__pycache__/
+*.pyc
+
+# --- AÑADIDO: Node / Frontend ---
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+.vercel
+
+# --- AÑADIDO: Datos pesados del MCR (cientos de MB, NO van al repo) ---
+mcr30-2016/
+**/*.tsv
+
+# --- AÑADIDO: Respaldos y reportes generados ---
+*.csv
+backend/reporte_*.md
+backend/debug_*.html
+
+# --- AÑADIDO: Sistema / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
