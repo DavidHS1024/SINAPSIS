@@ -1,0 +1,44 @@
+[
+  {
+    "lema": "tieso",
+    "grupo": "A_tipo1",
+    "retoconsiderado": "Adjetivo / Estado clínico o alterado",
+    "glosa_en": "stupefied or excited by a chemical substance (especially alcohol)",
+    "glosa_en_traducida": "aturdido o excitado por una sustancia química (especialmente alcohol)"
+  },
+  {
+    "lema": "achira",
+    "grupo": "B_tipo2",
+    "retoconsiderado": "Terminología técnica / Botánica",
+    "glosa_en": "a plant lacking a permanent woody stem; many are flowering garden plants or potherbs; some having medicinal properties; some are pests  ",
+    "glosa_en_traducida": "planta sin tallo leñoso permanente; muchas son plantas de jardín con flores o plantas comestibles; algunas tienen propiedades medicinales; algunas son plagas"
+  },
+  {
+    "lema": "cruzarse",
+    "grupo": "C_escueta",
+    "retoconsiderado": "Modismo inglés / Verbos psicológicos",
+    "glosa_en": "drive up the wall; go on someone's nerves  ",
+    "glosa_en_traducida": "exasperar; irritar profundamente"
+  },
+  {
+    "lema": "carabina",
+    "grupo": "D_destino",
+    "retoconsiderado": "Adaptación de jerga / Coloquialismos",
+    "glosa_en": "the human face (`kisser' and `smiler' and `mug' are informal terms for `face' and `phiz' is British)  ",
+    "glosa_en_traducida": "la cara humana (los términos informales para 'cara' son 'jeta', 'sonrisa' y 'cara', y 'faz' es británico)"
+  },
+  {
+    "lema": "yanaconaje",
+    "grupo": "E_rica",
+    "retoconsiderado": "Terminología jurídica / Derecho",
+    "glosa_en": "(law) the privilege of using something that is not your own (as using another's land as a right of way to your own land)  ",
+    "glosa_en_traducida": "derecho legal de usar algo que no es propio, como usar la tierra de otro como paso hacia la propia"
+  },
+  {
+    "lema": "cleta",
+    "grupo": "ancla",
+    "retoconsiderado": "Definición mecánica / Objeto cotidiano",
+    "glosa_en": "a wheeled vehicle that has two wheels and is moved by foot pedals  ",
+    "glosa_en_traducida": "un vehículo con ruedas que tiene dos ruedas y se mueve por pedales accionados con los pies"
+  }
+]

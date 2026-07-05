@@ -1,1 +1,0 @@
-# Código para embeddings.py

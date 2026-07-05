@@ -3,7 +3,7 @@
 
 services:
   db_proceso:
-    image: postgres:15-alpine
+    image: pgvector/pgvector:pg15 # antes: postgres:15-alpine
     container_name: sinapsis_postgres
     restart: always
     env_file:

@@ -1,0 +1,4058 @@
+[
+  {
+    "lema": "bagre",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "bagre",
+      "mujer"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-02517442-n",
+        "pos": "n",
+        "sinonimos": "bagre, barbo, siluriforme, siluriformes, siluro",
+        "glosa_es": null,
+        "glosa_en": "any of numerous mostly freshwater bottom-living fishes of Eurasia and North America with barbels like whiskers around the mouth  ",
+        "glosa_en_traducida": "cualquiera de los numerosos peces de agua dulce que viven en el fondo, principalmente de Eurasia y América del Norte, con barbillas parecidas a bigotes alrededor de la boca"
+      },
+      {
+        "offset": "spa-30-07780038-n",
+        "pos": "n",
+        "sinonimos": "bagre, barbo",
+        "glosa_es": null,
+        "glosa_en": "flesh of scaleless food fish of the southern United States; often farmed  ",
+        "glosa_en_traducida": "carne de pez sin escamas comestible del sur de Estados Unidos; a menudo criado en granjas"
+      },
+      {
+        "offset": "spa-30-10787470-n",
+        "pos": "n",
+        "sinonimos": "hembra_adulta, mujer",
+        "glosa_es": "un persona adulta del_género_femenino ( en oposición a un hombre )",
+        "glosa_en": "an adult female person (as opposed to a man)",
+        "glosa_en_traducida": "una persona adulta de sexo femenino (en contraste con un hombre)"
+      },
+      {
+        "offset": "spa-30-10780632-n",
+        "pos": "n",
+        "sinonimos": "cónyuge, esposa, esposo, marido, mujer_casada, señora, mujer",
+        "glosa_es": "una mujer casada; la pareja del hombre en el matrimonio",
+        "glosa_en": "a married woman; a man's partner in marriage  ",
+        "glosa_en_traducida": "una mujer casada; pareja de un hombre en el matrimonio"
+      },
+      {
+        "offset": "spa-30-10613996-n",
+        "pos": "n",
+        "sinonimos": "lulu, tía_buena, bombón, belleza, mujer, preciosidad, maravilla",
+        "glosa_es": null,
+        "glosa_en": "a very attractive or seductive looking woman  ",
+        "glosa_en_traducida": "una mujer de aspecto muy atractivo o seductor"
+      },
+      {
+        "offset": "spa-30-10130447-n",
+        "pos": "n",
+        "sinonimos": "mujer, chica",
+        "glosa_es": null,
+        "glosa_en": "a friendly informal reference to a grown woman",
+        "glosa_en_traducida": "una referencia amistosa e informal a una mujer adulta"
+      }
+    ]
+  },
+  {
+    "lema": "carreta",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "carreta",
+      "amigo"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-02970849-n",
+        "pos": "n",
+        "sinonimos": "carreta, carro",
+        "glosa_es": null,
+        "glosa_en": "a heavy open wagon usually having two wheels and drawn by an animal  ",
+        "glosa_en_traducida": "un carro pesado y abierto, generalmente de dos ruedas, tirado por un animal"
+      },
+      {
+        "offset": "spa-30-03484083-n",
+        "pos": "n",
+        "sinonimos": "carretilla, carreta, carro",
+        "glosa_es": null,
+        "glosa_en": "wheeled vehicle that can be pushed by a person; may have one or two or four wheels",
+        "glosa_en_traducida": "vehículo con ruedas que puede ser empujado por una persona; puede tener una, dos o cuatro ruedas"
+      },
+      {
+        "offset": "spa-30-03235979-n",
+        "pos": "n",
+        "sinonimos": "carretón, dray, carreta",
+        "glosa_es": null,
+        "glosa_en": "a low heavy horse cart without sides; used for haulage  ",
+        "glosa_en_traducida": "un carro bajo y pesado sin laterales; utilizado para transporte de carga"
+      },
+      {
+        "offset": "spa-30-01077638-a",
+        "pos": "a",
+        "sinonimos": "amigo",
+        "glosa_es": null,
+        "glosa_en": "of or belonging to your own country's forces or those of an ally",
+        "glosa_en_traducida": "perteneciente o relativo a las fuerzas de tu propio país o las de un aliado"
+      },
+      {
+        "offset": "spa-30-10677713-n",
+        "pos": "n",
+        "sinonimos": "aficionada, aficionado, amiga, amigo, entusiasta, adepta, adepto, seguidor, seguidora",
+        "glosa_es": null,
+        "glosa_en": "a person who backs a politician or a team etc.",
+        "glosa_en_traducida": "una persona que apoya a un político o a un equipo, etc."
+      },
+      {
+        "offset": "spa-30-09945905-n",
+        "pos": "n",
+        "sinonimos": "acompañante, camarada, compañera, compañero, amigo",
+        "glosa_es": null,
+        "glosa_en": "a friend who is frequently in the company of another",
+        "glosa_en_traducida": "un amigo que frecuentemente acompaña a otro"
+      },
+      {
+        "offset": "spa-30-10112591-n",
+        "pos": "n",
+        "sinonimos": "amiga, camarada, amigo",
+        "glosa_es": null,
+        "glosa_en": "a person you know well and regard with affection and trust",
+        "glosa_en_traducida": "una persona a quien conoces bien y a quien tienes afecto y confianza"
+      },
+      {
+        "offset": "spa-30-10077593-n",
+        "pos": "n",
+        "sinonimos": "apasionada, apasionado, devota, fanática, fanático, aficionada, aficionado, amante, devoto, entusiasta, amiga, amigo",
+        "glosa_es": null,
+        "glosa_en": "an ardent follower and admirer  ",
+        "glosa_en_traducida": "un seguidor y admirador apasionado"
+      },
+      {
+        "offset": "spa-30-09763784-n",
+        "pos": "n",
+        "sinonimos": "conocido, amistad, amiga, amigo",
+        "glosa_es": null,
+        "glosa_en": "a person with whom you are acquainted",
+        "glosa_en_traducida": "una persona con quien estás familiarizado"
+      },
+      {
+        "offset": "spa-30-09877951-n",
+        "pos": "n",
+        "sinonimos": "amigota, amigote, amigueta, amiguete, socia, compinche, pal, cuate, edecán, camarada, colega, socio, acompañante, hermano, hermana, compañero, compañera, amigo",
+        "glosa_es": null,
+        "glosa_en": "a close friend who accompanies his buddies in their activities  ",
+        "glosa_en_traducida": "un amigo íntimo que acompaña a sus compañeros en sus actividades"
+      },
+      {
+        "offset": "spa-30-09883452-n",
+        "pos": "n",
+        "sinonimos": "amigo",
+        "glosa_es": null,
+        "glosa_en": "a person (or thing) that breaks up or overpowers something",
+        "glosa_en_traducida": "una persona (o cosa) que rompe o vence algo"
+      },
+      {
+        "offset": "spa-30-09788521-n",
+        "pos": "n",
+        "sinonimos": "amigo",
+        "glosa_es": "amigo o camarada",
+        "glosa_en": "a friend or comrade  ",
+        "glosa_en_traducida": "un amigo o camarada"
+      }
+    ]
+  },
+  {
+    "lema": "pachamanca",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "pachamanca",
+      "encuentro",
+      "cita"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-07470671-n",
+        "pos": "n",
+        "sinonimos": "encuentro, partido",
+        "glosa_es": "una contienda formal en el cual dos o más personas o equipos compiten",
+        "glosa_en": "a formal contest in which two or more persons or teams compete  ",
+        "glosa_en_traducida": "una competencia formal en la que dos o más personas o equipos compiten"
+      },
+      {
+        "offset": "spa-30-07414922-n",
+        "pos": "n",
+        "sinonimos": "acercamiento, encuentro",
+        "glosa_es": "convergencia casual o inesperada",
+        "glosa_en": "a casual or unexpected convergence",
+        "glosa_en_traducida": "una convergencia casual o inesperada"
+      },
+      {
+        "offset": "spa-30-08310389-n",
+        "pos": "n",
+        "sinonimos": "encuentro, reunión",
+        "glosa_es": null,
+        "glosa_en": "a small informal social gathering",
+        "glosa_en_traducida": "una pequeña reunión social informal"
+      },
+      {
+        "offset": "spa-30-08309611-n",
+        "pos": "n",
+        "sinonimos": "encuentro",
+        "glosa_es": null,
+        "glosa_en": "a meeting of people to develop mutual understanding by freely expressing emotions  ",
+        "glosa_en_traducida": "un encuentro de personas para desarrollar comprensión mutua expresando libremente emociones"
+      },
+      {
+        "offset": "spa-30-07181043-n",
+        "pos": "n",
+        "sinonimos": "cara_a_cara, encontronazo, enfrentamiento, confrontación, pugna, conflicto, encuentro",
+        "glosa_es": "cara_a_cara hostil de desaveniencia",
+        "glosa_en": "a hostile disagreement face-to-face  ",
+        "glosa_en_traducida": "un desacuerdo hostil cara a cara"
+      },
+      {
+        "offset": "spa-30-00147187-n",
+        "pos": "n",
+        "sinonimos": "encuentro",
+        "glosa_es": null,
+        "glosa_en": "a casual meeting with a person or thing  ",
+        "glosa_en_traducida": "un encuentro casual con una persona o cosa"
+      },
+      {
+        "offset": "spa-30-00959376-n",
+        "pos": "n",
+        "sinonimos": "escaramuza, refriega, trifulca, enfrentamiento, riña, zalagarda, roce, encuentro",
+        "glosa_es": "una pelea sin_importancia de breve_duración",
+        "glosa_en": "a minor short-term fight  ",
+        "glosa_en_traducida": "una pelea breve de corta duración"
+      },
+      {
+        "offset": "spa-30-01230965-n",
+        "pos": "n",
+        "sinonimos": "encuentro, reunión",
+        "glosa_es": null,
+        "glosa_en": "the social act of assembling for some common purpose",
+        "glosa_en_traducida": "el acto social de reunirse con un propósito común"
+      },
+      {
+        "offset": "spa-30-08385009-n",
+        "pos": "n",
+        "sinonimos": "cita, esponsales, compromiso, hora",
+        "glosa_es": "reunión concertada por_adelantado",
+        "glosa_en": "a meeting arranged in advance",
+        "glosa_en_traducida": "una reunión concertada con anticipación"
+      },
+      {
+        "offset": "spa-30-06613056-n",
+        "pos": "n",
+        "sinonimos": "cita, citación",
+        "glosa_es": null,
+        "glosa_en": "a passage or expression that is quoted or cited  ",
+        "glosa_en_traducida": "un pasaje o expresión que se cita o se menciona"
+      },
+      {
+        "offset": "spa-30-06763681-n",
+        "pos": "n",
+        "sinonimos": "mención, remisión, cita, referencia",
+        "glosa_es": null,
+        "glosa_en": "a short note recognizing a source of information or of a quoted passage",
+        "glosa_en_traducida": "una breve nota que reconoce la fuente de información o de un pasaje citado"
+      },
+      {
+        "offset": "spa-30-00992331-n",
+        "pos": "n",
+        "sinonimos": "datación, fechado, cita",
+        "glosa_es": null,
+        "glosa_en": "use of chemical analysis to estimate the age of geological specimens  ",
+        "glosa_en_traducida": "uso del análisis químico para estimar la edad de especímenes geológicos"
+      },
+      {
+        "offset": "spa-30-09992538-n",
+        "pos": "n",
+        "sinonimos": "acompañante, escolta, cita",
+        "glosa_es": "participante en una cita",
+        "glosa_en": "a participant in a date",
+        "glosa_en_traducida": "un participante en una cita"
+      },
+      {
+        "offset": "spa-30-09607630-n",
+        "pos": "n",
+        "sinonimos": "citado, persona_designada, nombramiento, cita",
+        "glosa_es": null,
+        "glosa_en": "a person who is appointed to a job or position  ",
+        "glosa_en_traducida": "una persona designada para un cargo o posición"
+      },
+      {
+        "offset": "spa-30-01231548-n",
+        "pos": "n",
+        "sinonimos": "cita",
+        "glosa_es": null,
+        "glosa_en": "a meeting planned at a certain time and place  ",
+        "glosa_en_traducida": "una reunión planeada en cierto tiempo y lugar"
+      },
+      {
+        "offset": "spa-30-08385717-n",
+        "pos": "n",
+        "sinonimos": "cita",
+        "glosa_es": null,
+        "glosa_en": "a date; usually with a member of the opposite sex  ",
+        "glosa_en_traducida": "una cita; generalmente con una persona del sexo opuesto"
+      }
+    ]
+  },
+  {
+    "lema": "kilometraje",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "kilometraje",
+      "experiencia"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-05131194-n",
+        "pos": "n",
+        "sinonimos": "kilometraje",
+        "glosa_es": null,
+        "glosa_en": "distance measured in miles  ",
+        "glosa_en_traducida": "distancia medida en millas"
+      },
+      {
+        "offset": "spa-30-13294029-n",
+        "pos": "n",
+        "sinonimos": "kilometraje",
+        "glosa_es": null,
+        "glosa_en": "a travel allowance at a given rate per mile traveled  ",
+        "glosa_en_traducida": "una asignación de viaje a una tarifa determinada por milla recorrida"
+      },
+      {
+        "offset": "spa-30-07285403-n",
+        "pos": "n",
+        "sinonimos": "experiencia",
+        "glosa_es": null,
+        "glosa_en": "an event as apprehended",
+        "glosa_en_traducida": "un evento tal como se percibe"
+      },
+      {
+        "offset": "spa-30-05984584-n",
+        "pos": "n",
+        "sinonimos": "vivencia, experiencia",
+        "glosa_es": "contenido de la observación directa o participación en un evento",
+        "glosa_en": "the content of direct observation or participation in an event",
+        "glosa_en_traducida": "el contenido de la observación directa o participación en un evento"
+      },
+      {
+        "offset": "spa-30-05640729-n",
+        "pos": "n",
+        "sinonimos": "experiencia, pericia",
+        "glosa_es": "Práctica o habilidad en una ciencia o arte.",
+        "glosa_en": "skillfulness by virtue of possessing special knowledge  ",
+        "glosa_en_traducida": "destreza por poseer conocimiento especial"
+      },
+      {
+        "offset": "spa-30-05758059-n",
+        "pos": "n",
+        "sinonimos": "experiencia",
+        "glosa_es": "acumulación de conocimientos o habilidades resultado de la participación directa en eventos o actividades",
+        "glosa_en": "the accumulation of knowledge or skill that results from direct participation in events or activities",
+        "glosa_en_traducida": "la acumulación de conocimiento o destreza que resulta de la participación directa en eventos o actividades"
+      }
+    ]
+  },
+  {
+    "lema": "cuáquer",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "cuáquer",
+      "semen"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-05404336-n",
+        "pos": "n",
+        "sinonimos": "corrida, lefa, líquido_seminal, semen, esperma, leche",
+        "glosa_es": null,
+        "glosa_en": "the thick white fluid containing spermatozoa that is ejaculated by the male genital tract  ",
+        "glosa_en_traducida": "fluido blanco y espeso que contiene espermatozoides y es eyaculado por el tracto genital masculino"
+      }
+    ]
+  },
+  {
+    "lema": "nota",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "nota",
+      "situación"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-06865345-n",
+        "pos": "n",
+        "sinonimos": "nota, nota_musical, tono",
+        "glosa_es": null,
+        "glosa_en": "a notation representing the pitch and duration of a musical sound",
+        "glosa_en_traducida": "notación que representa la altura y duración de un sonido musical"
+      },
+      {
+        "offset": "spa-30-05737153-n",
+        "pos": "n",
+        "sinonimos": "calificación, nota, puntuación",
+        "glosa_es": null,
+        "glosa_en": "a number or letter indicating quality (especially of a student's performance)",
+        "glosa_en_traducida": "número o letra que indica la calidad, especialmente del desempeño de un estudiante"
+      },
+      {
+        "offset": "spa-30-06763273-n",
+        "pos": "n",
+        "sinonimos": "anotación, glosa, letra_chica, letra_pequeña, comentario, notación, nota",
+        "glosa_es": "comentario o instrucción ( por_lo_general añadidos )",
+        "glosa_en": "a comment or instruction (usually added)",
+        "glosa_en_traducida": "comentario o instrucción, generalmente añadido"
+      },
+      {
+        "offset": "spa-30-06504462-n",
+        "pos": "n",
+        "sinonimos": "nota",
+        "glosa_es": "breve registro escrito",
+        "glosa_en": "a brief written record",
+        "glosa_en_traducida": "breve registro escrito"
+      },
+      {
+        "offset": "spa-30-06764244-n",
+        "pos": "n",
+        "sinonimos": "nota_a_pie_de_página, leyenda, nota",
+        "glosa_es": null,
+        "glosa_en": "a printed note placed below the text on a printed page  ",
+        "glosa_en_traducida": "nota impresa colocada debajo del texto en una página impresa"
+      },
+      {
+        "offset": "spa-30-04727694-n",
+        "pos": "n",
+        "sinonimos": "nota",
+        "glosa_es": null,
+        "glosa_en": "a characteristic emotional quality",
+        "glosa_en_traducida": "cualidad emocional característica"
+      },
+      {
+        "offset": "spa-30-06517942-n",
+        "pos": "n",
+        "sinonimos": "nota, cuenta",
+        "glosa_es": "la factura en un restaurante",
+        "glosa_en": "the bill in a restaurant",
+        "glosa_en_traducida": "la cuenta en un restaurante"
+      },
+      {
+        "offset": "spa-30-13920835-n",
+        "pos": "n",
+        "sinonimos": "circunstancias, condición, situación, estado",
+        "glosa_es": null,
+        "glosa_en": "a state at a particular time",
+        "glosa_en_traducida": "estado en un momento particular"
+      },
+      {
+        "offset": "spa-30-13925752-n",
+        "pos": "n",
+        "sinonimos": "coyuntura, trance, situación",
+        "glosa_es": null,
+        "glosa_en": "a condition or position in which you find yourself",
+        "glosa_en_traducida": "condición o posición en la que te encuentras"
+      },
+      {
+        "offset": "spa-30-13927383-n",
+        "pos": "n",
+        "sinonimos": "situación, estado",
+        "glosa_es": null,
+        "glosa_en": "the general state of things; the combination of circumstances at a given time",
+        "glosa_en_traducida": "estado general de las cosas; combinación de circunstancias en un momento dado"
+      },
+      {
+        "offset": "spa-30-08622950-n",
+        "pos": "n",
+        "sinonimos": "situación",
+        "glosa_es": null,
+        "glosa_en": "physical position in relation to the surroundings",
+        "glosa_en_traducida": "posición física en relación con el entorno"
+      },
+      {
+        "offset": "spa-30-05074774-n",
+        "pos": "n",
+        "sinonimos": "localización, radicación, relación_espacial, colocación, emplazamiento, ubicación, sitio, posición, situación, lugar",
+        "glosa_es": null,
+        "glosa_en": "the spatial property of a place where or way in which something is situated",
+        "glosa_en_traducida": "propiedad espacial del lugar donde o manera en que algo está situado"
+      },
+      {
+        "offset": "spa-30-01051331-n",
+        "pos": "n",
+        "sinonimos": "posicionamiento, colocación, emplazamiento, ubicación, situación, posición, lugar",
+        "glosa_es": null,
+        "glosa_en": "the act of putting something in a certain place  ",
+        "glosa_en_traducida": "acto de poner algo en un lugar determinado"
+      },
+      {
+        "offset": "spa-30-05819338-n",
+        "pos": "n",
+        "sinonimos": "situación, estado",
+        "glosa_es": null,
+        "glosa_en": "the facts about an actual situation",
+        "glosa_en_traducida": "hechos sobre una situación real"
+      }
+    ]
+  },
+  {
+    "lema": "palta",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "palta",
+      "miedo"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-07764847-n",
+        "pos": "n",
+        "sinonimos": "aguacate, palta, persea_americana, cura",
+        "glosa_es": null,
+        "glosa_en": "a pear-shaped tropical fruit with green or blackish skin and rich yellowish pulp enclosing a single large seed  ",
+        "glosa_en_traducida": "fruto tropical en forma de pera con piel verde u oscura y pulpa amarillenta rica que encierra una sola semilla grande"
+      },
+      {
+        "offset": "spa-30-07519253-n",
+        "pos": "n",
+        "sinonimos": "espanto, miedo, pavor, susto, temor, terror",
+        "glosa_es": null,
+        "glosa_en": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)  ",
+        "glosa_en_traducida": "emoción experimentada en anticipación de algún dolor o peligro específico, generalmente acompañada del deseo de huir o luchar"
+      },
+      {
+        "offset": "spa-30-07524529-n",
+        "pos": "n",
+        "sinonimos": "miedo, inquietud, temor, cuidado, preocupación",
+        "glosa_es": null,
+        "glosa_en": "an anxious feeling",
+        "glosa_en_traducida": "sensación de inquietud"
+      },
+      {
+        "offset": "spa-30-07521039-n",
+        "pos": "n",
+        "sinonimos": "sobrecogimiento, veneración, miedo, reverencia, temor, terror",
+        "glosa_es": "emoción profunda inspirada por una deidad",
+        "glosa_en": "a feeling of profound respect for someone or something",
+        "glosa_en_traducida": "sentimiento de profundo respeto hacia alguien o algo"
+      },
+      {
+        "offset": "spa-30-07523016-n",
+        "pos": "n",
+        "sinonimos": "susto, miedo",
+        "glosa_es": "timidez que evita la continuación de un curso de acción",
+        "glosa_en": "timidity that prevents the continuation of a course of action",
+        "glosa_en_traducida": "timidez que impide la continuación de un curso de acción"
+      }
+    ]
+  },
+  {
+    "lema": "tieso",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "tieso",
+      "ebrio",
+      "borracho"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-01023706-a",
+        "pos": "a",
+        "sinonimos": "rígida, tieso, yerto, rígido",
+        "glosa_es": null,
+        "glosa_en": "incapable of or resistant to bending",
+        "glosa_en_traducida": "incapaz de o resistente a doblarse"
+      },
+      {
+        "offset": "spa-30-14038185-n",
+        "pos": "n",
+        "sinonimos": "tieso, erección",
+        "glosa_es": null,
+        "glosa_en": "an erect penis  ",
+        "glosa_en_traducida": "pene erecto"
+      },
+      {
+        "offset": "spa-30-01525659-a",
+        "pos": "a",
+        "sinonimos": "tieso, rígido, inflexible",
+        "glosa_es": null,
+        "glosa_en": "not moving or operating freely",
+        "glosa_en_traducida": "que no se mueve u opera libremente"
+      },
+      {
+        "offset": "spa-30-00073761-a",
+        "pos": "a",
+        "sinonimos": "tiesa, tieso, forzado",
+        "glosa_es": null,
+        "glosa_en": "lacking spontaneity; not natural",
+        "glosa_en_traducida": "carente de espontaneidad; no natural"
+      },
+      {
+        "offset": "spa-30-01237754-a",
+        "pos": "a",
+        "sinonimos": "enderezado, erguido, tieso, derecho, rígido, recto",
+        "glosa_es": null,
+        "glosa_en": "erect in posture",
+        "glosa_en_traducida": "erguido en postura"
+      },
+      {
+        "offset": "spa-30-00797299-a",
+        "pos": "a",
+        "sinonimos": "bebido, borracho, ebrio",
+        "glosa_es": "atontado o excitado por una sustancia química ( alcohol )",
+        "glosa_en": "stupefied or excited by a chemical substance (especially alcohol)",
+        "glosa_en_traducida": "aturdido o excitado por una sustancia química (especialmente alcohol)"
+      },
+      {
+        "offset": "spa-30-00798491-a",
+        "pos": "a",
+        "sinonimos": "achispado, bebedor, bebedora, borracha, embriagado, borracho, ebrio",
+        "glosa_es": null,
+        "glosa_en": "given to or marked by the consumption of alcohol",
+        "glosa_en_traducida": "dado al o marcado por el consumo de alcohol"
+      },
+      {
+        "offset": "spa-30-10037385-n",
+        "pos": "n",
+        "sinonimos": "borrachín, ebrio, alcohólico, borracho, tomador",
+        "glosa_es": "bebedor crónico",
+        "glosa_en": "a chronic drinker  ",
+        "glosa_en_traducida": "bebedor crónico"
+      },
+      {
+        "offset": "spa-30-09782167-n",
+        "pos": "n",
+        "sinonimos": "alcohólico, borracho, catavinos, dipsomaníaco, dipsómano, privota, zaque",
+        "glosa_es": null,
+        "glosa_en": "a person who drinks alcohol to excess habitually  ",
+        "glosa_en_traducida": "persona que bebe alcohol en exceso habitualmente"
+      },
+      {
+        "offset": "spa-30-00798103-a",
+        "pos": "a",
+        "sinonimos": "ajumado, curda, curdela, mamado, pedo, piripí, trompa, achispado, borracho, ciego",
+        "glosa_es": null,
+        "glosa_en": "very drunk  ",
+        "glosa_en_traducida": "muy borracho"
+      },
+      {
+        "offset": "spa-30-10526300-n",
+        "pos": "n",
+        "sinonimos": "borracho",
+        "glosa_es": null,
+        "glosa_en": "someone who engages in drinking bouts  ",
+        "glosa_en_traducida": "alguien que se entrega a borracheras"
+      }
+    ]
+  },
+  {
+    "lema": "aguado",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "aguado",
+      "aguafiestas"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-00756459-a",
+        "pos": "a",
+        "sinonimos": "aguado, acuoso",
+        "glosa_es": null,
+        "glosa_en": "overly diluted; thin and insipid",
+        "glosa_en_traducida": "excesivamente diluido; delgado e insípido"
+      },
+      {
+        "offset": "spa-30-10638136-n",
+        "pos": "n",
+        "sinonimos": "aguafiestas, gafe, cenizo",
+        "glosa_es": "alguien que estropea el placer de los otros",
+        "glosa_en": "someone who spoils the pleasure of others  ",
+        "glosa_en_traducida": "alguien que arruina el placer de otros"
+      }
+    ]
+  },
+  {
+    "lema": "robado",
+    "grupo": "A_tipo1",
+    "sondas": [
+      "robado",
+      "gastado",
+      "estropeado"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-02580449-a",
+        "pos": "a",
+        "sinonimos": "gastado",
+        "glosa_es": null,
+        "glosa_en": "affected by wear; damaged by long use",
+        "glosa_en_traducida": "afectado por el desgaste; dañado por el uso prolongado"
+      },
+      {
+        "offset": "spa-30-01688757-a",
+        "pos": "a",
+        "sinonimos": "banal, manida, manido, sabida, sobada, sobado, trillada, trillado, gastado, trivial",
+        "glosa_es": null,
+        "glosa_en": "repeated too often; overfamiliar through overuse",
+        "glosa_en_traducida": "repetido demasiadas veces; demasiado familiar por el uso excesivo"
+      },
+      {
+        "offset": "spa-30-01689223-a",
+        "pos": "a",
+        "sinonimos": "sobado, trillado, gastado",
+        "glosa_es": null,
+        "glosa_en": "dull and tiresome but with pretensions of significance or originality",
+        "glosa_en_traducida": "aburrido y tedioso pero con pretensiones de significancia u originalidad"
+      },
+      {
+        "offset": "spa-30-02434115-a",
+        "pos": "a",
+        "sinonimos": "gastado",
+        "glosa_es": null,
+        "glosa_en": "very tired  ",
+        "glosa_en_traducida": "muy cansado"
+      },
+      {
+        "offset": "spa-30-02582873-a",
+        "pos": "a",
+        "sinonimos": "gastado, estropeado",
+        "glosa_es": null,
+        "glosa_en": "used until no longer useful",
+        "glosa_en_traducida": "usado hasta dejar de ser útil"
+      },
+      {
+        "offset": "spa-30-00289082-a",
+        "pos": "a",
+        "sinonimos": "dañado, estropeado, roto",
+        "glosa_es": null,
+        "glosa_en": "physically and forcibly separated into pieces or cracked or split",
+        "glosa_en_traducida": "separado física y violentamente en pedazos o agrietado o dividido"
+      },
+      {
+        "offset": "spa-30-01092371-a",
+        "pos": "a",
+        "sinonimos": "averiado, estropeado, mal",
+        "glosa_es": null,
+        "glosa_en": "not functioning properly",
+        "glosa_en_traducida": "que no funciona correctamente"
+      },
+      {
+        "offset": "spa-30-00679717-a",
+        "pos": "a",
+        "sinonimos": "derruido, malparado, maltrecho, deteriorado, estropeado, dañado",
+        "glosa_es": null,
+        "glosa_en": "in deplorable condition",
+        "glosa_en_traducida": "en condición deplorable"
+      },
+      {
+        "offset": "spa-30-02581254-a",
+        "pos": "a",
+        "sinonimos": "raído, estropeado",
+        "glosa_es": null,
+        "glosa_en": "damaged especially by hard usage",
+        "glosa_en_traducida": "dañado especialmente por uso intenso"
+      },
+      {
+        "offset": "spa-30-00680156-a",
+        "pos": "a",
+        "sinonimos": "estropeado",
+        "glosa_es": null,
+        "glosa_en": "out of working order (`busted' is an informal substitute for `broken')",
+        "glosa_en_traducida": "fuera de funcionamiento (informal: roto)"
+      },
+      {
+        "offset": "spa-30-00246727-a",
+        "pos": "a",
+        "sinonimos": "marcado, estropeado",
+        "glosa_es": null,
+        "glosa_en": "blemished by injury or rough wear",
+        "glosa_en_traducida": "marcado por lesión o desgaste"
+      }
+    ]
+  },
+  {
+    "lema": "asua",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "chicha",
+      "bebida"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-07902520-n",
+        "pos": "n",
+        "sinonimos": "chicha",
+        "glosa_es": null,
+        "glosa_en": "whiskey illegally distilled from a corn mash  ",
+        "glosa_en_traducida": "whisky destilado ilegalmente de una mezcla de maíz"
+      },
+      {
+        "offset": "spa-30-03533014-n",
+        "pos": "n",
+        "sinonimos": "calean, kalian, nargileh, narguile, pipa_de_agua, chicha",
+        "glosa_es": null,
+        "glosa_en": "an oriental tobacco pipe with a long flexible tube connected to a container where the smoke is cooled by passing through water",
+        "glosa_en_traducida": "pipa de tabaco oriental con un tubo flexible largo conectado a un recipiente donde el humo se enfría al pasar por agua"
+      },
+      {
+        "offset": "spa-30-07881800-n",
+        "pos": "n",
+        "sinonimos": "beber, bebida, bebidas, potable, trago",
+        "glosa_es": "cualquier líquido susceptible de ser bebido",
+        "glosa_en": "any liquid suitable for drinking",
+        "glosa_en_traducida": "cualquier líquido apto para beber"
+      },
+      {
+        "offset": "spa-30-07885223-n",
+        "pos": "n",
+        "sinonimos": "copa, bebida",
+        "glosa_es": null,
+        "glosa_en": "a single serving of a beverage",
+        "glosa_en_traducida": "una sola porción de bebida"
+      },
+      {
+        "offset": "spa-30-00748515-n",
+        "pos": "n",
+        "sinonimos": "beber, bebida",
+        "glosa_es": null,
+        "glosa_en": "the act of drinking alcoholic beverages to excess",
+        "glosa_en_traducida": "el acto de beber bebidas alcohólicas en exceso"
+      },
+      {
+        "offset": "spa-30-00843128-n",
+        "pos": "n",
+        "sinonimos": "bebida",
+        "glosa_es": null,
+        "glosa_en": "the act of consuming liquids  ",
+        "glosa_en_traducida": "el acto de consumir líquidos"
+      },
+      {
+        "offset": "spa-30-07927197-n",
+        "pos": "n",
+        "sinonimos": "bebida_de_fantasia, gaseosa, refresco, soda, bebida",
+        "glosa_es": "bebida sin_alcohol ( por_lo_general carbonatada )",
+        "glosa_en": "nonalcoholic beverage (usually carbonated)  ",
+        "glosa_en_traducida": "bebida no alcohólica (generalmente carbonatada)"
+      },
+      {
+        "offset": "spa-30-07927512-n",
+        "pos": "n",
+        "sinonimos": "refresco, sifón, sosa, gaseosa, soda, bebida",
+        "glosa_es": null,
+        "glosa_en": "a sweet drink containing carbonated water and flavoring",
+        "glosa_en_traducida": "bebida dulce que contiene agua carbonatada y saborizante"
+      }
+    ]
+  },
+  {
+    "lema": "machinga",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "brujería",
+      "hechizo"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-05979350-n",
+        "pos": "n",
+        "sinonimos": "aojo, autería, hechizo, maleficio, sortilegio, brujería, hechicería",
+        "glosa_es": null,
+        "glosa_en": "the art of sorcery  ",
+        "glosa_en_traducida": "el arte de la brujería"
+      },
+      {
+        "offset": "spa-30-05978812-n",
+        "pos": "n",
+        "sinonimos": "brujería, hechicería, jorguinería, magia_negra, mágica_negra, nigromancia",
+        "glosa_es": null,
+        "glosa_en": "the belief in magical spells that harness occult forces or evil spirits to produce unnatural effects in the world  ",
+        "glosa_en_traducida": "la creencia en hechizos mágicos que aprovechan fuerzas ocultas o espíritus malignos para producir efectos sobrenaturales en el mundo"
+      },
+      {
+        "offset": "spa-30-14407536-n",
+        "pos": "n",
+        "sinonimos": "conjuro, encantamiento, encanto, hechizo, trance",
+        "glosa_es": "estado sicológico inducido por ( o como si fuera inducido por ) una encantación mágica",
+        "glosa_en": "a psychological state induced by (or as if induced by) a magical incantation  ",
+        "glosa_en_traducida": "un estado psicológico inducido por (o como si fuera inducido por) una fórmula mágica"
+      },
+      {
+        "offset": "spa-30-07159791-n",
+        "pos": "n",
+        "sinonimos": "sortilegio, hechizo",
+        "glosa_es": null,
+        "glosa_en": "a verbal formula believed to have magical force",
+        "glosa_en_traducida": "una fórmula verbal que se cree tiene poder mágico"
+      },
+      {
+        "offset": "spa-30-07497976-n",
+        "pos": "n",
+        "sinonimos": "embebecimiento, embeleso, fascinación, atracción, hechizo",
+        "glosa_es": null,
+        "glosa_en": "a feeling of great liking for something wonderful and unusual  ",
+        "glosa_en_traducida": "un sentimiento de gran agrado por algo maravilloso e inusual"
+      },
+      {
+        "offset": "spa-30-04685195-n",
+        "pos": "n",
+        "sinonimos": "glamour, hechizo, atractivo",
+        "glosa_es": null,
+        "glosa_en": "alluring beauty or charm (often with sex-appeal)  ",
+        "glosa_en_traducida": "belleza o encanto cautivador (a menudo con atractivo sexual)"
+      }
+    ]
+  },
+  {
+    "lema": "huacanqui",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "talismán",
+      "amuleto"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-02706586-n",
+        "pos": "n",
+        "sinonimos": "amuleto, talismán, filacteria",
+        "glosa_es": null,
+        "glosa_en": "a trinket or piece of jewelry usually hung about the neck and thought to be a magical protection against evil or disease  ",
+        "glosa_en_traducida": "un amuleto u objeto de joyería generalmente colgado del cuello y que se cree es una protección mágica contra el mal o la enfermedad"
+      },
+      {
+        "offset": "spa-30-03009633-n",
+        "pos": "n",
+        "sinonimos": "amuleto, mascota, talismán",
+        "glosa_es": null,
+        "glosa_en": "something believed to bring good luck  ",
+        "glosa_en_traducida": "algo que se cree trae buena suerte"
+      }
+    ]
+  },
+  {
+    "lema": "achira",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "hierba",
+      "planta"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-12205694-n",
+        "pos": "n",
+        "sinonimos": "herbácea, hierba, planta_herbácea",
+        "glosa_es": null,
+        "glosa_en": "a plant lacking a permanent woody stem; many are flowering garden plants or potherbs; some having medicinal properties; some are pests  ",
+        "glosa_en_traducida": "planta sin tallo leñoso permanente; muchas son plantas de jardín con flores o plantas comestibles; algunas tienen propiedades medicinales; algunas son plagas"
+      },
+      {
+        "offset": "spa-30-12102133-n",
+        "pos": "n",
+        "sinonimos": "césped, grama, pasto, hierba",
+        "glosa_es": null,
+        "glosa_en": "narrow-leaved green herbage: grown as lawns; used as pasture for grazing animals; cut and dried as hay  ",
+        "glosa_en_traducida": "hierba verde de hojas estrechas: cultivada como césped; utilizada como pasto para animales de pastoreo; cortada y secada como heno"
+      },
+      {
+        "offset": "spa-30-07811416-n",
+        "pos": "n",
+        "sinonimos": "hierbas, yerba, yerbas, hierba",
+        "glosa_es": null,
+        "glosa_en": "aromatic potherb used in cookery for its savory qualities  ",
+        "glosa_en_traducida": "hierba aromática comestible utilizada en cocina por sus cualidades sabrosas"
+      },
+      {
+        "offset": "spa-30-02949691-n",
+        "pos": "n",
+        "sinonimos": "cannabis, cáñamo, grifa, mariguana, marihuana, marijuana, maría, chocolate, yerba, hierba",
+        "glosa_es": null,
+        "glosa_en": "the most commonly used illicit drug; considered a soft drug, it consists of the dried leaves of the hemp plant; smoked or chewed for euphoric effect  ",
+        "glosa_en_traducida": "droga ilícita más comúnmente usada; considerada droga blanda, consiste en hojas secas de la planta de cáñamo; fumada o masticada por su efecto eufórico"
+      },
+      {
+        "offset": "spa-30-12397210-n",
+        "pos": "n",
+        "sinonimos": "mariguana, maría, marihuana, cáñamo, hierba",
+        "glosa_es": null,
+        "glosa_en": "a strong-smelling plant from whose dried leaves a number of euphoriant and hallucinogenic drugs are prepared  ",
+        "glosa_en_traducida": "planta de olor fuerte de cuyas hojas secas se preparan varios fármacos euforizantes y alucinógenos"
+      },
+      {
+        "offset": "spa-30-07883251-n",
+        "pos": "n",
+        "sinonimos": "bebedizo, brebaje, brevaje, poción, pócima, yerba, hierba",
+        "glosa_es": "bebida medicinal , mágica o venenosa",
+        "glosa_en": "a medicinal or magical or poisonous beverage  ",
+        "glosa_en_traducida": "bebida medicinal, mágica o venenosa"
+      },
+      {
+        "offset": "spa-30-03990834-n",
+        "pos": "n",
+        "sinonimos": "Mary_Jane, chaquetón, sens, grifa, marijuana, polen, cannabis, costo, maría, marihuana, chocolate, cáñamo, pote, hierba",
+        "glosa_es": "nombre vulgar de la marihuana",
+        "glosa_en": "street names for marijuana  ",
+        "glosa_en_traducida": "nombres callejeros para la marihuana"
+      },
+      {
+        "offset": "spa-30-00017222-n",
+        "pos": "n",
+        "sinonimos": "flora, mata, planta, plantae, plantas, vegetación, vida_vegetal",
+        "glosa_es": "(Botánica) un organismo vivo que carece del poder de la locomoción",
+        "glosa_en": "(botany) a living organism lacking the power of locomotion  ",
+        "glosa_en_traducida": "organismo viviente que carece del poder de locomoción"
+      },
+      {
+        "offset": "spa-30-03316406-n",
+        "pos": "n",
+        "sinonimos": "fabrica, factoría, fábrica, molino, planta",
+        "glosa_es": null,
+        "glosa_en": "a plant consisting of one or more buildings with facilities for manufacturing  ",
+        "glosa_en_traducida": "planta que consiste en uno o más edificios con instalaciones para la manufactura"
+      },
+      {
+        "offset": "spa-30-03956922-n",
+        "pos": "n",
+        "sinonimos": "factoría, fábrica, planta",
+        "glosa_es": "edificios donde tener mano de obra industrial",
+        "glosa_en": "buildings for carrying on industrial labor",
+        "glosa_en_traducida": "edificios para realizar trabajo industrial"
+      },
+      {
+        "offset": "spa-30-05577190-n",
+        "pos": "n",
+        "sinonimos": "planta",
+        "glosa_es": null,
+        "glosa_en": "the underside of the foot  ",
+        "glosa_en_traducida": "la parte inferior del pie"
+      },
+      {
+        "offset": "spa-30-03365991-n",
+        "pos": "n",
+        "sinonimos": "piso, planta",
+        "glosa_es": null,
+        "glosa_en": "a structure consisting of a room or set of rooms at a single position along a vertical scale",
+        "glosa_en_traducida": "estructura que consiste en una habitación o conjunto de habitaciones en una única posición en una escala vertical"
+      },
+      {
+        "offset": "spa-30-03367147-n",
+        "pos": "n",
+        "sinonimos": "planta",
+        "glosa_es": null,
+        "glosa_en": "scale drawing of a horizontal section through a building at a given level; contrasts with elevation  ",
+        "glosa_en_traducida": "dibujo a escala de una sección horizontal de un edificio en un nivel dado; contrasta con elevación"
+      }
+    ]
+  },
+  {
+    "lema": "suri",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "ave",
+      "pájaro"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-01514668-n",
+        "pos": "n",
+        "sinonimos": "pájaro_macho, ave",
+        "glosa_es": null,
+        "glosa_en": "adult male bird  ",
+        "glosa_en_traducida": "ave macho adulta"
+      },
+      {
+        "offset": "spa-30-01503061-n",
+        "pos": "n",
+        "sinonimos": "ave, pájaro, aves",
+        "glosa_es": null,
+        "glosa_en": "warm-blooded egg-laying vertebrates characterized by feathers and forelimbs modified as wings  ",
+        "glosa_en_traducida": "vertebrados ovíparos de sangre caliente caracterizados por plumas y miembros anteriores modificados como alas"
+      },
+      {
+        "offset": "spa-30-10022759-n",
+        "pos": "n",
+        "sinonimos": "astuta, astuto, pajarraca, pajarraco, pájara, pájaro, pícara, gato, pícaro, zorro",
+        "glosa_es": null,
+        "glosa_en": "a shifty deceptive person  ",
+        "glosa_en_traducida": "persona astuta y engañosa"
+      }
+    ]
+  },
+  {
+    "lema": "pincullo",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "flauta",
+      "instrumento"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-03945615-n",
+        "pos": "n",
+        "sinonimos": "chiflo, flauta, gaita",
+        "glosa_es": null,
+        "glosa_en": "a tubular wind instrument  ",
+        "glosa_en_traducida": "instrumento de viento tubular"
+      },
+      {
+        "offset": "spa-30-10098245-n",
+        "pos": "n",
+        "sinonimos": "flautista, flauta",
+        "glosa_es": null,
+        "glosa_en": "someone who plays the flute  ",
+        "glosa_en_traducida": "alguien que toca la flauta"
+      },
+      {
+        "offset": "spa-30-03372029-n",
+        "pos": "n",
+        "sinonimos": "flauta, flauta_travesera",
+        "glosa_es": null,
+        "glosa_en": "a high-pitched woodwind instrument; a slender tube closed at one end with finger holes on one end and an opening near the closed end across which the breath is blown  ",
+        "glosa_en_traducida": "instrumento de viento de madera de sonido agudo; tubo esbelto cerrado en un extremo con agujeros para los dedos en un extremo y una abertura cerca del extremo cerrado sobre la cual se sopla"
+      },
+      {
+        "offset": "spa-30-01707925-v",
+        "pos": "v",
+        "sinonimos": "instrumentar, instrumento",
+        "glosa_es": "escribir una partitura instrumental para alguien o algo",
+        "glosa_en": "write an instrumental score for  ",
+        "glosa_en_traducida": "escribir una partitura instrumental para"
+      },
+      {
+        "offset": "spa-30-03575240-n",
+        "pos": "n",
+        "sinonimos": "instrumental, utillaje, instrumento",
+        "glosa_es": "un artefacto (o sistema de artefactos) que es necesario para lograr un fin",
+        "glosa_en": "an artifact (or system of artifacts) that is instrumental in accomplishing some end  ",
+        "glosa_en_traducida": "un artefacto o sistema de artefactos que es instrumental para lograr algún fin"
+      },
+      {
+        "offset": "spa-30-00173761-n",
+        "pos": "n",
+        "sinonimos": "herramienta, instrumento",
+        "glosa_es": null,
+        "glosa_en": "the means whereby some act is accomplished",
+        "glosa_en_traducida": "el medio por el cual se realiza algún acto"
+      },
+      {
+        "offset": "spa-30-03574816-n",
+        "pos": "n",
+        "sinonimos": "instrumento",
+        "glosa_es": null,
+        "glosa_en": "a device that requires skill for proper use  ",
+        "glosa_en_traducida": "un dispositivo que requiere destreza para su uso adecuado"
+      },
+      {
+        "offset": "spa-30-03800933-n",
+        "pos": "n",
+        "sinonimos": "instrumento_musical, instrumento",
+        "glosa_es": null,
+        "glosa_en": "any of various devices or contrivances that can be used to produce musical tones or sounds  ",
+        "glosa_en_traducida": "cualquiera de varios dispositivos o artilugios que pueden usarse para producir tonos o sonidos musicales"
+      },
+      {
+        "offset": "spa-30-04451818-n",
+        "pos": "n",
+        "sinonimos": "herramienta, instrumento, utensilio, útil",
+        "glosa_es": null,
+        "glosa_en": "an implement used in the practice of a vocation  ",
+        "glosa_en_traducida": "un utensilio usado en la práctica de una vocación"
+      },
+      {
+        "offset": "spa-30-06479665-n",
+        "pos": "n",
+        "sinonimos": "documento_judicial, documento_jurídico, documento_legal, documento_oficial, instrumento",
+        "glosa_es": "Un documento que establece alguna relación contractual o concede algún derecho",
+        "glosa_en": "(law) a document that states some contractual relationship or grants some right  ",
+        "glosa_en_traducida": "documento que establece alguna relación contractual u otorga algún derecho"
+      },
+      {
+        "offset": "spa-30-03563967-n",
+        "pos": "n",
+        "sinonimos": "implemento, herramienta, instrumento",
+        "glosa_es": null,
+        "glosa_en": "instrumentation (a piece of equipment or tool) used to effect an end  ",
+        "glosa_en_traducida": "instrumentación o equipo usado para lograr un fin"
+      }
+    ]
+  },
+  {
+    "lema": "equeco",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "duende",
+      "figura"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-09540739-n",
+        "pos": "n",
+        "sinonimos": "elfo, geniecillo, gremlin, silfo, duende, gnomo",
+        "glosa_es": null,
+        "glosa_en": "(folklore) fairies that are somewhat mischievous  ",
+        "glosa_en_traducida": "seres sobrenaturales algo traviesos de la mitología popular"
+      },
+      {
+        "offset": "spa-30-09543748-n",
+        "pos": "n",
+        "sinonimos": "hobgoblin, trasgo, duende",
+        "glosa_es": null,
+        "glosa_en": "(folklore) a small grotesque supernatural creature that makes trouble for human beings  ",
+        "glosa_en_traducida": "criatura sobrenatural pequeña y grotesca que causa problemas a los seres humanos"
+      },
+      {
+        "offset": "spa-30-09540430-n",
+        "pos": "n",
+        "sinonimos": "duende, fay, hada",
+        "glosa_es": null,
+        "glosa_en": "a small being, human in form, playful and having magical powers  ",
+        "glosa_en_traducida": "un pequeño ser de forma humana, juguetón y con poderes mágicos"
+      },
+      {
+        "offset": "spa-30-03314028-n",
+        "pos": "n",
+        "sinonimos": "picture_card, figura",
+        "glosa_es": null,
+        "glosa_en": "one of the twelve cards in a deck bearing a picture of a face  ",
+        "glosa_en_traducida": "una de las doce cartas de una baraja que lleva la imagen de un rostro"
+      },
+      {
+        "offset": "spa-30-05929008-n",
+        "pos": "n",
+        "sinonimos": "personaje, papel, parte, figura",
+        "glosa_es": null,
+        "glosa_en": "an actor's portrayal of someone in a play",
+        "glosa_en_traducida": "la interpretación de un actor de un personaje en una obra de teatro"
+      },
+      {
+        "offset": "spa-30-03178782-n",
+        "pos": "n",
+        "sinonimos": "diseño, adorno, figura, patrón",
+        "glosa_es": "trabajo decorativo o artístico",
+        "glosa_en": "a decorative or artistic work",
+        "glosa_en_traducida": "una obra decorativa o artística"
+      },
+      {
+        "offset": "spa-30-03335600-n",
+        "pos": "n",
+        "sinonimos": "figura",
+        "glosa_es": null,
+        "glosa_en": "a model of a bodily form (especially of a person)",
+        "glosa_en_traducida": "un modelo de una forma corporal, especialmente de una persona"
+      },
+      {
+        "offset": "spa-30-03234306-n",
+        "pos": "n",
+        "sinonimos": "dibujo, retrato, imagen, figura",
+        "glosa_es": null,
+        "glosa_en": "a representation of forms or objects on a surface by means of lines",
+        "glosa_en_traducida": "una representación de formas u objetos en una superficie por medio de líneas"
+      },
+      {
+        "offset": "spa-30-03561345-n",
+        "pos": "n",
+        "sinonimos": "dibujo, ilustración, figura",
+        "glosa_es": null,
+        "glosa_en": "a visual representation (a picture or diagram) that is used make some subject more pleasing or easier to understand  ",
+        "glosa_en_traducida": "una representación visual que se usa para hacer un tema más agradable o fácil de entender"
+      },
+      {
+        "offset": "spa-30-03265874-n",
+        "pos": "n",
+        "sinonimos": "efigie, simulacro, figura",
+        "glosa_es": null,
+        "glosa_en": "a representation of a person (especially in the form of sculpture)",
+        "glosa_en_traducida": "una representación de una persona, especialmente en forma de escultura"
+      },
+      {
+        "offset": "spa-30-03925226-n",
+        "pos": "n",
+        "sinonimos": "exposición, figura, foto, fotografía, retrato, imagen",
+        "glosa_es": "Representación de una persona o una escena mediante una diapositiva impresa o transparente, grabada por una cámara en un material fotosensible",
+        "glosa_en": "a representation of a person or scene in the form of a print or transparent slide; recorded by a camera on light-sensitive material  ",
+        "glosa_en_traducida": "una representación de una persona o escena en forma de impresión o diapositiva; grabada por una cámara en material sensible a la luz"
+      },
+      {
+        "offset": "spa-30-00556992-n",
+        "pos": "n",
+        "sinonimos": "figura",
+        "glosa_es": null,
+        "glosa_en": "a predetermined set of movements in dancing or skating",
+        "glosa_en_traducida": "un conjunto predeterminado de movimientos en la danza o el patinaje"
+      },
+      {
+        "offset": "spa-30-05902327-n",
+        "pos": "n",
+        "sinonimos": "esquema, dibujo, proyecto, diseño, figura",
+        "glosa_es": null,
+        "glosa_en": "something intended as a guide for making something else",
+        "glosa_en_traducida": "algo destinado a servir de guía para hacer otra cosa"
+      },
+      {
+        "offset": "spa-30-04076846-n",
+        "pos": "n",
+        "sinonimos": "representación, figura",
+        "glosa_es": "una creación que es una representación visual o tangible de alguien o algo",
+        "glosa_en": "a creation that is a visual or tangible rendering of someone or something  ",
+        "glosa_en_traducida": "una creación que es una representación visual o tangible de alguien o algo"
+      },
+      {
+        "offset": "spa-30-03720163-n",
+        "pos": "n",
+        "sinonimos": "mapa, mapas, plano, figura",
+        "glosa_es": null,
+        "glosa_en": "a diagrammatic representation of the earth's surface (or part of it)  ",
+        "glosa_en_traducida": "una representación diagramática de la superficie terrestre (o parte de ella)"
+      },
+      {
+        "offset": "spa-30-10344443-n",
+        "pos": "n",
+        "sinonimos": "personaje_público, nombre, persona, figura",
+        "glosa_es": null,
+        "glosa_en": "a well-known or notable person",
+        "glosa_en_traducida": "una persona conocida o notable"
+      },
+      {
+        "offset": "spa-30-09938991-n",
+        "pos": "n",
+        "sinonimos": "hombre_de_peso, mujer_de_peso, coloso, titán, monstruo, figura",
+        "glosa_es": null,
+        "glosa_en": "a person of exceptional importance and reputation  ",
+        "glosa_en_traducida": "una persona de importancia y reputación excepcionales"
+      },
+      {
+        "offset": "spa-30-13862780-n",
+        "pos": "n",
+        "sinonimos": "figura",
+        "glosa_es": null,
+        "glosa_en": "a combination of points and lines and planes that form a visible palpable shape  ",
+        "glosa_en_traducida": "una combinación de puntos, líneas y planos que forman una forma visible y palpable"
+      },
+      {
+        "offset": "spa-30-04675646-n",
+        "pos": "n",
+        "sinonimos": "figura",
+        "glosa_es": null,
+        "glosa_en": "the impression produced by a person",
+        "glosa_en_traducida": "la impresión producida por una persona"
+      },
+      {
+        "offset": "spa-30-06999647-n",
+        "pos": "n",
+        "sinonimos": "figura",
+        "glosa_es": null,
+        "glosa_en": "a diagram or picture illustrating textual material",
+        "glosa_en_traducida": "un diagrama o imagen que ilustra material textual"
+      },
+      {
+        "offset": "spa-30-05217168-n",
+        "pos": "n",
+        "sinonimos": "cuerpo_humano, soma, anatomía, físico, figura, carne, cuerpo, forma",
+        "glosa_es": null,
+        "glosa_en": "alternative names for the body of a human being",
+        "glosa_en_traducida": "nombres alternativos para el cuerpo de un ser humano"
+      },
+      {
+        "offset": "spa-30-04306847-n",
+        "pos": "n",
+        "sinonimos": "estatua, figura",
+        "glosa_es": null,
+        "glosa_en": "a sculpture representing a human or animal  ",
+        "glosa_en_traducida": "una escultura que representa a un ser humano o animal"
+      }
+    ]
+  },
+  {
+    "lema": "festejo",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "música",
+      "danza",
+      "género"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-07020895-n",
+        "pos": "n",
+        "sinonimos": "música",
+        "glosa_es": "una forma artística de comunicación auditiva que incorpora tonos instrumentales o vocales de una manera estructurada y continua",
+        "glosa_en": "an artistic form of auditory communication incorporating instrumental or vocal tones in a structured and continuous manner  ",
+        "glosa_en_traducida": "una forma artística de comunicación auditiva que incorpora tonos instrumentales o vocales de manera estructurada y continua"
+      },
+      {
+        "offset": "spa-30-00543233-n",
+        "pos": "n",
+        "sinonimos": "música",
+        "glosa_es": null,
+        "glosa_en": "musical activity (singing or whistling etc.)",
+        "glosa_en_traducida": "actividad musical (cantar o silbar, etc.)"
+      },
+      {
+        "offset": "spa-30-05718935-n",
+        "pos": "n",
+        "sinonimos": "música",
+        "glosa_es": null,
+        "glosa_en": "(music) the sounds produced by singers or musical instruments (or reproductions of such sounds)  ",
+        "glosa_en_traducida": "los sonidos producidos por cantantes o instrumentos musicales (o reproducciones de tales sonidos)"
+      },
+      {
+        "offset": "spa-30-05718556-n",
+        "pos": "n",
+        "sinonimos": "eufonía, música",
+        "glosa_es": null,
+        "glosa_en": "any agreeable (pleasing and harmonious) sounds",
+        "glosa_en_traducida": "cualesquiera sonidos agradables (placenteros y armoniosos)"
+      },
+      {
+        "offset": "spa-30-00428270-n",
+        "pos": "n",
+        "sinonimos": "baile, danza",
+        "glosa_es": "realizar una serie de pasos rítmicos (y movimientos) al tiempo de la música",
+        "glosa_en": "taking a series of rhythmical steps (and movements) in time to music  ",
+        "glosa_en_traducida": "realizar una serie de pasos rítmicos (y movimientos) al compás de la música"
+      },
+      {
+        "offset": "spa-30-07020538-n",
+        "pos": "n",
+        "sinonimos": "danza, baile",
+        "glosa_es": "una forma artística de comunicación no verbal",
+        "glosa_en": "an artistic form of nonverbal communication  ",
+        "glosa_en_traducida": "una forma artística de comunicación no verbal"
+      },
+      {
+        "offset": "spa-30-08108972-n",
+        "pos": "n",
+        "sinonimos": "género",
+        "glosa_es": null,
+        "glosa_en": "(biology) taxonomic group containing one or more species  ",
+        "glosa_en_traducida": "grupo taxonómico que contiene una o más especies"
+      },
+      {
+        "offset": "spa-30-05839024-n",
+        "pos": "n",
+        "sinonimos": "clase, especie, tipo, forma, género",
+        "glosa_es": null,
+        "glosa_en": "a category of things distinguished by some common characteristic or quality",
+        "glosa_en_traducida": "una categoría de cosas distinguidas por alguna característica o cualidad común"
+      },
+      {
+        "offset": "spa-30-03309808-n",
+        "pos": "n",
+        "sinonimos": "material, paño, tejido, tela, textil, trapo, género",
+        "glosa_es": null,
+        "glosa_en": "artifact made by weaving or felting or knitting or crocheting natural or synthetic fibers",
+        "glosa_en_traducida": "artefacto hecho mediante tejido, fieltrado, tejido de punto o ganchillo de fibras naturales o sintéticas"
+      },
+      {
+        "offset": "spa-30-03748886-n",
+        "pos": "n",
+        "sinonimos": "artículo, mercadería, mercancía, mercancías, producto, género",
+        "glosa_es": "artículos que_se_ofrecen a la venta",
+        "glosa_en": "commodities offered for sale",
+        "glosa_en_traducida": "mercancías ofrecidas a la venta"
+      },
+      {
+        "offset": "spa-30-03076708-n",
+        "pos": "n",
+        "sinonimos": "artículo_de_consumo, bien, bien_comercial, artículo, mercadería, mercancía, producto, género",
+        "glosa_es": "producto de comercialización",
+        "glosa_en": "articles of commerce  ",
+        "glosa_en_traducida": "artículos de comercio"
+      },
+      {
+        "offset": "spa-30-05006898-n",
+        "pos": "n",
+        "sinonimos": "sexualidad, sexo, género",
+        "glosa_es": null,
+        "glosa_en": "the properties that distinguish organisms on the basis of their reproductive roles",
+        "glosa_en_traducida": "las propiedades que distinguen a los organismos según sus funciones reproductivas"
+      },
+      {
+        "offset": "spa-30-05844105-n",
+        "pos": "n",
+        "sinonimos": "estilo, género",
+        "glosa_es": null,
+        "glosa_en": "a particular kind (as to appearance)",
+        "glosa_en_traducida": "un tipo particular en cuanto a apariencia"
+      },
+      {
+        "offset": "spa-30-03434943-n",
+        "pos": "n",
+        "sinonimos": "género",
+        "glosa_es": null,
+        "glosa_en": "a class of art (or artistic endeavor) having a characteristic form or technique  ",
+        "glosa_en_traducida": "una clase de arte o actividad artística que tiene una forma o técnica característica"
+      },
+      {
+        "offset": "spa-30-06328643-n",
+        "pos": "n",
+        "sinonimos": "género_gramatical, genero, sexo, género",
+        "glosa_es": null,
+        "glosa_en": "a grammatical category in inflected languages governing the agreement between nouns and pronouns and adjectives; in some languages it is quite arbitrary but in Indo-European languages it is usually based on sex or animateness  ",
+        "glosa_en_traducida": "categoría gramatical en lenguas flexivas que rige la concordancia entre sustantivos, pronombres y adjetivos; en algunas lenguas es arbitraria pero en lenguas indoeuropeas generalmente se basa en el sexo o la animacidad"
+      },
+      {
+        "offset": "spa-30-07092158-n",
+        "pos": "n",
+        "sinonimos": "género_literario, género",
+        "glosa_es": null,
+        "glosa_en": "a style of expressing yourself in writing  ",
+        "glosa_en_traducida": "un estilo de expresarse por escrito"
+      },
+      {
+        "offset": "spa-30-05845332-n",
+        "pos": "n",
+        "sinonimos": "género",
+        "glosa_es": null,
+        "glosa_en": "a kind of literary or artistic work  ",
+        "glosa_en_traducida": "una clase de obra literaria o artística"
+      },
+      {
+        "offset": "spa-30-05845013-n",
+        "pos": "n",
+        "sinonimos": "género",
+        "glosa_es": null,
+        "glosa_en": "a general kind of something",
+        "glosa_en_traducida": "un tipo general de algo"
+      }
+    ]
+  },
+  {
+    "lema": "mascapaicha",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "insignia",
+      "distintivo"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-06883073-n",
+        "pos": "n",
+        "sinonimos": "distintivo, insignia",
+        "glosa_es": null,
+        "glosa_en": "a badge worn to show official position  ",
+        "glosa_en_traducida": "una insignia que se lleva para mostrar la posición oficial"
+      },
+      {
+        "offset": "spa-30-06882009-n",
+        "pos": "n",
+        "sinonimos": "bandera_nacional, insignia",
+        "glosa_es": "emblema que_flamea como un símbolo de nacionalidad",
+        "glosa_en": "an emblem flown as a symbol of nationality  ",
+        "glosa_en_traducida": "un emblema que ondea como símbolo de nacionalidad"
+      },
+      {
+        "offset": "spa-30-03290096-n",
+        "pos": "n",
+        "sinonimos": "enseña, insignia",
+        "glosa_es": null,
+        "glosa_en": "colors flown by a ship to show its nationality  ",
+        "glosa_en_traducida": "colores que ondea un barco para mostrar su nacionalidad"
+      },
+      {
+        "offset": "spa-30-06705891-n",
+        "pos": "n",
+        "sinonimos": "banderín, gallardete, insignia, corona",
+        "glosa_es": "premio dado al campeón",
+        "glosa_en": "the award given to the champion  ",
+        "glosa_en_traducida": "el premio otorgado al campeón"
+      },
+      {
+        "offset": "spa-30-00357556-a",
+        "pos": "a",
+        "sinonimos": "distintivo, típico",
+        "glosa_es": null,
+        "glosa_en": "of a feature that helps to distinguish a person or thing",
+        "glosa_en_traducida": "de un rasgo que ayuda a distinguir a una persona o cosa"
+      },
+      {
+        "offset": "spa-30-01272718-a",
+        "pos": "a",
+        "sinonimos": "clasificable, distintivo",
+        "glosa_es": "Puede ser clasificado",
+        "glosa_en": "capable of being classified  ",
+        "glosa_en_traducida": "capaz de ser clasificado"
+      }
+    ]
+  },
+  {
+    "lema": "cachascanista",
+    "grupo": "B_tipo2",
+    "sondas": [
+      "luchador",
+      "deportista"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-01517632-a",
+        "pos": "a",
+        "sinonimos": "combatiente, luchador",
+        "glosa_es": null,
+        "glosa_en": "engaging in or ready for combat  ",
+        "glosa_en_traducida": "que participa en o está listo para el combate"
+      },
+      {
+        "offset": "spa-30-09939313-n",
+        "pos": "n",
+        "sinonimos": "batallador, beligerante, combatiente, luchador, guerrero",
+        "glosa_es": null,
+        "glosa_en": "someone who fights (or is fighting)  ",
+        "glosa_en_traducida": "alguien que lucha o está luchando"
+      },
+      {
+        "offset": "spa-30-10793168-n",
+        "pos": "n",
+        "sinonimos": "matman, luchador",
+        "glosa_es": null,
+        "glosa_en": "combatant who tries to throw opponent to the ground  ",
+        "glosa_en_traducida": "combatiente que intenta derribar al oponente al suelo"
+      },
+      {
+        "offset": "spa-30-09906538-n",
+        "pos": "n",
+        "sinonimos": "paladino, paladín, luchador, héroe",
+        "glosa_es": null,
+        "glosa_en": "someone who fights for a cause  ",
+        "glosa_en_traducida": "alguien que lucha por una causa"
+      },
+      {
+        "offset": "spa-30-09820263-n",
+        "pos": "n",
+        "sinonimos": "atleta, deportista",
+        "glosa_es": null,
+        "glosa_en": "a person trained to compete in sports  ",
+        "glosa_en_traducida": "una persona entrenada para competir en deportes"
+      },
+      {
+        "offset": "spa-30-10638922-n",
+        "pos": "n",
+        "sinonimos": "deportista",
+        "glosa_es": null,
+        "glosa_en": "someone who engages in sports  ",
+        "glosa_en_traducida": "alguien que participa en deportes"
+      }
+    ]
+  },
+  {
+    "lema": "zaramullo",
+    "grupo": "C_escueta",
+    "sondas": [
+      "despreciable",
+      "ruin"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-00904745-a",
+        "pos": "a",
+        "sinonimos": "abyecto, despreciable, vil, bajo, miserable",
+        "glosa_es": null,
+        "glosa_en": "of the most contemptible kind",
+        "glosa_en_traducida": "del tipo más despreciable"
+      },
+      {
+        "offset": "spa-30-00904548-a",
+        "pos": "a",
+        "sinonimos": "despreciable",
+        "glosa_es": "que merece desprecio o desdén",
+        "glosa_en": "deserving of contempt or scorn  ",
+        "glosa_en_traducida": "merecedor de desprecio o burla"
+      },
+      {
+        "offset": "spa-30-00265214-a",
+        "pos": "a",
+        "sinonimos": "indigno, despreciable",
+        "glosa_es": null,
+        "glosa_en": "despicably mean and cowardly  ",
+        "glosa_en_traducida": "despreciablemente mezquino y cobarde"
+      },
+      {
+        "offset": "spa-30-02504046-a",
+        "pos": "a",
+        "sinonimos": "despreciable",
+        "glosa_es": null,
+        "glosa_en": "of no value  ",
+        "glosa_en_traducida": "sin valor"
+      },
+      {
+        "offset": "spa-30-01496462-a",
+        "pos": "a",
+        "sinonimos": "despreciable, insignificante",
+        "glosa_es": null,
+        "glosa_en": "so small as to be meaningless; insignificant",
+        "glosa_en_traducida": "tan pequeño que carece de significado; insignificante"
+      },
+      {
+        "offset": "spa-30-01460421-a",
+        "pos": "a",
+        "sinonimos": "odioso, despreciable, repugnante",
+        "glosa_es": "que_evoca o merece odio",
+        "glosa_en": "evoking or deserving hatred",
+        "glosa_en_traducida": "que evoca u merece odio"
+      },
+      {
+        "offset": "spa-30-01133017-a",
+        "pos": "a",
+        "sinonimos": "desdeñable, ruin, despreciable, vil, bajo",
+        "glosa_es": null,
+        "glosa_en": "morally reprehensible",
+        "glosa_en_traducida": "moralmente reprehensible"
+      },
+      {
+        "offset": "spa-30-01589650-a",
+        "pos": "a",
+        "sinonimos": "desdeñable, infame, innoble, ruin, vil, despreciable, miserable",
+        "glosa_es": null,
+        "glosa_en": "having or showing an ignoble lack of honor or morality",
+        "glosa_en_traducida": "que muestra falta de honor o moralidad"
+      },
+      {
+        "offset": "spa-30-01625893-a",
+        "pos": "a",
+        "sinonimos": "asquerosa, asqueroso, repulsivo, despreciable, repugnante, desagradable",
+        "glosa_es": null,
+        "glosa_en": "highly offensive; arousing aversion or disgust",
+        "glosa_en_traducida": "altamente ofensivo; que despierta aversión o asco"
+      },
+      {
+        "offset": "spa-30-01113807-a",
+        "pos": "a",
+        "sinonimos": "miserable, ruin, mezquino",
+        "glosa_es": null,
+        "glosa_en": "(used of persons or behavior) characterized by or indicative of lack of generosity",
+        "glosa_en_traducida": "caracterizado por o indicativo de falta de generosidad"
+      },
+      {
+        "offset": "spa-30-10322084-n",
+        "pos": "n",
+        "sinonimos": "avara, avaro, cicatera, cicatero, mezquina, mezquino, miserable, roñica, roñosa, roñoso, ruin, tacaña, tacaño, rata, roña",
+        "glosa_es": null,
+        "glosa_en": "a stingy hoarder of money and possessions (often living miserably)  ",
+        "glosa_en_traducida": "acaparador tacaño de dinero y posesiones, a menudo viviendo miserablemente"
+      }
+    ]
+  },
+  {
+    "lema": "hartos",
+    "grupo": "C_escueta",
+    "sondas": [
+      "muchos",
+      "abundante"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-01551633-a",
+        "pos": "a",
+        "sinonimos": "mucho, muchos",
+        "glosa_es": null,
+        "glosa_en": "a quantifier that can be used with count nouns and is often preceded by `as' or `too' or `so' or `that'; amounting to a large but indefinite number",
+        "glosa_en_traducida": "cuantificador que puede usarse con sustantivos contables y frecuentemente va precedido de 'como', 'demasiado', 'tan' o 'ese'; que asciende a un número grande pero indefinido"
+      },
+      {
+        "offset": "spa-30-13777509-n",
+        "pos": "n",
+        "sinonimos": "tanda, slews, runfla, muchos, montones, gobs, lote, mogollón, enormidad, burrada, bestialidad, barbaridad, fajo, avalancha, cúmulo, montón, multitud, cantidad, pila",
+        "glosa_es": null,
+        "glosa_en": "a large number or amount",
+        "glosa_en_traducida": "un número o cantidad grande"
+      },
+      {
+        "offset": "spa-30-00013887-a",
+        "pos": "a",
+        "sinonimos": "abundante, bastante, colmado, copiosa, copioso, cuantioso",
+        "glosa_es": null,
+        "glosa_en": "present in great quantity",
+        "glosa_en_traducida": "presente en gran cantidad"
+      },
+      {
+        "offset": "spa-30-00014490-a",
+        "pos": "a",
+        "sinonimos": "abundante, bastante, copioso, generoso",
+        "glosa_es": null,
+        "glosa_en": "affording an abundant supply",
+        "glosa_en_traducida": "que proporciona una provisión abundante"
+      },
+      {
+        "offset": "spa-30-00014858-a",
+        "pos": "a",
+        "sinonimos": "abundante, copioso, extenso",
+        "glosa_es": null,
+        "glosa_en": "large in number or quantity (especially of discourse)",
+        "glosa_en_traducida": "numeroso o abundante en cantidad, especialmente en el discurso"
+      },
+      {
+        "offset": "spa-30-00015247-a",
+        "pos": "a",
+        "sinonimos": "abundoso, nombroso, profuso, copioso, exuberante, abundante",
+        "glosa_es": null,
+        "glosa_en": "produced or growing in extreme abundance",
+        "glosa_en_traducida": "producido o que crece en abundancia extrema"
+      },
+      {
+        "offset": "spa-30-02558528-a",
+        "pos": "a",
+        "sinonimos": "sustancioso, nutritivo, abundante, sólido, bueno",
+        "glosa_es": null,
+        "glosa_en": "providing abundant nourishment",
+        "glosa_en_traducida": "que proporciona nutrición abundante"
+      },
+      {
+        "offset": "spa-30-01080900-a",
+        "pos": "a",
+        "sinonimos": "rebosante, exuberante, abundante",
+        "glosa_es": null,
+        "glosa_en": "producing in abundance",
+        "glosa_en_traducida": "que produce en abundancia"
+      },
+      {
+        "offset": "spa-30-00015854-a",
+        "pos": "a",
+        "sinonimos": "abundante",
+        "glosa_es": null,
+        "glosa_en": "existing in great number or quantity",
+        "glosa_en_traducida": "que existe en gran número o cantidad"
+      },
+      {
+        "offset": "spa-30-00014358-a",
+        "pos": "a",
+        "sinonimos": "abundante",
+        "glosa_es": null,
+        "glosa_en": "existing in abundance",
+        "glosa_en_traducida": "que existe en abundancia"
+      }
+    ]
+  },
+  {
+    "lema": "maulear",
+    "grupo": "C_escueta",
+    "sondas": [
+      "acobardarse",
+      "amilanarse"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-02380980-v",
+        "pos": "v",
+        "sinonimos": "acobardarse, amedrentarse, rajarse",
+        "glosa_es": null,
+        "glosa_en": "remove oneself from an obligation",
+        "glosa_en_traducida": "eximirse de una obligación"
+      }
+    ]
+  },
+  {
+    "lema": "arrechura",
+    "grupo": "C_escueta",
+    "sondas": [
+      "excitación",
+      "deseo"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-14037011-n",
+        "pos": "n",
+        "sinonimos": "excitación",
+        "glosa_es": null,
+        "glosa_en": "the state of being emotionally aroused and worked up",
+        "glosa_en_traducida": "estado de excitación emocional y agitación"
+      },
+      {
+        "offset": "spa-30-07528212-n",
+        "pos": "n",
+        "sinonimos": "excitación, regocijo",
+        "glosa_es": null,
+        "glosa_en": "the feeling of lively and cheerful joy",
+        "glosa_en_traducida": "sensación de alegría viva y jovial"
+      },
+      {
+        "offset": "spa-30-14403107-n",
+        "pos": "n",
+        "sinonimos": "turbación, agitación, perturbación, excitación, alteración",
+        "glosa_es": null,
+        "glosa_en": "a mental state of extreme emotional disturbance  ",
+        "glosa_en_traducida": "estado mental de perturbación emocional extrema"
+      },
+      {
+        "offset": "spa-30-14037619-n",
+        "pos": "n",
+        "sinonimos": "excitación_sexual, excitación",
+        "glosa_es": null,
+        "glosa_en": "the arousal of sexual desires in preparation for sexual behavior  ",
+        "glosa_en_traducida": "excitación de los deseos sexuales en preparación para la conducta sexual"
+      },
+      {
+        "offset": "spa-30-14036356-n",
+        "pos": "n",
+        "sinonimos": "excitación",
+        "glosa_es": null,
+        "glosa_en": "the neural or electrical arousal of an organ or muscle or gland  ",
+        "glosa_en_traducida": "excitación neural o eléctrica de un órgano, músculo o glándula"
+      },
+      {
+        "offset": "spa-30-01260867-n",
+        "pos": "n",
+        "sinonimos": "emoción, excitación",
+        "glosa_es": "algo que agita y despierta",
+        "glosa_en": "something that agitates and arouses",
+        "glosa_en_traducida": "algo que agita y excita"
+      },
+      {
+        "offset": "spa-30-00554300-n",
+        "pos": "n",
+        "sinonimos": "batahola, follón, greguería, zambeque, zaragata, alboroto, algarabía, barbulla, griterío, vocería, zalagarda, excitación, trastorno, agitación",
+        "glosa_es": "disturbio que normalmente tiene lugar en_forma de protesta",
+        "glosa_en": "disturbance usually in protest  ",
+        "glosa_en_traducida": "perturbación generalmente en protesta"
+      },
+      {
+        "offset": "spa-30-07528470-n",
+        "pos": "n",
+        "sinonimos": "entusiasmo, emoción, excitación",
+        "glosa_es": null,
+        "glosa_en": "the swift release of a store of affective force",
+        "glosa_en_traducida": "liberación rápida de una reserva de fuerza afectiva"
+      },
+      {
+        "offset": "spa-30-14449405-n",
+        "pos": "n",
+        "sinonimos": "carencia, carestía, deficiencia, deseo, escasez, falta",
+        "glosa_es": null,
+        "glosa_en": "the state of needing something that is absent or unavailable",
+        "glosa_en_traducida": "estado de necesitar algo que está ausente o indisponible"
+      },
+      {
+        "offset": "spa-30-07484265-n",
+        "pos": "n",
+        "sinonimos": "gana, deseo",
+        "glosa_es": null,
+        "glosa_en": "the feeling that accompanies an unsatisfied state  ",
+        "glosa_en_traducida": "sensación que acompaña un estado insatisfecho"
+      },
+      {
+        "offset": "spa-30-07487955-n",
+        "pos": "n",
+        "sinonimos": "atracción_física, atracción_secual, calentura, concupiscencia, deseo_sexual, eros, deseo",
+        "glosa_es": "deseo de intimidad sexual",
+        "glosa_en": "a desire for sexual intimacy  ",
+        "glosa_en_traducida": "deseo de intimidad sexual"
+      },
+      {
+        "offset": "spa-30-07485626-n",
+        "pos": "n",
+        "sinonimos": "apetencia, apetito, ganas, gana, deseo",
+        "glosa_es": null,
+        "glosa_en": "a feeling of craving something",
+        "glosa_en_traducida": "sensación de anhelar algo"
+      },
+      {
+        "offset": "spa-30-04945057-n",
+        "pos": "n",
+        "sinonimos": "deseo",
+        "glosa_es": null,
+        "glosa_en": "an inclination to want things",
+        "glosa_en_traducida": "inclinación a querer cosas"
+      },
+      {
+        "offset": "spa-30-07486229-n",
+        "pos": "n",
+        "sinonimos": "afán, deseo",
+        "glosa_es": null,
+        "glosa_en": "a specific feeling of desire",
+        "glosa_en_traducida": "sentimiento específico de deseo"
+      },
+      {
+        "offset": "spa-30-14038993-n",
+        "pos": "n",
+        "sinonimos": "deseo",
+        "glosa_es": null,
+        "glosa_en": "something that is desired  ",
+        "glosa_en_traducida": "algo que es deseado"
+      },
+      {
+        "offset": "spa-30-07489714-n",
+        "pos": "n",
+        "sinonimos": "hormigueo, lascivia, lujuria, quemazón, reconcomio, comezón, picazón, prurito, deseo",
+        "glosa_es": null,
+        "glosa_en": "a strong sexual desire  ",
+        "glosa_en_traducida": "deseo sexual intenso"
+      },
+      {
+        "offset": "spa-30-07185870-n",
+        "pos": "n",
+        "sinonimos": "ruego_indirecto, voluntad, petición, deseo",
+        "glosa_es": "expresión de algún anhelo o inclinación",
+        "glosa_en": "an expression of some desire or inclination",
+        "glosa_en_traducida": "expresión de algún deseo o inclinación"
+      },
+      {
+        "offset": "spa-30-07488788-n",
+        "pos": "n",
+        "sinonimos": "pasión, deseo",
+        "glosa_es": null,
+        "glosa_en": "a feeling of strong sexual desire  ",
+        "glosa_en_traducida": "sensación de deseo sexual intenso"
+      }
+    ]
+  },
+  {
+    "lema": "brilloso",
+    "grupo": "C_escueta",
+    "sondas": [
+      "brillante",
+      "lustroso"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-00278551-a",
+        "pos": "a",
+        "sinonimos": "brillante, luminoso, claro",
+        "glosa_es": null,
+        "glosa_en": "emitting or reflecting light readily or in large amounts",
+        "glosa_en_traducida": "que emite o refleja luz fácilmente o en gran cantidad"
+      },
+      {
+        "offset": "spa-30-13372123-n",
+        "pos": "n",
+        "sinonimos": "brillante, roca",
+        "glosa_es": "diamantes",
+        "glosa_en": "diamonds",
+        "glosa_en_traducida": "diamantes"
+      },
+      {
+        "offset": "spa-30-01119421-a",
+        "pos": "a",
+        "sinonimos": "glaseado, brillante",
+        "glosa_es": null,
+        "glosa_en": "having a shiny surface or coating",
+        "glosa_en_traducida": "que tiene una superficie o recubrimiento brillante"
+      },
+      {
+        "offset": "spa-30-00279618-a",
+        "pos": "a",
+        "sinonimos": "centelleante, reluciente, brillante",
+        "glosa_es": null,
+        "glosa_en": "having brief brilliant points or flashes of light",
+        "glosa_en_traducida": "que tiene puntos o destellos breves e intensos de luz"
+      },
+      {
+        "offset": "spa-30-01812237-a",
+        "pos": "a",
+        "sinonimos": "bruñido, lustroso, reluciente, luminoso, brillante",
+        "glosa_es": null,
+        "glosa_en": "made smooth and bright by or as if by rubbing; reflecting a sheen or glow",
+        "glosa_en_traducida": "hecho liso y brillante por fricción o como si lo fuera; que refleja un brillo o resplandor"
+      },
+      {
+        "offset": "spa-30-01335156-a",
+        "pos": "a",
+        "sinonimos": "sesudo, brillante",
+        "glosa_es": null,
+        "glosa_en": "having or marked by unusual and impressive intelligence",
+        "glosa_en_traducida": "que tiene o se caracteriza por una inteligencia inusual e impresionante"
+      },
+      {
+        "offset": "spa-30-01285376-a",
+        "pos": "a",
+        "sinonimos": "macanudo, espléndido, magnífico, brillante",
+        "glosa_es": null,
+        "glosa_en": "characterized by grandeur",
+        "glosa_en_traducida": "caracterizado por grandiosidad"
+      },
+      {
+        "offset": "spa-30-00805810-a",
+        "pos": "a",
+        "sinonimos": "vivaz, brillante",
+        "glosa_es": null,
+        "glosa_en": "marked by high spirits or excitement",
+        "glosa_en_traducida": "marcado por ánimo elevado o entusiasmo"
+      },
+      {
+        "offset": "spa-30-00281657-a",
+        "pos": "a",
+        "sinonimos": "refulgente, lustroso, reluciente, brillante",
+        "glosa_es": null,
+        "glosa_en": "reflecting light",
+        "glosa_en_traducida": "que refleja luz"
+      },
+      {
+        "offset": "spa-30-00281173-a",
+        "pos": "a",
+        "sinonimos": "brillante",
+        "glosa_es": null,
+        "glosa_en": "full of light; shining intensely",
+        "glosa_en_traducida": "lleno de luz; que brilla intensamente"
+      },
+      {
+        "offset": "spa-30-00282675-a",
+        "pos": "a",
+        "sinonimos": "de_seda, sedosa, terso, satinado, sedoso, lustroso, liso, brillante",
+        "glosa_es": null,
+        "glosa_en": "having a smooth, gleaming surface reflecting light",
+        "glosa_en_traducida": "que tiene una superficie lisa y reluciente que refleja luz"
+      },
+      {
+        "offset": "spa-30-00402855-a",
+        "pos": "a",
+        "sinonimos": "vivo, brillante",
+        "glosa_es": null,
+        "glosa_en": "having striking color",
+        "glosa_en_traducida": "que tiene color llamativo"
+      },
+      {
+        "offset": "spa-30-02342608-a",
+        "pos": "a",
+        "sinonimos": "brillante",
+        "glosa_es": null,
+        "glosa_en": "of surpassing excellence",
+        "glosa_en_traducida": "de excelencia excepcional"
+      },
+      {
+        "offset": "spa-30-01677957-a",
+        "pos": "a",
+        "sinonimos": "brillante",
+        "glosa_es": null,
+        "glosa_en": "suggestive of fireworks",
+        "glosa_en_traducida": "que sugiere fuegos artificiales"
+      },
+      {
+        "offset": "spa-30-01811997-a",
+        "pos": "a",
+        "sinonimos": "lustroso, pulido",
+        "glosa_es": null,
+        "glosa_en": "perfected or made shiny and smooth",
+        "glosa_en_traducida": "perfeccionado o hecho brillante y liso"
+      }
+    ]
+  },
+  {
+    "lema": "jefaturado",
+    "grupo": "C_escueta",
+    "sondas": [
+      "dirigido",
+      "comandado"
+    ],
+    "candidatos": []
+  },
+  {
+    "lema": "cruzarse",
+    "grupo": "C_escueta",
+    "sondas": [
+      "enloquecer",
+      "trastornarse"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-01787709-v",
+        "pos": "v",
+        "sinonimos": "enloquecer, enfurecer, sulfurar",
+        "glosa_es": null,
+        "glosa_en": "drive up the wall; go on someone's nerves  ",
+        "glosa_en_traducida": "exasperar; irritar profundamente"
+      },
+      {
+        "offset": "spa-30-01787822-v",
+        "pos": "v",
+        "sinonimos": "volver_loco, enloquecer",
+        "glosa_es": null,
+        "glosa_en": "cause to go crazy; cause to lose one's mind  ",
+        "glosa_en_traducida": "volver loco; hacer perder la razón"
+      },
+      {
+        "offset": "spa-30-01787600-v",
+        "pos": "v",
+        "sinonimos": "enloquecer",
+        "glosa_es": "volver loco",
+        "glosa_en": "make mad",
+        "glosa_en_traducida": "enloquecer"
+      }
+    ]
+  },
+  {
+    "lema": "maloso",
+    "grupo": "C_escueta",
+    "sondas": [
+      "malvado",
+      "perverso"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-02513740-a",
+        "pos": "a",
+        "sinonimos": "inicuo, malvado, perverso",
+        "glosa_es": null,
+        "glosa_en": "morally bad in principle or practice  ",
+        "glosa_en_traducida": "moralmente malo en principio o práctica"
+      },
+      {
+        "offset": "spa-30-10329945-n",
+        "pos": "n",
+        "sinonimos": "fiera, malvado, ogro, demonio, diablo, monstruo",
+        "glosa_es": null,
+        "glosa_en": "a cruel wicked and inhuman person  ",
+        "glosa_en_traducida": "persona cruel, malvada e inhumana"
+      },
+      {
+        "offset": "spa-30-01131043-a",
+        "pos": "a",
+        "sinonimos": "maléfico, malévolo, mal, malo, malvado, perjudicial",
+        "glosa_es": "moralmente malo o incorrecto",
+        "glosa_en": "morally bad or wrong",
+        "glosa_en_traducida": "moralmente malo o incorrecto"
+      },
+      {
+        "offset": "spa-30-01244410-a",
+        "pos": "a",
+        "sinonimos": "hostil, mal, malo, malvado, perjudicial",
+        "glosa_es": null,
+        "glosa_en": "characterized by enmity or ill will",
+        "glosa_en_traducida": "caracterizado por enemistad o mala voluntad"
+      },
+      {
+        "offset": "spa-30-00225912-a",
+        "pos": "a",
+        "sinonimos": "malicioso, malintencionado, malvado",
+        "glosa_es": null,
+        "glosa_en": "marked by or arising from malice",
+        "glosa_en_traducida": "marcado por malicia o que surge de ella"
+      },
+      {
+        "offset": "spa-30-02037531-a",
+        "pos": "a",
+        "sinonimos": "pecador, pecaminoso, malicioso, perverso, malvado",
+        "glosa_es": null,
+        "glosa_en": "having committed unrighteous acts",
+        "glosa_en_traducida": "que ha cometido actos injustos"
+      },
+      {
+        "offset": "spa-30-00224515-a",
+        "pos": "a",
+        "sinonimos": "maléfico, maligno, malévolo, malvado",
+        "glosa_es": null,
+        "glosa_en": "having or exerting a malignant influence",
+        "glosa_en_traducida": "que tiene o ejerce una influencia maligna"
+      },
+      {
+        "offset": "spa-30-02515001-a",
+        "pos": "a",
+        "sinonimos": "nefario, infame, perverso, malvado, vil",
+        "glosa_es": null,
+        "glosa_en": "extremely wicked",
+        "glosa_en_traducida": "extremadamente malvado"
+      },
+      {
+        "offset": "spa-30-01160775-a",
+        "pos": "a",
+        "sinonimos": "malvado, mal, malo, perjudicial",
+        "glosa_es": null,
+        "glosa_en": "capable of harming",
+        "glosa_en_traducida": "capaz de causar daño"
+      },
+      {
+        "offset": "spa-30-01596122-a",
+        "pos": "a",
+        "sinonimos": "aberrante, anómala, anómalo, desviada, desviado, anormal, excepcional, perverso",
+        "glosa_es": null,
+        "glosa_en": "markedly different from an accepted norm",
+        "glosa_en_traducida": "marcadamente diferente de una norma aceptada"
+      },
+      {
+        "offset": "spa-30-00621524-a",
+        "pos": "a",
+        "sinonimos": "depravado, pervertido, inmoral, perverso",
+        "glosa_es": null,
+        "glosa_en": "deviating from what is considered moral or right or proper or good",
+        "glosa_en_traducida": "que se desvía de lo considerado moral, correcto, apropiado o bueno"
+      },
+      {
+        "offset": "spa-30-01131935-a",
+        "pos": "a",
+        "sinonimos": "siniestro, corrupto, negro, obscuro, perverso, oscuro",
+        "glosa_es": null,
+        "glosa_en": "stemming from evil characteristics or forces; wicked or dishonorable",
+        "glosa_en_traducida": "que proviene de características o fuerzas malignas; malvado o deshonroso"
+      }
+    ]
+  },
+  {
+    "lema": "carabina",
+    "grupo": "D_destino",
+    "sondas": [
+      "rostro",
+      "cara"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-05600637-n",
+        "pos": "n",
+        "sinonimos": "faz, rostro, rostro_humano, cara",
+        "glosa_es": "parte_delantera de la cabeza humana desde la frente hasta la barbilla y de oreja a oreja",
+        "glosa_en": "the front of the human head from the forehead to the chin and ear to ear",
+        "glosa_en_traducida": "la parte frontal de la cabeza humana desde la frente hasta la barbilla y de oreja a oreja"
+      },
+      {
+        "offset": "spa-30-05601357-n",
+        "pos": "n",
+        "sinonimos": "fisiognomía, fisionomía, semblante, fisonomía, rostro, faz",
+        "glosa_es": null,
+        "glosa_en": "the human face (`kisser' and `smiler' and `mug' are informal terms for `face' and `phiz' is British)  ",
+        "glosa_en_traducida": "la cara humana (los términos informales para 'cara' son 'jeta', 'sonrisa' y 'cara', y 'faz' es británico)"
+      },
+      {
+        "offset": "spa-30-04679549-n",
+        "pos": "n",
+        "sinonimos": "semblante, rostro, apariencia, expresión",
+        "glosa_es": null,
+        "glosa_en": "the appearance conveyed by a person's face",
+        "glosa_en_traducida": "la apariencia que transmite la cara de una persona"
+      },
+      {
+        "offset": "spa-30-04673965-n",
+        "pos": "n",
+        "sinonimos": "apariencia, aspecto, cara, presencia",
+        "glosa_es": null,
+        "glosa_en": "outward or visible aspect of a person or thing  ",
+        "glosa_en_traducida": "aspecto externo o visible de una persona o cosa"
+      },
+      {
+        "offset": "spa-30-08510666-n",
+        "pos": "n",
+        "sinonimos": "lado, cara",
+        "glosa_es": null,
+        "glosa_en": "a surface forming part of the outside of an object",
+        "glosa_en_traducida": "superficie que forma parte del exterior de un objeto"
+      },
+      {
+        "offset": "spa-30-04213626-n",
+        "pos": "n",
+        "sinonimos": "faz, lado, cara",
+        "glosa_es": null,
+        "glosa_en": "an extended outer surface of an object",
+        "glosa_en_traducida": "superficie exterior extendida de un objeto"
+      },
+      {
+        "offset": "spa-30-05601198-n",
+        "pos": "n",
+        "sinonimos": "cara",
+        "glosa_es": "la parte de un animal que corresponde al rostro humano",
+        "glosa_en": "the part of an animal corresponding to the human face  ",
+        "glosa_en_traducida": "la parte del animal que corresponde a la cara humana"
+      },
+      {
+        "offset": "spa-30-08566707-n",
+        "pos": "n",
+        "sinonimos": "lado, cara",
+        "glosa_es": null,
+        "glosa_en": "the surface at either extremity of a three-dimensional object",
+        "glosa_en_traducida": "la superficie en cualquiera de los extremos de un objeto tridimensional"
+      },
+      {
+        "offset": "spa-30-03313873-n",
+        "pos": "n",
+        "sinonimos": "cara",
+        "glosa_es": "superficie sobresaliente o de_trabajo de un implemento",
+        "glosa_en": "the striking or working surface of an implement  ",
+        "glosa_en_traducida": "la superficie de golpe o trabajo de una herramienta"
+      },
+      {
+        "offset": "spa-30-03501811-n",
+        "pos": "n",
+        "sinonimos": "cara",
+        "glosa_es": null,
+        "glosa_en": "(usually plural) the obverse side of a coin that usually bears the representation of a person's head",
+        "glosa_en_traducida": "el lado inverso de una moneda que generalmente lleva la representación de la cabeza de una persona"
+      },
+      {
+        "offset": "spa-30-04838210-n",
+        "pos": "n",
+        "sinonimos": "cara_dura, desfachatez, sangre_fría, audacia, descaro, desvergüenza, osadía, temeridad, atrevimiento, valor, cara",
+        "glosa_es": "agresividad insolente",
+        "glosa_en": "impudent aggressiveness",
+        "glosa_en_traducida": "agresividad descarada"
+      },
+      {
+        "offset": "spa-30-06877578-n",
+        "pos": "n",
+        "sinonimos": "mueca, visaje, rictus, cara",
+        "glosa_es": "expresión facial retorcida",
+        "glosa_en": "a contorted facial expression",
+        "glosa_en_traducida": "una expresión facial contorsionada"
+      },
+      {
+        "offset": "spa-30-09618957-n",
+        "pos": "n",
+        "sinonimos": "cara",
+        "glosa_es": null,
+        "glosa_en": "a part of a person that is used to refer to a person",
+        "glosa_en_traducida": "una parte de una persona que se usa para referirse a una persona"
+      },
+      {
+        "offset": "spa-30-04679419-n",
+        "pos": "n",
+        "sinonimos": "cara",
+        "glosa_es": null,
+        "glosa_en": "the general outward appearance of something",
+        "glosa_en_traducida": "la apariencia general externa de algo"
+      },
+      {
+        "offset": "spa-30-05546298-n",
+        "pos": "n",
+        "sinonimos": "quijada, mandíbula, cara",
+        "glosa_es": "mandíbula",
+        "glosa_en": "a jaw",
+        "glosa_en_traducida": "una mandíbula"
+      }
+    ]
+  },
+  {
+    "lema": "cocho",
+    "grupo": "D_destino",
+    "sondas": [
+      "viejo",
+      "antiguo"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-01638438-a",
+        "pos": "a",
+        "sinonimos": "antiguo, viejo",
+        "glosa_es": null,
+        "glosa_en": "of long duration; not new",
+        "glosa_en_traducida": "de larga duración; no nuevo"
+      },
+      {
+        "offset": "spa-30-10375506-n",
+        "pos": "n",
+        "sinonimos": "abuelo, anciano, viejo",
+        "glosa_es": null,
+        "glosa_en": "a man who is very old  ",
+        "glosa_en_traducida": "un hombre muy anciano"
+      },
+      {
+        "offset": "spa-30-01643620-a",
+        "pos": "a",
+        "sinonimos": "anciano, viejo",
+        "glosa_es": null,
+        "glosa_en": "(used especially of persons) having lived for a relatively long time or attained a specific age",
+        "glosa_en_traducida": "que ha vivido durante un tiempo relativamente largo o ha alcanzado una edad específica"
+      },
+      {
+        "offset": "spa-30-07943870-n",
+        "pos": "n",
+        "sinonimos": "viejo",
+        "glosa_es": null,
+        "glosa_en": "people who are old collectively",
+        "glosa_en_traducida": "personas ancianas colectivamente"
+      },
+      {
+        "offset": "spa-30-01689580-a",
+        "pos": "a",
+        "sinonimos": "anticuado, viejo, pasado",
+        "glosa_es": null,
+        "glosa_en": "lacking originality or spontaneity; no longer new",
+        "glosa_en_traducida": "carente de originalidad o espontaneidad; ya no nuevo"
+      },
+      {
+        "offset": "spa-30-10375690-n",
+        "pos": "n",
+        "sinonimos": "viejo",
+        "glosa_es": "jefe",
+        "glosa_en": "(slang) boss  ",
+        "glosa_en_traducida": "jefe"
+      },
+      {
+        "offset": "spa-30-00669138-a",
+        "pos": "a",
+        "sinonimos": "desfasado, obsoleto, anticuado, viejo, antiguo",
+        "glosa_es": null,
+        "glosa_en": "old; no longer valid or fashionable",
+        "glosa_en_traducida": "viejo; ya no válido o de moda"
+      },
+      {
+        "offset": "spa-30-10375214-n",
+        "pos": "n",
+        "sinonimos": "viejo",
+        "glosa_es": null,
+        "glosa_en": "a familiar term of address for a man  ",
+        "glosa_en_traducida": "término familiar de dirección para un hombre"
+      },
+      {
+        "offset": "spa-30-01640261-a",
+        "pos": "a",
+        "sinonimos": "viejo, antiguo",
+        "glosa_es": null,
+        "glosa_en": "of long duration",
+        "glosa_en_traducida": "de larga duración"
+      },
+      {
+        "offset": "spa-30-10376890-n",
+        "pos": "n",
+        "sinonimos": "anticuado, antigualla, matusalén, pureta, tarra, anciano, carcamal, vejestorio, veterano, carroza, viejo",
+        "glosa_es": "un hombre anciano",
+        "glosa_en": "an elderly man  ",
+        "glosa_en_traducida": "un hombre anciano"
+      },
+      {
+        "offset": "spa-30-00936297-a",
+        "pos": "a",
+        "sinonimos": "viejo",
+        "glosa_es": null,
+        "glosa_en": "skilled through long experience",
+        "glosa_en_traducida": "experto por larga experiencia"
+      },
+      {
+        "offset": "spa-30-01639891-a",
+        "pos": "a",
+        "sinonimos": "viejo",
+        "glosa_es": null,
+        "glosa_en": "ancient",
+        "glosa_en_traducida": "antiguo"
+      },
+      {
+        "offset": "spa-30-01536911-a",
+        "pos": "a",
+        "sinonimos": "antiguo",
+        "glosa_es": null,
+        "glosa_en": "not modern; of or characteristic of an earlier time  ",
+        "glosa_en_traducida": "no moderno; de o característico de una época anterior"
+      },
+      {
+        "offset": "spa-30-01728614-a",
+        "pos": "a",
+        "sinonimos": "antigua, arcaico, vetusto, antiguo",
+        "glosa_es": null,
+        "glosa_en": "belonging to times long past especially of the historical period before the fall of the Western Roman Empire",
+        "glosa_en_traducida": "perteneciente a tiempos remotos, especialmente del período histórico anterior a la caída del Imperio Romano de Occidente"
+      },
+      {
+        "offset": "spa-30-01638962-a",
+        "pos": "a",
+        "sinonimos": "inmemorial, secular, antiguo",
+        "glosa_es": null,
+        "glosa_en": "belonging to or lasting from times long ago",
+        "glosa_en_traducida": "perteneciente a o que dura desde tiempos remotos"
+      },
+      {
+        "offset": "spa-30-01639446-a",
+        "pos": "a",
+        "sinonimos": "antiguo",
+        "glosa_es": null,
+        "glosa_en": "made in or typical of earlier times and valued for its age",
+        "glosa_en_traducida": "hecho en o típico de épocas anteriores y valorado por su antigüedad"
+      },
+      {
+        "offset": "spa-30-01729566-a",
+        "pos": "a",
+        "sinonimos": "ex-, antiguo",
+        "glosa_es": null,
+        "glosa_en": "belonging to some prior time",
+        "glosa_en_traducida": "que pertenece a un tiempo anterior"
+      },
+      {
+        "offset": "spa-30-01730745-a",
+        "pos": "a",
+        "sinonimos": "antiguo",
+        "glosa_es": null,
+        "glosa_en": "long past",
+        "glosa_en_traducida": "pasado remoto"
+      }
+    ]
+  },
+  {
+    "lema": "huamán",
+    "grupo": "D_destino",
+    "sondas": [
+      "gavilán",
+      "ave"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-01606672-n",
+        "pos": "n",
+        "sinonimos": "gavilán, esparaván",
+        "glosa_es": null,
+        "glosa_en": "small hawk of Eurasia and northern Africa  ",
+        "glosa_en_traducida": "pequeño halcón de Eurasia y norte de África"
+      },
+      {
+        "offset": "spa-30-01606978-n",
+        "pos": "n",
+        "sinonimos": "azor, gavilán",
+        "glosa_es": null,
+        "glosa_en": "nontechnical term for any hawks said to prey on poultry  ",
+        "glosa_en_traducida": "término no técnico para cualquier halcón que se dice que depreda aves de corral"
+      },
+      {
+        "offset": "spa-30-01612122-n",
+        "pos": "n",
+        "sinonimos": "cernícalo, gavilán, halcón",
+        "glosa_es": null,
+        "glosa_en": "small North American falcon  ",
+        "glosa_en_traducida": "pequeño halcón norteamericano"
+      },
+      {
+        "offset": "spa-30-01607962-n",
+        "pos": "n",
+        "sinonimos": "ratonero_común, busardo, gavilán, halcón",
+        "glosa_es": null,
+        "glosa_en": "the common European short-winged hawk  ",
+        "glosa_en_traducida": "el común halcón europeo de alas cortas"
+      },
+      {
+        "offset": "spa-30-01514668-n",
+        "pos": "n",
+        "sinonimos": "pájaro_macho, ave",
+        "glosa_es": null,
+        "glosa_en": "adult male bird  ",
+        "glosa_en_traducida": "ave macho adulta"
+      },
+      {
+        "offset": "spa-30-01503061-n",
+        "pos": "n",
+        "sinonimos": "ave, pájaro, aves",
+        "glosa_es": null,
+        "glosa_en": "warm-blooded egg-laying vertebrates characterized by feathers and forelimbs modified as wings  ",
+        "glosa_en_traducida": "vertebrados ovíparos de sangre caliente caracterizados por plumas y miembros anteriores modificados como alas"
+      }
+    ]
+  },
+  {
+    "lema": "implicancia",
+    "grupo": "D_destino",
+    "sondas": [
+      "consecuencia",
+      "resultado"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-11410625-n",
+        "pos": "n",
+        "sinonimos": "consecuencia, efecto, resultado",
+        "glosa_es": null,
+        "glosa_en": "a phenomenon that follows and is caused by some previous phenomenon",
+        "glosa_en_traducida": "un fenómeno que sigue y es causado por algún fenómeno anterior"
+      },
+      {
+        "offset": "spa-30-07292694-n",
+        "pos": "n",
+        "sinonimos": "consecuencia, resultado",
+        "glosa_es": null,
+        "glosa_en": "something that results",
+        "glosa_en_traducida": "algo que resulta"
+      },
+      {
+        "offset": "spa-30-05780885-n",
+        "pos": "n",
+        "sinonimos": "consecuencia, deducción, implicación",
+        "glosa_es": null,
+        "glosa_en": "something that is inferred (deduced or entailed or implied)",
+        "glosa_en_traducida": "algo que se deduce o se infiere"
+      },
+      {
+        "offset": "spa-30-07294019-n",
+        "pos": "n",
+        "sinonimos": "repercusión, consecuencia",
+        "glosa_es": null,
+        "glosa_en": "the outcome of an event especially as relative to an individual  ",
+        "glosa_en_traducida": "el resultado de un evento especialmente en relación con un individuo"
+      },
+      {
+        "offset": "spa-30-05170574-n",
+        "pos": "n",
+        "sinonimos": "transcendencia, trascendencia, importancia, repercusión, consecuencia",
+        "glosa_es": null,
+        "glosa_en": "having important effects or influence",
+        "glosa_en_traducida": "que tiene efectos o influencia importantes"
+      },
+      {
+        "offset": "spa-30-11414411-n",
+        "pos": "n",
+        "sinonimos": "efecto, impacto, consecuencia",
+        "glosa_es": null,
+        "glosa_en": "a forceful consequence; a strong effect",
+        "glosa_en_traducida": "una consecuencia contundente; un efecto fuerte"
+      },
+      {
+        "offset": "spa-30-11416722-n",
+        "pos": "n",
+        "sinonimos": "repercusión, consecuencia",
+        "glosa_es": null,
+        "glosa_en": "a remote or indirect consequence of some action",
+        "glosa_en_traducida": "una consecuencia remota o indirecta de alguna acción"
+      },
+      {
+        "offset": "spa-30-05170923-n",
+        "pos": "n",
+        "sinonimos": "graves_consecuencias, consecuencia",
+        "glosa_es": "secuelas terribles",
+        "glosa_en": "dire consequences",
+        "glosa_en_traducida": "consecuencias terribles"
+      },
+      {
+        "offset": "spa-30-13594585-n",
+        "pos": "n",
+        "sinonimos": "puntaje, puntuación, marcador, resultado",
+        "glosa_es": "un número que expresa la consecución de un equipo o un individuo en un juego o concurso",
+        "glosa_en": "a number that expresses the accomplishment of a team or an individual in a game or contest",
+        "glosa_en_traducida": "un número que expresa el desempeño de un equipo o un individuo en un juego o competencia"
+      },
+      {
+        "offset": "spa-30-06743506-n",
+        "pos": "n",
+        "sinonimos": "solvente, respuesta, resultado, solución, resolución",
+        "glosa_es": "declaración que resuelve un problema o explica cómo solucionar dicho problema",
+        "glosa_en": "a statement that solves a problem or explains how to solve the problem",
+        "glosa_en_traducida": "una afirmación que resuelve un problema o explica cómo resolverlo"
+      },
+      {
+        "offset": "spa-30-11411610-n",
+        "pos": "n",
+        "sinonimos": "resultado",
+        "glosa_es": null,
+        "glosa_en": "the consequences of an event (especially a catastrophic event)",
+        "glosa_en_traducida": "las consecuencias de un evento especialmente uno catastrófico"
+      }
+    ]
+  },
+  {
+    "lema": "agarrada",
+    "grupo": "D_destino",
+    "sondas": [
+      "altercado",
+      "pelea",
+      "riña"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-07184149-n",
+        "pos": "n",
+        "sinonimos": "altercado, camorra, dustup, encontrón, pelotera, reyerta, trifulca, riña, brega, disputa, palabras, pelea, pleito, roce, choque, discusión",
+        "glosa_es": "disputa colérica",
+        "glosa_en": "an angry dispute",
+        "glosa_en_traducida": "una disputa airada"
+      },
+      {
+        "offset": "spa-30-07184735-n",
+        "pos": "n",
+        "sinonimos": "pique, tiff, altercado, desavenencia, discordia, disputa, roce",
+        "glosa_es": null,
+        "glosa_en": "a quarrel about petty points  ",
+        "glosa_en_traducida": "una riña sobre puntos triviales"
+      },
+      {
+        "offset": "spa-30-01172441-n",
+        "pos": "n",
+        "sinonimos": "agarrada, escaramuza, gresca, pelea_de_perros, refriega, altercado, pelea, riña, disputa",
+        "glosa_es": "pelea caótica",
+        "glosa_en": "disorderly fighting  ",
+        "glosa_en_traducida": "pelea desordenada"
+      },
+      {
+        "offset": "spa-30-07184545-n",
+        "pos": "n",
+        "sinonimos": "altercación, paloteado, paloteo, camorra, reyerta, gresca, altercado",
+        "glosa_es": "pelea ruidosa",
+        "glosa_en": "noisy quarrel  ",
+        "glosa_en_traducida": "riña ruidosa"
+      },
+      {
+        "offset": "spa-30-01176335-n",
+        "pos": "n",
+        "sinonimos": "liza, algarada, reyerta, altercado, contienda, disturbio",
+        "glosa_es": "pelea ruidosa",
+        "glosa_en": "a noisy fight  ",
+        "glosa_en_traducida": "pelea ruidosa"
+      },
+      {
+        "offset": "spa-30-01170962-n",
+        "pos": "n",
+        "sinonimos": "brega, pelea, batalla, combate, lucha, acción",
+        "glosa_es": null,
+        "glosa_en": "the act of fighting; any contest or struggle",
+        "glosa_en_traducida": "acto de luchar; cualquier contienda o pugna"
+      },
+      {
+        "offset": "spa-30-07183151-n",
+        "pos": "n",
+        "sinonimos": "bronca, controversia, lid, pendencia, polémica, quimera, riña, disputa, pelea, discusión",
+        "glosa_es": null,
+        "glosa_en": "a contentious speech act; a dispute where there is strong disagreement",
+        "glosa_en_traducida": "acto de habla contencioso; disputa con fuerte desacuerdo"
+      },
+      {
+        "offset": "spa-30-01236173-n",
+        "pos": "n",
+        "sinonimos": "feudo, enemistad, pelea",
+        "glosa_es": null,
+        "glosa_en": "a bitter quarrel between two parties  ",
+        "glosa_en_traducida": "querella amarga entre dos partes"
+      },
+      {
+        "offset": "spa-30-00789391-n",
+        "pos": "n",
+        "sinonimos": "refriega, pelea",
+        "glosa_es": "lucha hosca y desorganizada",
+        "glosa_en": "an unceremonious and disorganized struggle  ",
+        "glosa_en_traducida": "lucha desordenada y sin ceremonias"
+      },
+      {
+        "offset": "spa-30-00513761-n",
+        "pos": "n",
+        "sinonimos": "payasadas, pelea",
+        "glosa_es": null,
+        "glosa_en": "rowdy or boisterous play  ",
+        "glosa_en_traducida": "juego alborotador o bullicioso"
+      },
+      {
+        "offset": "spa-30-01172173-n",
+        "pos": "n",
+        "sinonimos": "bronquina, peleona, zapatiesta, pelotera, zaragata, camorra, movida, bronca, riña",
+        "glosa_es": "pelea de corta duración pero fuerte",
+        "glosa_en": "a brief but vigorous fight  ",
+        "glosa_en_traducida": "pelea breve pero vigorosa"
+      },
+      {
+        "offset": "spa-30-01176431-n",
+        "pos": "n",
+        "sinonimos": "sarracina, todo_vale, batalla_campal, riña",
+        "glosa_es": "pelea ruidosa entre una muchedumbre",
+        "glosa_en": "a noisy fight in a crowd  ",
+        "glosa_en_traducida": "pelea ruidosa en medio de una multitud"
+      },
+      {
+        "offset": "spa-30-00959376-n",
+        "pos": "n",
+        "sinonimos": "escaramuza, refriega, trifulca, enfrentamiento, riña, zalagarda, roce, encuentro",
+        "glosa_es": "una pelea sin_importancia de breve_duración",
+        "glosa_en": "a minor short-term fight  ",
+        "glosa_en_traducida": "una pelea breve de corta duración"
+      }
+    ]
+  },
+  {
+    "lema": "maroca",
+    "grupo": "D_destino",
+    "sondas": [
+      "muchacha",
+      "amante"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-10129825-n",
+        "pos": "n",
+        "sinonimos": "chica, fille, jovencita, muchacha, mujercita, señorita, señorito, chico, joven, niña",
+        "glosa_es": "mujer joven",
+        "glosa_en": "a young woman",
+        "glosa_en_traducida": "mujer joven"
+      },
+      {
+        "offset": "spa-30-10084295-n",
+        "pos": "n",
+        "sinonimos": "chavala, chiquitina, lola, moza, nena, pequeña, rapaza, zagala, chica, jovencita, muchacha, joven, niña",
+        "glosa_es": "persona joven de sexo femenino",
+        "glosa_en": "a youthful female person",
+        "glosa_en_traducida": "persona femenina joven"
+      },
+      {
+        "offset": "spa-30-10247358-n",
+        "pos": "n",
+        "sinonimos": "chavala, moza, rapaza, zagala, muchacha, chica, joven, niña",
+        "glosa_es": null,
+        "glosa_en": "a girl or young woman who is unmarried  ",
+        "glosa_en_traducida": "muchacha o mujer joven soltera"
+      },
+      {
+        "offset": "spa-30-09989045-n",
+        "pos": "n",
+        "sinonimos": "gachí, tía, muñeca, nena, polla, bomba, moza, muchacha, chica",
+        "glosa_es": null,
+        "glosa_en": "informal terms for a (young) woman  ",
+        "glosa_en_traducida": "términos informales para una mujer (joven)"
+      },
+      {
+        "offset": "spa-30-09622302-n",
+        "pos": "n",
+        "sinonimos": "amante, enamorada, enamorado",
+        "glosa_es": null,
+        "glosa_en": "a person who loves someone or is loved by someone  ",
+        "glosa_en_traducida": "persona que ama a alguien o es amada por alguien"
+      },
+      {
+        "offset": "spa-30-10077593-n",
+        "pos": "n",
+        "sinonimos": "apasionada, apasionado, devota, fanática, fanático, aficionada, aficionado, amante, devoto, entusiasta, amiga, amigo",
+        "glosa_es": null,
+        "glosa_en": "an ardent follower and admirer  ",
+        "glosa_en_traducida": "un seguidor y admirador apasionado"
+      },
+      {
+        "offset": "spa-30-10323752-n",
+        "pos": "n",
+        "sinonimos": "entretenida, manceba, querida, amante, amiga",
+        "glosa_es": null,
+        "glosa_en": "an adulterous woman; a woman who has an ongoing extramarital sexual relationship with a man  ",
+        "glosa_en_traducida": "mujer adúltera; mujer que mantiene una relación sexual extramarital continuada con un hombre"
+      },
+      {
+        "offset": "spa-30-09952393-n",
+        "pos": "n",
+        "sinonimos": "barragana, concubina, daifa, odalisca, cortesana, favorita, manceba, querida, amante, coima",
+        "glosa_es": null,
+        "glosa_en": "a woman who cohabits with an important man  ",
+        "glosa_en_traducida": "mujer que convive con un hombre importante"
+      },
+      {
+        "offset": "spa-30-10237196-n",
+        "pos": "n",
+        "sinonimos": "besador, besucador, besucón, osculator, amante",
+        "glosa_es": "alguien que besa",
+        "glosa_en": "someone who kisses  ",
+        "glosa_en_traducida": "persona que besa"
+      }
+    ]
+  },
+  {
+    "lema": "bollo",
+    "grupo": "D_destino",
+    "sondas": [
+      "billete",
+      "dinero"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-13393762-n",
+        "pos": "n",
+        "sinonimos": "billete, billete_de_banco",
+        "glosa_es": null,
+        "glosa_en": "a piece of paper money (especially one issued by a central bank)",
+        "glosa_en_traducida": "billete de banco (especialmente uno emitido por un banco central)"
+      },
+      {
+        "offset": "spa-30-13308147-n",
+        "pos": "n",
+        "sinonimos": "billete, tarifa",
+        "glosa_es": null,
+        "glosa_en": "the sum charged for riding in a public conveyance  ",
+        "glosa_en_traducida": "cantidad cobrada por viajar en un medio de transporte público"
+      },
+      {
+        "offset": "spa-30-06518719-n",
+        "pos": "n",
+        "sinonimos": "boleto, ticket, billete, pasaje, entrada",
+        "glosa_es": null,
+        "glosa_en": "a commercial document showing that the holder is entitled to something (as to ride on public transportation or to enter a public entertainment)  ",
+        "glosa_en_traducida": "documento comercial que acredita que el portador tiene derecho a algo (como viajar en transporte público o entrar en un espectáculo público)"
+      },
+      {
+        "offset": "spa-30-13384557-n",
+        "pos": "n",
+        "sinonimos": "dinero, divisa",
+        "glosa_es": "El medio más común de intercambio, funciona como moneda de curso legal",
+        "glosa_en": "the most common medium of exchange; functions as legal tender",
+        "glosa_en_traducida": "el medio de intercambio más común; funciona como moneda de curso legal"
+      },
+      {
+        "offset": "spa-30-13384877-n",
+        "pos": "n",
+        "sinonimos": "moneda, dinero, divisa",
+        "glosa_es": null,
+        "glosa_en": "the official currency issued by a government or national bank",
+        "glosa_en_traducida": "la moneda oficial emitida por un gobierno o banco nacional"
+      },
+      {
+        "offset": "spa-30-13356112-n",
+        "pos": "n",
+        "sinonimos": "caudales, finanzas, fondos, posibles, recursos, dinero",
+        "glosa_es": "Los activos en forma de dinero",
+        "glosa_en": "assets in the form of money  ",
+        "glosa_en_traducida": "bienes en forma de dinero"
+      },
+      {
+        "offset": "spa-30-13250542-n",
+        "pos": "n",
+        "sinonimos": "dinero",
+        "glosa_es": null,
+        "glosa_en": "wealth reckoned in terms of money",
+        "glosa_en_traducida": "riqueza calculada en términos de dinero"
+      },
+      {
+        "offset": "spa-30-13385216-n",
+        "pos": "n",
+        "sinonimos": "cucas, parné, pelas, simoleons, cuartos, guita, kale, lucro, mosca, dinero, lana, pasta",
+        "glosa_es": null,
+        "glosa_en": "informal terms for money  ",
+        "glosa_en_traducida": "términos informales para dinero"
+      }
+    ]
+  },
+  {
+    "lema": "pindingues",
+    "grupo": "D_destino",
+    "sondas": [
+      "dificultad",
+      "aprieto"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-14410605-n",
+        "pos": "n",
+        "sinonimos": "dificultad, problema",
+        "glosa_es": null,
+        "glosa_en": "a state of difficulty that needs to be resolved",
+        "glosa_en_traducida": "un estado de dificultad que necesita ser resuelto"
+      },
+      {
+        "offset": "spa-30-14408086-n",
+        "pos": "n",
+        "sinonimos": "contrariedad, dificultad, obstáculo, problema",
+        "glosa_es": null,
+        "glosa_en": "a condition or state of affairs almost beyond one's ability to deal with and requiring great effort to bear or overcome",
+        "glosa_en_traducida": "una condición o situación casi más allá de la capacidad de alguien para lidiar con ella y que requiere gran esfuerzo para soportar o superar"
+      },
+      {
+        "offset": "spa-30-05690269-n",
+        "pos": "n",
+        "sinonimos": "obstrucción, traba, impedimento, barrera, dificultad, obstáculo",
+        "glosa_es": null,
+        "glosa_en": "something immaterial that stands in the way and must be circumvented or surmounted",
+        "glosa_en_traducida": "algo inmaterial que se interpone en el camino y debe ser eludido o superado"
+      },
+      {
+        "offset": "spa-30-05686955-n",
+        "pos": "n",
+        "sinonimos": "complicación, pega, impedimento, dificultad, problema, obstáculo",
+        "glosa_es": null,
+        "glosa_en": "a factor causing trouble in achieving a positive result or tending to produce a negative result",
+        "glosa_en_traducida": "un factor que causa problemas para lograr un resultado positivo o que tiende a producir un resultado negativo"
+      },
+      {
+        "offset": "spa-30-07289014-n",
+        "pos": "n",
+        "sinonimos": "contrariedad, dificultad, problema",
+        "glosa_es": null,
+        "glosa_en": "an event causing distress or pain",
+        "glosa_en_traducida": "un acontecimiento que causa angustia o dolor"
+      },
+      {
+        "offset": "spa-30-04709253-n",
+        "pos": "n",
+        "sinonimos": "dificultad",
+        "glosa_es": null,
+        "glosa_en": "the quality of being difficult",
+        "glosa_en_traducida": "la cualidad de ser difícil"
+      },
+      {
+        "offset": "spa-30-00623862-n",
+        "pos": "n",
+        "sinonimos": "dificultad, problema",
+        "glosa_es": null,
+        "glosa_en": "an effort that is inconvenient",
+        "glosa_en_traducida": "un esfuerzo que es inconveniente"
+      },
+      {
+        "offset": "spa-30-07336763-n",
+        "pos": "n",
+        "sinonimos": "apuro, infortunio, molestia, afán, dificultad, desgracia",
+        "glosa_es": null,
+        "glosa_en": "something that causes or entails suffering",
+        "glosa_en_traducida": "algo que causa o implica sufrimiento"
+      },
+      {
+        "offset": "spa-30-05691376-n",
+        "pos": "n",
+        "sinonimos": "impedimento, dificultad",
+        "glosa_es": "situación angustiosa y frustrante",
+        "glosa_en": "a thwarting and distressing situation  ",
+        "glosa_en_traducida": "una situación frustrante y angustiosa"
+      },
+      {
+        "offset": "spa-30-05691144-n",
+        "pos": "n",
+        "sinonimos": "pega, tropiezo, complicación, dificultad, impedimento, obstáculo, problema",
+        "glosa_es": "un obstáculo inesperado",
+        "glosa_en": "an unforeseen obstacle  ",
+        "glosa_en_traducida": "un obstáculo imprevisto"
+      },
+      {
+        "offset": "spa-30-14408646-n",
+        "pos": "n",
+        "sinonimos": "aprieto, predicamento, brete, dilema, apuro",
+        "glosa_es": null,
+        "glosa_en": "a situation from which extrication is difficult especially an unpleasant or trying one",
+        "glosa_en_traducida": "una situación de la cual es difícil escapar, especialmente una desagradable o difícil"
+      },
+      {
+        "offset": "spa-30-10713012-n",
+        "pos": "n",
+        "sinonimos": "aprieto",
+        "glosa_es": null,
+        "glosa_en": "someone who pays tithes  ",
+        "glosa_en_traducida": "alguien que paga diezmos"
+      },
+      {
+        "offset": "spa-30-00112828-n",
+        "pos": "n",
+        "sinonimos": "pulsado, clic, aprieto",
+        "glosa_es": "pulsación de uno de los botones de un ratón de ordenador",
+        "glosa_en": "depression of a button on a computer mouse",
+        "glosa_en_traducida": "presión de un botón en el ratón de una computadora"
+      },
+      {
+        "offset": "spa-30-13936939-n",
+        "pos": "n",
+        "sinonimos": "impás, aprieto",
+        "glosa_es": "situación o estado de cosas negativo o difícil",
+        "glosa_en": "a bad or difficult situation or state of affairs  ",
+        "glosa_en_traducida": "una situación o estado de cosas malo o difícil"
+      }
+    ]
+  },
+  {
+    "lema": "trozar",
+    "grupo": "D_destino",
+    "sondas": [
+      "trocear",
+      "cortar"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-01257173-v",
+        "pos": "v",
+        "sinonimos": "despedazar, trocear, rajar, tajar, picar, cortar",
+        "glosa_es": "cortar con hacha_o_machete",
+        "glosa_en": "cut with a hacking tool  ",
+        "glosa_en_traducida": "cortar con una herramienta de corte"
+      },
+      {
+        "offset": "spa-30-01573891-v",
+        "pos": "v",
+        "sinonimos": "hacer_trizas, desmenuzar, trocear",
+        "glosa_es": null,
+        "glosa_en": "tear into shreds  ",
+        "glosa_en_traducida": "rasgar en tiras"
+      },
+      {
+        "offset": "spa-30-00335814-v",
+        "pos": "v",
+        "sinonimos": "trocear, partir",
+        "glosa_es": "romper a trozos o en dos , usando violencia",
+        "glosa_en": "break apart or in two, using violence  ",
+        "glosa_en_traducida": "romper o separar en dos, usando violencia"
+      },
+      {
+        "offset": "spa-30-01552519-v",
+        "pos": "v",
+        "sinonimos": "cortar, perforar, seccionar",
+        "glosa_es": null,
+        "glosa_en": "separate with or as if with an instrument",
+        "glosa_en_traducida": "separar con un instrumento o como si fuera con uno"
+      },
+      {
+        "offset": "spa-30-01754737-v",
+        "pos": "v",
+        "sinonimos": "recortar, cortar, hacer",
+        "glosa_es": null,
+        "glosa_en": "form or shape by cutting or incising",
+        "glosa_en_traducida": "formar o dar forma cortando o incidiendo"
+      },
+      {
+        "offset": "spa-30-00778275-v",
+        "pos": "v",
+        "sinonimos": "interrumpir, romper, suspender, cortar, parar",
+        "glosa_es": "hacer una pausa",
+        "glosa_en": "make a break in",
+        "glosa_en_traducida": "hacer una abertura"
+      },
+      {
+        "offset": "spa-30-01256600-v",
+        "pos": "v",
+        "sinonimos": "labrar, tallar, trinchar, cortar",
+        "glosa_es": "gravar o cortar labrando una superficie",
+        "glosa_en": "engrave or cut by chipping away at a surface",
+        "glosa_en_traducida": "grabar o cortar desprendiendo material de una superficie"
+      },
+      {
+        "offset": "spa-30-00429060-v",
+        "pos": "v",
+        "sinonimos": "rebajar, bajar, recortar, reducir, cortar",
+        "glosa_es": "recortar hacer una reducción",
+        "glosa_en": "cut down on; make a reduction in",
+        "glosa_en_traducida": "reducir; disminuir"
+      },
+      {
+        "offset": "spa-30-01256157-v",
+        "pos": "v",
+        "sinonimos": "cincelar, esculpir, tallar, grabar, cortar",
+        "glosa_es": null,
+        "glosa_en": "form by carving",
+        "glosa_en_traducida": "formar tallando"
+      },
+      {
+        "offset": "spa-30-01610834-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": "hacer una incisión o separación",
+        "glosa_en": "make an incision or separation",
+        "glosa_en_traducida": "hacer una incisión o separación"
+      },
+      {
+        "offset": "spa-30-01555742-v",
+        "pos": "v",
+        "sinonimos": "hacer_una_incisión, sajar, cortar",
+        "glosa_es": "hacer una incisión en algo tajándolo o cortándolo",
+        "glosa_en": "make an incision into by carving or cutting  ",
+        "glosa_en_traducida": "hacer una incisión cortando o tallando"
+      },
+      {
+        "offset": "spa-30-01319562-v",
+        "pos": "v",
+        "sinonimos": "podar, segar, cortar",
+        "glosa_es": "cortar con una cuchilla o corta-césped",
+        "glosa_en": "cut with a blade or mower",
+        "glosa_en_traducida": "cortar con una cuchilla o segadora"
+      },
+      {
+        "offset": "spa-30-00226071-v",
+        "pos": "v",
+        "sinonimos": "desleír, aclarar, diluir, reducir, cortar",
+        "glosa_es": "debilitar la fuerza o el sabor de una solución o mezcla",
+        "glosa_en": "lessen the strength or flavor of a solution or mixture",
+        "glosa_en_traducida": "debilitar la concentración o sabor de una solución o mezcla"
+      },
+      {
+        "offset": "spa-30-01258091-v",
+        "pos": "v",
+        "sinonimos": "tajar, picar, cortar",
+        "glosa_es": null,
+        "glosa_en": "cut into pieces",
+        "glosa_en_traducida": "cortar en pedazos"
+      },
+      {
+        "offset": "spa-30-01456463-v",
+        "pos": "v",
+        "sinonimos": "tijeretear, cortar",
+        "glosa_es": null,
+        "glosa_en": "sever or remove by pinching or snipping",
+        "glosa_en_traducida": "seccionar o extirpar pellizcando o cortando"
+      },
+      {
+        "offset": "spa-30-00292507-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": null,
+        "glosa_en": "cease, stop",
+        "glosa_en_traducida": "cesar, parar"
+      },
+      {
+        "offset": "spa-30-01255967-v",
+        "pos": "v",
+        "sinonimos": "trinchar, cortar",
+        "glosa_es": null,
+        "glosa_en": "cut to pieces",
+        "glosa_en_traducida": "cortar en trozos"
+      },
+      {
+        "offset": "spa-30-01560731-v",
+        "pos": "v",
+        "sinonimos": "podar, romper, separar, cortar",
+        "glosa_es": null,
+        "glosa_en": "cut off from a whole",
+        "glosa_en_traducida": "separar cortando de un todo"
+      },
+      {
+        "offset": "spa-30-01320816-v",
+        "pos": "v",
+        "sinonimos": "esquilar, trasquilar, cortar",
+        "glosa_es": null,
+        "glosa_en": "cut or cut through with shears",
+        "glosa_en_traducida": "cortar o atravesar con tijeras"
+      },
+      {
+        "offset": "spa-30-01320424-v",
+        "pos": "v",
+        "sinonimos": "segar, cortar",
+        "glosa_es": "cosechar o segar",
+        "glosa_en": "reap or harvest",
+        "glosa_en_traducida": "segar o cosechar"
+      },
+      {
+        "offset": "spa-30-01322675-v",
+        "pos": "v",
+        "sinonimos": "acuchillar, cortar",
+        "glosa_es": "cortar con movimientos amplios como con un hacha o machete",
+        "glosa_en": "cut with sweeping strokes; as with an ax or machete  ",
+        "glosa_en_traducida": "cortar con movimientos amplios; como con un hacha o machete"
+      },
+      {
+        "offset": "spa-30-01260428-v",
+        "pos": "v",
+        "sinonimos": "hachar, hachear, tallar, cortar",
+        "glosa_es": "golpear con un hacha cortar , golpear",
+        "glosa_en": "strike with an axe; cut down, strike",
+        "glosa_en_traducida": "golpear con un hacha; derribar, golpear"
+      },
+      {
+        "offset": "spa-30-01555437-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": "dividir un mazo de cartas al azar en dos partes para dificultar la elección",
+        "glosa_en": "divide a deck of cards at random into two parts to make selection difficult",
+        "glosa_en_traducida": "dividir una baraja de cartas al azar en dos partes para dificultar la selección"
+      },
+      {
+        "offset": "spa-30-01227088-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": "penetrar injuriosamente",
+        "glosa_en": "penetrate injuriously",
+        "glosa_en_traducida": "penetrar de manera perjudicial"
+      },
+      {
+        "offset": "spa-30-00613248-v",
+        "pos": "v",
+        "sinonimos": "dejar_plantado, cortar",
+        "glosa_es": "desechar caprichosamente o insensiblemente",
+        "glosa_en": "cast aside capriciously or unfeelingly",
+        "glosa_en_traducida": "descartar caprichosamente o sin consideración"
+      },
+      {
+        "offset": "spa-30-01560984-v",
+        "pos": "v",
+        "sinonimos": "separarse, terminar, romper, separar, cortar",
+        "glosa_es": "separar o mantener aparte",
+        "glosa_en": "set or keep apart",
+        "glosa_en_traducida": "separar o mantener apartado"
+      },
+      {
+        "offset": "spa-30-00353639-v",
+        "pos": "v",
+        "sinonimos": "dar_puerta, terminar_con, cortar",
+        "glosa_es": "terminar una relación bruscamente",
+        "glosa_en": "terminate a relationship abruptly",
+        "glosa_en_traducida": "terminar una relación abruptamente"
+      },
+      {
+        "offset": "spa-30-01319885-v",
+        "pos": "v",
+        "sinonimos": "guadañar, cortar",
+        "glosa_es": "cortar con una guadaña",
+        "glosa_en": "cut with a scythe",
+        "glosa_en_traducida": "segar con una guadaña"
+      },
+      {
+        "offset": "spa-30-01257953-v",
+        "pos": "v",
+        "sinonimos": "hachear, recortar, cortar",
+        "glosa_es": "cortar o separar con un hacha",
+        "glosa_en": "chop or split with an ax",
+        "glosa_en_traducida": "picar o hender con un hacha"
+      },
+      {
+        "offset": "spa-30-00780191-v",
+        "pos": "v",
+        "sinonimos": "meterse, tomar_parte, entrometerse, incorporarse, unirse, interrumpir, cortar",
+        "glosa_es": "tomar parte en una conversación",
+        "glosa_en": "break into a conversation",
+        "glosa_en_traducida": "interrumpir una conversación"
+      },
+      {
+        "offset": "spa-30-00107604-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": "disminuir o suspender bruscamente",
+        "glosa_en": "diminish or discontinue abruptly",
+        "glosa_en_traducida": "disminuir o interrumpir abruptamente"
+      },
+      {
+        "offset": "spa-30-01104509-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": null,
+        "glosa_en": "intercept (a player)  ",
+        "glosa_en_traducida": "interceptar a un jugador"
+      },
+      {
+        "offset": "spa-30-00447654-v",
+        "pos": "v",
+        "sinonimos": "disolver, cortar",
+        "glosa_es": "disolver al romper la grasa",
+        "glosa_en": "dissolve by breaking down the fat of",
+        "glosa_en_traducida": "disolver descomponiendo la grasa"
+      },
+      {
+        "offset": "spa-30-01440646-v",
+        "pos": "v",
+        "sinonimos": "detener, cortar",
+        "glosa_es": "cesar y detener",
+        "glosa_en": "cut off and stop",
+        "glosa_en_traducida": "cortar y detener"
+      },
+      {
+        "offset": "spa-30-01860320-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": null,
+        "glosa_en": "move quickly to another scene or focus when filming",
+        "glosa_en_traducida": "cambiar rápidamente a otra escena o enfoque al filmar"
+      },
+      {
+        "offset": "spa-30-01126961-v",
+        "pos": "v",
+        "sinonimos": "bloquear, cortar",
+        "glosa_es": "impedir el acceso",
+        "glosa_en": "obstruct access to  ",
+        "glosa_en_traducida": "obstruir el acceso"
+      },
+      {
+        "offset": "spa-30-01859995-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": null,
+        "glosa_en": "stop filming",
+        "glosa_en_traducida": "dejar de filmar"
+      },
+      {
+        "offset": "spa-30-01257817-v",
+        "pos": "v",
+        "sinonimos": "dar_tajos, despejar, cortar",
+        "glosa_es": "cortar en tajadas",
+        "glosa_en": "cut away",
+        "glosa_en_traducida": "cortar"
+      },
+      {
+        "offset": "spa-30-00354317-v",
+        "pos": "v",
+        "sinonimos": "cancelar, terminar, cortar",
+        "glosa_es": "terminar",
+        "glosa_en": "terminate",
+        "glosa_en_traducida": "terminar"
+      },
+      {
+        "offset": "spa-30-02680531-v",
+        "pos": "v",
+        "sinonimos": "cerrar, cortar",
+        "glosa_es": null,
+        "glosa_en": "stem the flow of",
+        "glosa_en_traducida": "detener el flujo"
+      },
+      {
+        "offset": "spa-30-00520602-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": null,
+        "glosa_en": "cause to end earlier than intended",
+        "glosa_en_traducida": "hacer que algo termine antes de lo previsto"
+      },
+      {
+        "offset": "spa-30-02134232-v",
+        "pos": "v",
+        "sinonimos": "cortar",
+        "glosa_es": "dar la apariencia o impresión de algo",
+        "glosa_en": "give the appearance or impression of",
+        "glosa_en_traducida": "dar la apariencia o impresión de"
+      }
+    ]
+  },
+  {
+    "lema": "achuncharse",
+    "grupo": "D_destino",
+    "sondas": [
+      "avergonzarse",
+      "cohibirse"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-01792287-v",
+        "pos": "v",
+        "sinonimos": "avergonzarse, abochornar, avergonzar",
+        "glosa_es": null,
+        "glosa_en": "cause to be ashamed  ",
+        "glosa_en_traducida": "causar vergüenza"
+      }
+    ]
+  },
+  {
+    "lema": "higuerilla",
+    "grupo": "E_rica",
+    "sondas": [
+      "arbusto",
+      "planta"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-13112664-n",
+        "pos": "n",
+        "sinonimos": "arbusto, mata",
+        "glosa_es": "una plantas perennes leñosas de baja altura generalmente con varios tallos principales",
+        "glosa_en": "a low woody perennial plant usually having several major stems  ",
+        "glosa_en_traducida": "planta leñosa baja y perenne que generalmente tiene varios tallos principales"
+      },
+      {
+        "offset": "spa-30-00017222-n",
+        "pos": "n",
+        "sinonimos": "flora, mata, planta, plantae, plantas, vegetación, vida_vegetal",
+        "glosa_es": "(Botánica) un organismo vivo que carece del poder de la locomoción",
+        "glosa_en": "(botany) a living organism lacking the power of locomotion  ",
+        "glosa_en_traducida": "organismo viviente que carece del poder de locomoción"
+      },
+      {
+        "offset": "spa-30-03316406-n",
+        "pos": "n",
+        "sinonimos": "fabrica, factoría, fábrica, molino, planta",
+        "glosa_es": null,
+        "glosa_en": "a plant consisting of one or more buildings with facilities for manufacturing  ",
+        "glosa_en_traducida": "planta que consiste en uno o más edificios con instalaciones para la manufactura"
+      },
+      {
+        "offset": "spa-30-03956922-n",
+        "pos": "n",
+        "sinonimos": "factoría, fábrica, planta",
+        "glosa_es": "edificios donde tener mano de obra industrial",
+        "glosa_en": "buildings for carrying on industrial labor",
+        "glosa_en_traducida": "edificios para realizar trabajo industrial"
+      },
+      {
+        "offset": "spa-30-05577190-n",
+        "pos": "n",
+        "sinonimos": "planta",
+        "glosa_es": null,
+        "glosa_en": "the underside of the foot  ",
+        "glosa_en_traducida": "la parte inferior del pie"
+      },
+      {
+        "offset": "spa-30-03365991-n",
+        "pos": "n",
+        "sinonimos": "piso, planta",
+        "glosa_es": null,
+        "glosa_en": "a structure consisting of a room or set of rooms at a single position along a vertical scale",
+        "glosa_en_traducida": "estructura que consiste en una habitación o conjunto de habitaciones en una única posición en una escala vertical"
+      },
+      {
+        "offset": "spa-30-03367147-n",
+        "pos": "n",
+        "sinonimos": "planta",
+        "glosa_es": null,
+        "glosa_en": "scale drawing of a horizontal section through a building at a given level; contrasts with elevation  ",
+        "glosa_en_traducida": "dibujo a escala de una sección horizontal de un edificio en un nivel dado; contrasta con elevación"
+      }
+    ]
+  },
+  {
+    "lema": "panetela",
+    "grupo": "E_rica",
+    "sondas": [
+      "cocimiento",
+      "postre",
+      "dulce"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-07609840-n",
+        "pos": "n",
+        "sinonimos": "postre, postres, dulce",
+        "glosa_es": null,
+        "glosa_en": "a dish served as the last course of a meal  ",
+        "glosa_en_traducida": "plato servido como último curso de una comida"
+      },
+      {
+        "offset": "spa-30-02368336-a",
+        "pos": "a",
+        "sinonimos": "dulce, rico, suave",
+        "glosa_es": null,
+        "glosa_en": "having or denoting the characteristic taste of sugar  ",
+        "glosa_en_traducida": "que tiene o denota el sabor característico del azúcar"
+      },
+      {
+        "offset": "spa-30-07597365-n",
+        "pos": "n",
+        "sinonimos": "caramelo, dulce, golosina",
+        "glosa_es": null,
+        "glosa_en": "a rich sweet made of flavored sugar and often combined with fruit or nuts  ",
+        "glosa_en_traducida": "dulce rico hecho de azúcar aromatizado y frecuentemente combinado con frutas o frutos secos"
+      },
+      {
+        "offset": "spa-30-01464700-a",
+        "pos": "a",
+        "sinonimos": "cándido, dulce, cariñoso, tierno, amable, afectuoso, cálido, simpático",
+        "glosa_es": null,
+        "glosa_en": "having or displaying warmth or affection",
+        "glosa_en_traducida": "que tiene o muestra calor o afecto"
+      },
+      {
+        "offset": "spa-30-02367604-a",
+        "pos": "a",
+        "sinonimos": "dulce",
+        "glosa_es": null,
+        "glosa_en": "(used of wines) having a high residual sugar content",
+        "glosa_en_traducida": "dicho de vinos, que tiene un alto contenido de azúcar residual"
+      },
+      {
+        "offset": "spa-30-07596684-n",
+        "pos": "n",
+        "sinonimos": "confección, dulce",
+        "glosa_es": null,
+        "glosa_en": "a food rich in sugar  ",
+        "glosa_en_traducida": "alimento rico en azúcar"
+      },
+      {
+        "offset": "spa-30-01493636-a",
+        "pos": "a",
+        "sinonimos": "dulce, maduro",
+        "glosa_es": null,
+        "glosa_en": "having a full and pleasing flavor through proper aging",
+        "glosa_en_traducida": "que tiene un sabor pleno y agradable por envejecimiento adecuado"
+      },
+      {
+        "offset": "spa-30-07597263-n",
+        "pos": "n",
+        "sinonimos": "dulce, golosina",
+        "glosa_es": "manjar dulce ( como una conserva o pastel )",
+        "glosa_en": "a sweetened delicacy (as a preserve or pastry)  ",
+        "glosa_en_traducida": "golosina endulzada, como conserva o pastel"
+      },
+      {
+        "offset": "spa-30-01501821-a",
+        "pos": "a",
+        "sinonimos": "melifluo, dulce, melodioso, agradable",
+        "glosa_es": null,
+        "glosa_en": "pleasing to the ear",
+        "glosa_en_traducida": "agradable al oído"
+      },
+      {
+        "offset": "spa-30-02338197-a",
+        "pos": "a",
+        "sinonimos": "endulzado, azucarado, dulce",
+        "glosa_es": null,
+        "glosa_en": "with sweetening added  ",
+        "glosa_en_traducida": "con edulcorante añadido"
+      },
+      {
+        "offset": "spa-30-01808671-a",
+        "pos": "a",
+        "sinonimos": "dulce",
+        "glosa_es": null,
+        "glosa_en": "pleasing to the senses",
+        "glosa_en_traducida": "agradable a los sentidos"
+      },
+      {
+        "offset": "spa-30-01800873-a",
+        "pos": "a",
+        "sinonimos": "dulce",
+        "glosa_es": null,
+        "glosa_en": "extremely pleasant in a gentle way",
+        "glosa_en_traducida": "extremadamente agradable de manera suave"
+      }
+    ]
+  },
+  {
+    "lema": "tirante",
+    "grupo": "E_rica",
+    "sondas": [
+      "tira",
+      "viga"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-04680465-n",
+        "pos": "n",
+        "sinonimos": "tira, faja",
+        "glosa_es": null,
+        "glosa_en": "a stripe or stripes of contrasting color",
+        "glosa_en_traducida": "franja o franjas de color contrastante"
+      },
+      {
+        "offset": "spa-30-02784732-n",
+        "pos": "n",
+        "sinonimos": "tira, faja",
+        "glosa_es": null,
+        "glosa_en": "an adornment consisting of a strip of a contrasting color or material  ",
+        "glosa_en_traducida": "adorno consistente en una tira de color o material contrastante"
+      },
+      {
+        "offset": "spa-30-07003352-n",
+        "pos": "n",
+        "sinonimos": "tira_cómica, historieta, tira",
+        "glosa_es": null,
+        "glosa_en": "a sequence of drawings telling a story in a newspaper or comic book  ",
+        "glosa_en_traducida": "secuencia de dibujos que cuenta una historia en un periódico o cómic"
+      },
+      {
+        "offset": "spa-30-04339291-n",
+        "pos": "n",
+        "sinonimos": "banda, tira",
+        "glosa_es": null,
+        "glosa_en": "artifact consisting of a narrow flat piece of material  ",
+        "glosa_en_traducida": "artefacto que consiste en una pieza estrecha y plana de material"
+      },
+      {
+        "offset": "spa-30-09409203-n",
+        "pos": "n",
+        "sinonimos": "tira, tema",
+        "glosa_es": null,
+        "glosa_en": "any long object resembling a thin line",
+        "glosa_en_traducida": "cualquier objeto largo que se asemeja a una línea delgada"
+      },
+      {
+        "offset": "spa-30-00337210-n",
+        "pos": "n",
+        "sinonimos": "sacudida, lanzamiento, tira",
+        "glosa_es": "movimiento brusco hacia arriba y hacia abajo ( como causado por un vapor u otro transporte )",
+        "glosa_en": "abrupt up-and-down motion (as caused by a ship or other conveyance)",
+        "glosa_en_traducida": "movimiento abrupto de arriba hacia abajo (causado por un barco u otro vehículo)"
+      },
+      {
+        "offset": "spa-30-09879144-n",
+        "pos": "n",
+        "sinonimos": "bofia, guili, guripa, pasma, pitufo, poli, polizonte, tombo, gris, madero, guindilla, marrón, policía, romano, tira",
+        "glosa_es": null,
+        "glosa_en": "uncomplimentary terms for a policeman  ",
+        "glosa_en_traducida": "términos despectivos para referirse a un policía"
+      },
+      {
+        "offset": "spa-30-02815950-n",
+        "pos": "n",
+        "sinonimos": "viga",
+        "glosa_es": null,
+        "glosa_en": "long thick piece of wood or metal or concrete, etc., used in construction  ",
+        "glosa_en_traducida": "pieza larga y gruesa de madera, metal u hormigón, etc., utilizada en construcción"
+      },
+      {
+        "offset": "spa-30-04045644-n",
+        "pos": "n",
+        "sinonimos": "cabio, cabrio, contrapar, viga",
+        "glosa_es": null,
+        "glosa_en": "one of several parallel sloping beams that support a roof  ",
+        "glosa_en_traducida": "una de varias vigas paralelas inclinadas que sostienen un techo"
+      },
+      {
+        "offset": "spa-30-03437941-n",
+        "pos": "n",
+        "sinonimos": "viga",
+        "glosa_es": null,
+        "glosa_en": "a beam made usually of steel; a main support in a structure  ",
+        "glosa_en_traducida": "viga hecha generalmente de acero; soporte principal en una estructura"
+      }
+    ]
+  },
+  {
+    "lema": "palizada",
+    "grupo": "E_rica",
+    "sondas": [
+      "acumulación",
+      "empalizada"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-00372013-n",
+        "pos": "n",
+        "sinonimos": "acumulación",
+        "glosa_es": null,
+        "glosa_en": "the act of accumulating  ",
+        "glosa_en_traducida": "acción de acumular"
+      },
+      {
+        "offset": "spa-30-01014066-n",
+        "pos": "n",
+        "sinonimos": "acopio, montaje, recolección, colección, acumulación",
+        "glosa_es": null,
+        "glosa_en": "the act of gathering something together  ",
+        "glosa_en_traducida": "acción de reunir algo junto"
+      },
+      {
+        "offset": "spa-30-13424865-n",
+        "pos": "n",
+        "sinonimos": "acumulación, aumento",
+        "glosa_es": null,
+        "glosa_en": "an increase by natural growth or addition  ",
+        "glosa_en_traducida": "aumento por crecimiento natural o adición"
+      },
+      {
+        "offset": "spa-30-13366693-n",
+        "pos": "n",
+        "sinonimos": "acumulación",
+        "glosa_es": null,
+        "glosa_en": "(finance) profits that are not paid out as dividends but are added to the capital base of the corporation  ",
+        "glosa_en_traducida": "ganancias que no se distribuyen como dividendos sino que se añaden al capital de la corporación"
+      },
+      {
+        "offset": "spa-30-07951464-n",
+        "pos": "n",
+        "sinonimos": "acumulación, colección, conjunto, hatajo, hato, cúmulo, grupo",
+        "glosa_es": "Grupo de cosas que están juntas o que se puede considerar como un todo",
+        "glosa_en": "several things grouped together or considered as a whole  ",
+        "glosa_en_traducida": "varias cosas agrupadas juntas o consideradas como un todo"
+      },
+      {
+        "offset": "spa-30-07961480-n",
+        "pos": "n",
+        "sinonimos": "aglomerado, montículo, montón, pila, acumulación, cúmulo, montaña",
+        "glosa_es": "colección de objetos puestos uno_sobre_el_otro",
+        "glosa_en": "a collection of objects laid on top of each other  ",
+        "glosa_en_traducida": "colección de objetos colocados unos sobre otros"
+      },
+      {
+        "offset": "spa-30-03878963-n",
+        "pos": "n",
+        "sinonimos": "empalizada, palizada, estacada",
+        "glosa_es": null,
+        "glosa_en": "fortification consisting of a strong fence made of stakes driven into the ground  ",
+        "glosa_en_traducida": "fortificación consistente en una cerca fuerte hecha de estacas clavadas en el suelo"
+      },
+      {
+        "offset": "spa-30-03930313-n",
+        "pos": "n",
+        "sinonimos": "cerca_de_estacas, valla_de_estacas, empalizada, estacada, valla",
+        "glosa_es": "cerca hecha de estacas verticales",
+        "glosa_en": "a fence made of upright pickets  ",
+        "glosa_en_traducida": "cerca hecha de tablillas verticales"
+      }
+    ]
+  },
+  {
+    "lema": "vichayo",
+    "grupo": "E_rica",
+    "sondas": [
+      "arbusto",
+      "planta"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-13112664-n",
+        "pos": "n",
+        "sinonimos": "arbusto, mata",
+        "glosa_es": "una plantas perennes leñosas de baja altura generalmente con varios tallos principales",
+        "glosa_en": "a low woody perennial plant usually having several major stems  ",
+        "glosa_en_traducida": "planta leñosa baja y perenne que generalmente tiene varios tallos principales"
+      },
+      {
+        "offset": "spa-30-00017222-n",
+        "pos": "n",
+        "sinonimos": "flora, mata, planta, plantae, plantas, vegetación, vida_vegetal",
+        "glosa_es": "(Botánica) un organismo vivo que carece del poder de la locomoción",
+        "glosa_en": "(botany) a living organism lacking the power of locomotion  ",
+        "glosa_en_traducida": "organismo viviente que carece del poder de locomoción"
+      },
+      {
+        "offset": "spa-30-03316406-n",
+        "pos": "n",
+        "sinonimos": "fabrica, factoría, fábrica, molino, planta",
+        "glosa_es": null,
+        "glosa_en": "a plant consisting of one or more buildings with facilities for manufacturing  ",
+        "glosa_en_traducida": "planta que consiste en uno o más edificios con instalaciones para la manufactura"
+      },
+      {
+        "offset": "spa-30-03956922-n",
+        "pos": "n",
+        "sinonimos": "factoría, fábrica, planta",
+        "glosa_es": "edificios donde tener mano de obra industrial",
+        "glosa_en": "buildings for carrying on industrial labor",
+        "glosa_en_traducida": "edificios para realizar trabajo industrial"
+      },
+      {
+        "offset": "spa-30-05577190-n",
+        "pos": "n",
+        "sinonimos": "planta",
+        "glosa_es": null,
+        "glosa_en": "the underside of the foot  ",
+        "glosa_en_traducida": "la parte inferior del pie"
+      },
+      {
+        "offset": "spa-30-03365991-n",
+        "pos": "n",
+        "sinonimos": "piso, planta",
+        "glosa_es": null,
+        "glosa_en": "a structure consisting of a room or set of rooms at a single position along a vertical scale",
+        "glosa_en_traducida": "estructura que consiste en una habitación o conjunto de habitaciones en una única posición en una escala vertical"
+      },
+      {
+        "offset": "spa-30-03367147-n",
+        "pos": "n",
+        "sinonimos": "planta",
+        "glosa_es": null,
+        "glosa_en": "scale drawing of a horizontal section through a building at a given level; contrasts with elevation  ",
+        "glosa_en_traducida": "dibujo a escala de una sección horizontal de un edificio en un nivel dado; contrasta con elevación"
+      }
+    ]
+  },
+  {
+    "lema": "yanaconaje",
+    "grupo": "E_rica",
+    "sondas": [
+      "servidumbre",
+      "prestación"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-13998014-n",
+        "pos": "n",
+        "sinonimos": "servidumbre",
+        "glosa_es": null,
+        "glosa_en": "state of subjection to an owner or master or forced labor imposed as punishment",
+        "glosa_en_traducida": "estado de sujeción a un dueño o amo o trabajo forzado impuesto como castigo"
+      },
+      {
+        "offset": "spa-30-05179180-n",
+        "pos": "n",
+        "sinonimos": "servidumbre",
+        "glosa_es": "(derecho) el privilegio de uso de algo del cual no se tiene propiedad (como el derecho de paso sobre el solar de otro)",
+        "glosa_en": "(law) the privilege of using something that is not your own (as using another's land as a right of way to your own land)  ",
+        "glosa_en_traducida": "derecho legal de usar algo que no es propio, como usar la tierra de otro como paso hacia la propia"
+      },
+      {
+        "offset": "spa-30-13998263-n",
+        "pos": "n",
+        "sinonimos": "sevidumbre, vasallaje, servidumbre",
+        "glosa_es": null,
+        "glosa_en": "the state of a serf  ",
+        "glosa_en_traducida": "estado de siervo"
+      },
+      {
+        "offset": "spa-30-00577525-n",
+        "pos": "n",
+        "sinonimos": "prestación, servicio",
+        "glosa_es": null,
+        "glosa_en": "work done by one person or group that benefits another",
+        "glosa_en_traducida": "trabajo realizado por una persona o grupo que beneficia a otro"
+      },
+      {
+        "offset": "spa-30-13296899-n",
+        "pos": "n",
+        "sinonimos": "subsidio, prestación",
+        "glosa_es": null,
+        "glosa_en": "financial assistance in time of need  ",
+        "glosa_en_traducida": "ayuda financiera en tiempo de necesidad"
+      },
+      {
+        "offset": "spa-30-01093666-n",
+        "pos": "n",
+        "sinonimos": "prestación, préstamo",
+        "glosa_es": null,
+        "glosa_en": "disposing of money or property with the expectation that the same thing (or an equivalent) will be returned  ",
+        "glosa_en_traducida": "disposición de dinero o bienes con la expectativa de que lo mismo o algo equivalente sea devuelto"
+      },
+      {
+        "offset": "spa-30-13323313-n",
+        "pos": "n",
+        "sinonimos": "causa_contractual, contrapartida, remuneración, retribución, prestación",
+        "glosa_es": null,
+        "glosa_en": "a fee charged in advance to retain the services of someone  ",
+        "glosa_en_traducida": "honorario cobrado por anticipado para retener los servicios de alguien"
+      },
+      {
+        "offset": "spa-30-01122037-n",
+        "pos": "n",
+        "sinonimos": "prestación, entrega",
+        "glosa_es": "concesión en reconocimiento de una obligación",
+        "glosa_en": "giving in acknowledgment of obligation  ",
+        "glosa_en_traducida": "dar en reconocimiento de una obligación"
+      }
+    ]
+  },
+  {
+    "lema": "cleta",
+    "grupo": "ancla",
+    "sondas": [
+      "bicicleta"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-02834778-n",
+        "pos": "n",
+        "sinonimos": "bici, bicicleta, bicicletas",
+        "glosa_es": null,
+        "glosa_en": "a wheeled vehicle that has two wheels and is moved by foot pedals  ",
+        "glosa_en_traducida": "un vehículo con ruedas que tiene dos ruedas y se mueve por pedales accionados con los pies"
+      },
+      {
+        "offset": "spa-30-04026813-n",
+        "pos": "n",
+        "sinonimos": "bicicleta",
+        "glosa_es": null,
+        "glosa_en": "a bicycle that must be pedaled  ",
+        "glosa_en_traducida": "una bicicleta que debe ser impulsada a pedales"
+      }
+    ]
+  },
+  {
+    "lema": "rondín",
+    "grupo": "ancla",
+    "sondas": [
+      "armónica",
+      "instrumento"
+    ],
+    "candidatos": [
+      {
+        "offset": "spa-30-03494278-n",
+        "pos": "n",
+        "sinonimos": "armónica, harmónica, arpa, harpa",
+        "glosa_es": null,
+        "glosa_en": "a small rectangular free-reed instrument having a row of free reeds set back in air holes and played by blowing into the desired hole  ",
+        "glosa_en_traducida": "un pequeño instrumento rectangular de lengüetas libres que tiene una fila de lengüetas libres colocadas en orificios de aire y se toca soplando en el orificio deseado"
+      },
+      {
+        "offset": "spa-30-01707925-v",
+        "pos": "v",
+        "sinonimos": "instrumentar, instrumento",
+        "glosa_es": "escribir una partitura instrumental para alguien o algo",
+        "glosa_en": "write an instrumental score for  ",
+        "glosa_en_traducida": "escribir una partitura instrumental para"
+      },
+      {
+        "offset": "spa-30-03575240-n",
+        "pos": "n",
+        "sinonimos": "instrumental, utillaje, instrumento",
+        "glosa_es": "un artefacto (o sistema de artefactos) que es necesario para lograr un fin",
+        "glosa_en": "an artifact (or system of artifacts) that is instrumental in accomplishing some end  ",
+        "glosa_en_traducida": "un artefacto o sistema de artefactos que es instrumental para lograr algún fin"
+      },
+      {
+        "offset": "spa-30-00173761-n",
+        "pos": "n",
+        "sinonimos": "herramienta, instrumento",
+        "glosa_es": null,
+        "glosa_en": "the means whereby some act is accomplished",
+        "glosa_en_traducida": "el medio por el cual se realiza algún acto"
+      },
+      {
+        "offset": "spa-30-03574816-n",
+        "pos": "n",
+        "sinonimos": "instrumento",
+        "glosa_es": null,
+        "glosa_en": "a device that requires skill for proper use  ",
+        "glosa_en_traducida": "un dispositivo que requiere destreza para su uso adecuado"
+      },
+      {
+        "offset": "spa-30-03800933-n",
+        "pos": "n",
+        "sinonimos": "instrumento_musical, instrumento",
+        "glosa_es": null,
+        "glosa_en": "any of various devices or contrivances that can be used to produce musical tones or sounds  ",
+        "glosa_en_traducida": "cualquiera de varios dispositivos o artilugios que pueden usarse para producir tonos o sonidos musicales"
+      },
+      {
+        "offset": "spa-30-04451818-n",
+        "pos": "n",
+        "sinonimos": "herramienta, instrumento, utensilio, útil",
+        "glosa_es": null,
+        "glosa_en": "an implement used in the practice of a vocation  ",
+        "glosa_en_traducida": "un utensilio usado en la práctica de una vocación"
+      },
+      {
+        "offset": "spa-30-06479665-n",
+        "pos": "n",
+        "sinonimos": "documento_judicial, documento_jurídico, documento_legal, documento_oficial, instrumento",
+        "glosa_es": "Un documento que establece alguna relación contractual o concede algún derecho",
+        "glosa_en": "(law) a document that states some contractual relationship or grants some right  ",
+        "glosa_en_traducida": "documento que establece alguna relación contractual u otorga algún derecho"
+      },
+      {
+        "offset": "spa-30-03563967-n",
+        "pos": "n",
+        "sinonimos": "implemento, herramienta, instrumento",
+        "glosa_es": null,
+        "glosa_en": "instrumentation (a piece of equipment or tool) used to effect an end  ",
+        "glosa_en_traducida": "instrumentación o equipo usado para lograr un fin"
+      }
+    ]
+  }
+]

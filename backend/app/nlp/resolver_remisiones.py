@@ -4,8 +4,14 @@ SINAPSIS — Resolución de remisiones + aptitud para UCE
 Ubicación: backend/app/nlp/resolver_remisiones.py
 Puente Fase 1 (Socialización) -> Fase 2 (Externalización)
 ====================================================================
-Pasada única sobre el corpus ya extraído que hace dos cosas, sin re-barrer
+Pasada única sobre el corpus ya extraído que hace tres cosas, sin re-barrer
 la web y de forma idempotente:
+
+0) SANEA GLOSAS-PLACEHOLDER. Algunas entradas traen como glosa un signo suelto
+   (p. ej. un ".") que el lexicógrafo puso en un campo obligatorio sin definición
+   real. Se normaliza a null —conservando el original en glosa_saneada_de— para
+   que la remisión de esas acepciones sí se resuelva: un "." es un valor "verdadero"
+   que, sin sanear, bloquea la resolución y deja la acepción sin glosa referida.
 
 1) RESUELVE REMISIONES. Las acepciones de pura remisión (p. ej. *abancaíno*
    «V. abanquino») llegan con la glosa en null: su significado vive en la
@@ -40,6 +46,7 @@ Uso (desde la carpeta backend/):
 ====================================================================
 """
 
+import re
 from collections import Counter
 
 from sqlalchemy.orm.attributes import flag_modified
@@ -47,6 +54,32 @@ from sqlalchemy.orm.attributes import flag_modified
 from app.models import SessionLocal, RegistroLexicoCrudo
 
 MAX_SALTOS = 6   # tope de saltos al seguir cadenas de remisión
+
+# Glosa-placeholder: cadena formada SOLO por signos de puntuación o espacios.
+_GLOSA_BASURA = re.compile(r"^[\s.,;:·•\-–—]+$")
+
+
+def _sanear_rlc(rlc, saneadas):
+    """Normaliza a null las glosas que son puro signo de puntuación (placeholders),
+    en acepciones de lema y de sublema. Conserva el original en glosa_saneada_de.
+    Devuelve True si cambió algo. Idempotente."""
+    cambio = False
+
+    def _lista(aceps, lema):
+        nonlocal cambio
+        for ac in aceps:
+            g = ac.get("glosa")
+            if isinstance(g, str) and _GLOSA_BASURA.match(g):
+                ac["glosa_saneada_de"] = g
+                ac["glosa"] = None
+                saneadas.append((lema, ac.get("numero"), g))
+                cambio = True
+
+    lema = rlc.get("lema")
+    _lista(rlc.get("acepciones", []), lema)
+    for sub in rlc.get("sublemas", []):
+        _lista(sub.get("acepciones", []), sub.get("lema", lema))
+    return cambio
 
 
 def _resolver(indice, destino_id, destino_acepcion, origen_id):
@@ -115,7 +148,17 @@ def _imprimir_stats(titulo, stats):
 
 def main():
     with SessionLocal() as db:
+        db.expire_on_commit = False
         filas = db.query(RegistroLexicoCrudo).all()
+
+        # 0) Saneado de glosas-placeholder ANTES de indexar, para que la resolución
+        #    de cadenas nunca tome un "." como si fuera una glosa real.
+        saneadas = []
+        filas_saneadas = set()
+        for f in filas:
+            if _sanear_rlc(f.rlc_json, saneadas):
+                filas_saneadas.add(f)
+
         indice = {f.id_entrada: f.rlc_json for f in filas}
 
         stats_lema, stats_sub, stats_uce = Counter(), Counter(), Counter()
@@ -125,7 +168,7 @@ def main():
 
         for f in filas:
             rlc = f.rlc_json
-            cambio = False
+            cambio = f in filas_saneadas   # arranca en True si el saneado la tocó
 
             # 1) Resolución de remisiones (lema + sublema, por fidelidad)
             if _procesar_remisiones(rlc.get("acepciones", []), indice,
@@ -161,9 +204,12 @@ def main():
         aptas_total = stats_uce["apta_propia"] + stats_uce["apta_referida"]
 
         print("─" * 64)
-        print(" RESOLUCIÓN DE REMISIONES  +  APTITUD PARA UCE")
+        print(" SANEADO + RESOLUCIÓN DE REMISIONES + APTITUD PARA UCE")
         print("─" * 64)
         print(f"  RLC en el corpus                  : {len(filas):,}")
+        print(f"  Glosas-placeholder saneadas a null: {len(saneadas):,}")
+        for lema, num, orig in saneadas[:10]:
+            print(f"      {lema} (ac.{num}): {orig!r} → null")
         print()
         print("  [ Resolución de remisiones ]")
         _imprimir_stats("Acepciones de lema con remisión   ", stats_lema)

@@ -1,0 +1,1167 @@
+[
+  {
+    "lema": "bagre",
+    "grupo": "A_tipo1",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-10130447-n",
+        "sinonimos": "mujer, chica",
+        "coseno": 0.4676
+      },
+      "glosa_es": {
+        "offset": "spa-30-10787470-n",
+        "sinonimos": "hembra_adulta, mujer",
+        "coseno": 0.3817
+      },
+      "glosa_en": {
+        "offset": "spa-30-10613996-n",
+        "sinonimos": "lulu, tía_buena, bombón, belleza, mujer, preciosidad, maravilla",
+        "coseno": 0.2853
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-10613996-n",
+        "sinonimos": "lulu, tía_buena, bombón, belleza, mujer, preciosidad, maravilla",
+        "coseno": 0.4745
+      }
+    }
+  },
+  {
+    "lema": "carreta",
+    "grupo": "A_tipo1",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-01077638-a",
+        "sinonimos": "amigo",
+        "coseno": 0.6759
+      },
+      "glosa_es": {
+        "offset": "spa-30-09788521-n",
+        "sinonimos": "amigo",
+        "coseno": 0.6353
+      },
+      "glosa_en": {
+        "offset": "spa-30-09877951-n",
+        "sinonimos": "amigota, amigote, amigueta, amiguete, socia, compinche, pal, cuate, edecán, camarada, colega, socio, acompañante, hermano, hermana, compañero, compañera, amigo",
+        "coseno": 0.4135
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-09877951-n",
+        "sinonimos": "amigota, amigote, amigueta, amiguete, socia, compinche, pal, cuate, edecán, camarada, colega, socio, acompañante, hermano, hermana, compañero, compañera, amigo",
+        "coseno": 0.6209
+      }
+    }
+  },
+  {
+    "lema": "pachamanca",
+    "grupo": "A_tipo1",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-08309611-n",
+        "sinonimos": "encuentro",
+        "coseno": 0.6314
+      },
+      "glosa_es": {
+        "offset": "spa-30-07414922-n",
+        "sinonimos": "acercamiento, encuentro",
+        "coseno": 0.5642
+      },
+      "glosa_en": {
+        "offset": "spa-30-00147187-n",
+        "sinonimos": "encuentro",
+        "coseno": 0.4352
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-00147187-n",
+        "sinonimos": "encuentro",
+        "coseno": 0.6664
+      }
+    }
+  },
+  {
+    "lema": "kilometraje",
+    "grupo": "A_tipo1",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-07285403-n",
+        "sinonimos": "experiencia",
+        "coseno": 0.6717
+      },
+      "glosa_es": {
+        "offset": "spa-30-05758059-n",
+        "sinonimos": "experiencia",
+        "coseno": 0.472
+      },
+      "glosa_en": {
+        "offset": "spa-30-05758059-n",
+        "sinonimos": "experiencia",
+        "coseno": 0.2704
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-05758059-n",
+        "sinonimos": "experiencia",
+        "coseno": 0.4726
+      }
+    }
+  },
+  {
+    "lema": "cuáquer",
+    "grupo": "A_tipo1",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-05404336-n",
+        "sinonimos": "corrida, lefa, líquido_seminal, semen, esperma, leche",
+        "coseno": 0.6662
+      },
+      "glosa_en": {
+        "offset": "spa-30-05404336-n",
+        "sinonimos": "corrida, lefa, líquido_seminal, semen, esperma, leche",
+        "coseno": 0.5684
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-05404336-n",
+        "sinonimos": "corrida, lefa, líquido_seminal, semen, esperma, leche",
+        "coseno": 0.6978
+      }
+    }
+  },
+  {
+    "lema": "nota",
+    "grupo": "A_tipo1",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-13920835-n",
+        "sinonimos": "circunstancias, condición, situación, estado",
+        "coseno": 0.6038
+      },
+      "glosa_es": {
+        "offset": "spa-30-06763273-n",
+        "sinonimos": "anotación, glosa, letra_chica, letra_pequeña, comentario, notación, nota",
+        "coseno": 0.2638
+      },
+      "glosa_en": {
+        "offset": "spa-30-13925752-n",
+        "sinonimos": "coyuntura, trance, situación",
+        "coseno": 0.4656
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-13925752-n",
+        "sinonimos": "coyuntura, trance, situación",
+        "coseno": 0.5497
+      }
+    }
+  },
+  {
+    "lema": "palta",
+    "grupo": "A_tipo1",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-07524529-n",
+        "sinonimos": "miedo, inquietud, temor, cuidado, preocupación",
+        "coseno": 0.7036
+      },
+      "glosa_es": {
+        "offset": "spa-30-07521039-n",
+        "sinonimos": "sobrecogimiento, veneración, miedo, reverencia, temor, terror",
+        "coseno": 0.4292
+      },
+      "glosa_en": {
+        "offset": "spa-30-07519253-n",
+        "sinonimos": "espanto, miedo, pavor, susto, temor, terror",
+        "coseno": 0.437
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-07519253-n",
+        "sinonimos": "espanto, miedo, pavor, susto, temor, terror",
+        "coseno": 0.6201
+      }
+    }
+  },
+  {
+    "lema": "tieso",
+    "grupo": "A_tipo1",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-10526300-n",
+        "sinonimos": "borracho",
+        "coseno": 0.613
+      },
+      "glosa_es": {
+        "offset": "spa-30-00797299-a",
+        "sinonimos": "bebido, borracho, ebrio",
+        "coseno": 0.5191
+      },
+      "glosa_en": {
+        "offset": "spa-30-00798103-a",
+        "sinonimos": "ajumado, curda, curdela, mamado, pedo, piripí, trompa, achispado, borracho, ciego",
+        "coseno": 0.5565
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-00798103-a",
+        "sinonimos": "ajumado, curda, curdela, mamado, pedo, piripí, trompa, achispado, borracho, ciego",
+        "coseno": 0.6766
+      }
+    }
+  },
+  {
+    "lema": "aguado",
+    "grupo": "A_tipo1",
+    "coinciden": true,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-10638136-n",
+        "sinonimos": "aguafiestas, gafe, cenizo",
+        "coseno": 0.6499
+      },
+      "glosa_es": {
+        "offset": "spa-30-10638136-n",
+        "sinonimos": "aguafiestas, gafe, cenizo",
+        "coseno": 0.6176
+      },
+      "glosa_en": {
+        "offset": "spa-30-10638136-n",
+        "sinonimos": "aguafiestas, gafe, cenizo",
+        "coseno": 0.5224
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-10638136-n",
+        "sinonimos": "aguafiestas, gafe, cenizo",
+        "coseno": 0.6281
+      }
+    }
+  },
+  {
+    "lema": "robado",
+    "grupo": "A_tipo1",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-01689223-a",
+        "sinonimos": "sobado, trillado, gastado",
+        "coseno": 0.4512
+      },
+      "glosa_en": {
+        "offset": "spa-30-00680156-a",
+        "sinonimos": "estropeado",
+        "coseno": 0.2517
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-00680156-a",
+        "sinonimos": "estropeado",
+        "coseno": 0.4187
+      }
+    }
+  },
+  {
+    "lema": "asua",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-07902520-n",
+        "sinonimos": "chicha",
+        "coseno": 0.734
+      },
+      "glosa_es": {
+        "offset": "spa-30-07927197-n",
+        "sinonimos": "bebida_de_fantasia, gaseosa, refresco, soda, bebida",
+        "coseno": 0.3763
+      },
+      "glosa_en": {
+        "offset": "spa-30-07902520-n",
+        "sinonimos": "chicha",
+        "coseno": 0.3315
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-07902520-n",
+        "sinonimos": "chicha",
+        "coseno": 0.4663
+      }
+    }
+  },
+  {
+    "lema": "machinga",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-05978812-n",
+        "sinonimos": "brujería, hechicería, jorguinería, magia_negra, mágica_negra, nigromancia",
+        "coseno": 0.6315
+      },
+      "glosa_es": {
+        "offset": "spa-30-14407536-n",
+        "sinonimos": "conjuro, encantamiento, encanto, hechizo, trance",
+        "coseno": 0.5389
+      },
+      "glosa_en": {
+        "offset": "spa-30-05978812-n",
+        "sinonimos": "brujería, hechicería, jorguinería, magia_negra, mágica_negra, nigromancia",
+        "coseno": 0.4339
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-05979350-n",
+        "sinonimos": "aojo, autería, hechizo, maleficio, sortilegio, brujería, hechicería",
+        "coseno": 0.6781
+      }
+    }
+  },
+  {
+    "lema": "huacanqui",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-03009633-n",
+        "sinonimos": "amuleto, mascota, talismán",
+        "coseno": 0.69
+      },
+      "glosa_en": {
+        "offset": "spa-30-02706586-n",
+        "sinonimos": "amuleto, talismán, filacteria",
+        "coseno": 0.5332
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-02706586-n",
+        "sinonimos": "amuleto, talismán, filacteria",
+        "coseno": 0.6745
+      }
+    }
+  },
+  {
+    "lema": "achira",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-12205694-n",
+        "sinonimos": "herbácea, hierba, planta_herbácea",
+        "coseno": 0.5339
+      },
+      "glosa_es": {
+        "offset": "spa-30-03990834-n",
+        "sinonimos": "Mary_Jane, chaquetón, sens, grifa, marijuana, polen, cannabis, costo, maría, marihuana, chocolate, cáñamo, pote, hierba",
+        "coseno": 0.4379
+      },
+      "glosa_en": {
+        "offset": "spa-30-12397210-n",
+        "sinonimos": "mariguana, maría, marihuana, cáñamo, hierba",
+        "coseno": 0.4058
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-12205694-n",
+        "sinonimos": "herbácea, hierba, planta_herbácea",
+        "coseno": 0.5469
+      }
+    }
+  },
+  {
+    "lema": "suri",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-01514668-n",
+        "sinonimos": "pájaro_macho, ave",
+        "coseno": 0.4636
+      },
+      "glosa_en": {
+        "offset": "spa-30-01514668-n",
+        "sinonimos": "pájaro_macho, ave",
+        "coseno": 0.2787
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-01503061-n",
+        "sinonimos": "ave, pájaro, aves",
+        "coseno": 0.4408
+      }
+    }
+  },
+  {
+    "lema": "pincullo",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-03945615-n",
+        "sinonimos": "chiflo, flauta, gaita",
+        "coseno": 0.6537
+      },
+      "glosa_es": {
+        "offset": "spa-30-01707925-v",
+        "sinonimos": "instrumentar, instrumento",
+        "coseno": 0.3455
+      },
+      "glosa_en": {
+        "offset": "spa-30-03372029-n",
+        "sinonimos": "flauta, flauta_travesera",
+        "coseno": 0.6069
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-03372029-n",
+        "sinonimos": "flauta, flauta_travesera",
+        "coseno": 0.7477
+      }
+    }
+  },
+  {
+    "lema": "equeco",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-09540430-n",
+        "sinonimos": "duende, fay, hada",
+        "coseno": 0.5606
+      },
+      "glosa_es": {
+        "offset": "spa-30-04076846-n",
+        "sinonimos": "representación, figura",
+        "coseno": 0.3991
+      },
+      "glosa_en": {
+        "offset": "spa-30-09540430-n",
+        "sinonimos": "duende, fay, hada",
+        "coseno": 0.4277
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-09543748-n",
+        "sinonimos": "hobgoblin, trasgo, duende",
+        "coseno": 0.5308
+      }
+    }
+  },
+  {
+    "lema": "festejo",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-05844105-n",
+        "sinonimos": "estilo, género",
+        "coseno": 0.3712
+      },
+      "glosa_es": {
+        "offset": "spa-30-07020895-n",
+        "sinonimos": "música",
+        "coseno": 0.4908
+      },
+      "glosa_en": {
+        "offset": "spa-30-05718935-n",
+        "sinonimos": "música",
+        "coseno": 0.2822
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-07020895-n",
+        "sinonimos": "música",
+        "coseno": 0.4913
+      }
+    }
+  },
+  {
+    "lema": "mascapaicha",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-06705891-n",
+        "sinonimos": "banderín, gallardete, insignia, corona",
+        "coseno": 0.4849
+      },
+      "glosa_es": {
+        "offset": "spa-30-06882009-n",
+        "sinonimos": "bandera_nacional, insignia",
+        "coseno": 0.3959
+      },
+      "glosa_en": {
+        "offset": "spa-30-06883073-n",
+        "sinonimos": "distintivo, insignia",
+        "coseno": 0.3129
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-06883073-n",
+        "sinonimos": "distintivo, insignia",
+        "coseno": 0.465
+      }
+    }
+  },
+  {
+    "lema": "cachascanista",
+    "grupo": "B_tipo2",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-01517632-a",
+        "sinonimos": "combatiente, luchador",
+        "coseno": 0.5376
+      },
+      "glosa_en": {
+        "offset": "spa-30-10793168-n",
+        "sinonimos": "matman, luchador",
+        "coseno": 0.4062
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-10793168-n",
+        "sinonimos": "matman, luchador",
+        "coseno": 0.5596
+      }
+    }
+  },
+  {
+    "lema": "zaramullo",
+    "grupo": "C_escueta",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-00904548-a",
+        "sinonimos": "despreciable",
+        "coseno": 0.8589
+      },
+      "glosa_es": {
+        "offset": "spa-30-00904548-a",
+        "sinonimos": "despreciable",
+        "coseno": 0.585
+      },
+      "glosa_en": {
+        "offset": "spa-30-00265214-a",
+        "sinonimos": "indigno, despreciable",
+        "coseno": 0.5599
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-00265214-a",
+        "sinonimos": "indigno, despreciable",
+        "coseno": 0.6585
+      }
+    }
+  },
+  {
+    "lema": "hartos",
+    "grupo": "C_escueta",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-01551633-a",
+        "sinonimos": "mucho, muchos",
+        "coseno": 0.7393
+      },
+      "glosa_en": {
+        "offset": "spa-30-13777509-n",
+        "sinonimos": "tanda, slews, runfla, muchos, montones, gobs, lote, mogollón, enormidad, burrada, bestialidad, barbaridad, fajo, avalancha, cúmulo, montón, multitud, cantidad, pila",
+        "coseno": 0.3454
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-00015854-a",
+        "sinonimos": "abundante",
+        "coseno": 0.4952
+      }
+    }
+  },
+  {
+    "lema": "maulear",
+    "grupo": "C_escueta",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-02380980-v",
+        "sinonimos": "acobardarse, amedrentarse, rajarse",
+        "coseno": 0.767
+      },
+      "glosa_en": {
+        "offset": "spa-30-02380980-v",
+        "sinonimos": "acobardarse, amedrentarse, rajarse",
+        "coseno": 0.2305
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-02380980-v",
+        "sinonimos": "acobardarse, amedrentarse, rajarse",
+        "coseno": 0.3978
+      }
+    }
+  },
+  {
+    "lema": "arrechura",
+    "grupo": "C_escueta",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-14037619-n",
+        "sinonimos": "excitación_sexual, excitación",
+        "coseno": 0.835
+      },
+      "glosa_es": {
+        "offset": "spa-30-07487955-n",
+        "sinonimos": "atracción_física, atracción_secual, calentura, concupiscencia, deseo_sexual, eros, deseo",
+        "coseno": 0.5606
+      },
+      "glosa_en": {
+        "offset": "spa-30-14037619-n",
+        "sinonimos": "excitación_sexual, excitación",
+        "coseno": 0.5109
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-14037619-n",
+        "sinonimos": "excitación_sexual, excitación",
+        "coseno": 0.7329
+      }
+    }
+  },
+  {
+    "lema": "brilloso",
+    "grupo": "C_escueta",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-00278551-a",
+        "sinonimos": "brillante, luminoso, claro",
+        "coseno": 0.6409
+      },
+      "glosa_es": {
+        "offset": "spa-30-13372123-n",
+        "sinonimos": "brillante, roca",
+        "coseno": 0.4407
+      },
+      "glosa_en": {
+        "offset": "spa-30-00278551-a",
+        "sinonimos": "brillante, luminoso, claro",
+        "coseno": 0.4666
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-00278551-a",
+        "sinonimos": "brillante, luminoso, claro",
+        "coseno": 0.6514
+      }
+    }
+  },
+  {
+    "lema": "cruzarse",
+    "grupo": "C_escueta",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-01787600-v",
+        "sinonimos": "enloquecer",
+        "coseno": 0.4828
+      },
+      "glosa_es": {
+        "offset": "spa-30-01787600-v",
+        "sinonimos": "enloquecer",
+        "coseno": 0.3756
+      },
+      "glosa_en": {
+        "offset": "spa-30-01787822-v",
+        "sinonimos": "volver_loco, enloquecer",
+        "coseno": 0.2911
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-01787600-v",
+        "sinonimos": "enloquecer",
+        "coseno": 0.4828
+      }
+    }
+  },
+  {
+    "lema": "maloso",
+    "grupo": "C_escueta",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-02513740-a",
+        "sinonimos": "inicuo, malvado, perverso",
+        "coseno": 0.631
+      },
+      "glosa_es": {
+        "offset": "spa-30-01131043-a",
+        "sinonimos": "maléfico, malévolo, mal, malo, malvado, perjudicial",
+        "coseno": 0.4365
+      },
+      "glosa_en": {
+        "offset": "spa-30-01131935-a",
+        "sinonimos": "siniestro, corrupto, negro, obscuro, perverso, oscuro",
+        "coseno": 0.4081
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-02515001-a",
+        "sinonimos": "nefario, infame, perverso, malvado, vil",
+        "coseno": 0.5417
+      }
+    }
+  },
+  {
+    "lema": "carabina",
+    "grupo": "D_destino",
+    "coinciden": true,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-05600637-n",
+        "sinonimos": "faz, rostro, rostro_humano, cara",
+        "coseno": 0.6746
+      },
+      "glosa_es": {
+        "offset": "spa-30-05600637-n",
+        "sinonimos": "faz, rostro, rostro_humano, cara",
+        "coseno": 0.7475
+      },
+      "glosa_en": {
+        "offset": "spa-30-05600637-n",
+        "sinonimos": "faz, rostro, rostro_humano, cara",
+        "coseno": 0.5596
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-05600637-n",
+        "sinonimos": "faz, rostro, rostro_humano, cara",
+        "coseno": 0.6942
+      }
+    }
+  },
+  {
+    "lema": "cocho",
+    "grupo": "D_destino",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-01689580-a",
+        "sinonimos": "anticuado, viejo, pasado",
+        "coseno": 0.6953
+      },
+      "glosa_es": {
+        "offset": "spa-30-10376890-n",
+        "sinonimos": "anticuado, antigualla, matusalén, pureta, tarra, anciano, carcamal, vejestorio, veterano, carroza, viejo",
+        "coseno": 0.4612
+      },
+      "glosa_en": {
+        "offset": "spa-30-00669138-a",
+        "sinonimos": "desfasado, obsoleto, anticuado, viejo, antiguo",
+        "coseno": 0.4519
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-00669138-a",
+        "sinonimos": "desfasado, obsoleto, anticuado, viejo, antiguo",
+        "coseno": 0.685
+      }
+    }
+  },
+  {
+    "lema": "huamán",
+    "grupo": "D_destino",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-01606672-n",
+        "sinonimos": "gavilán, esparaván",
+        "coseno": 0.6503
+      },
+      "glosa_en": {
+        "offset": "spa-30-01606672-n",
+        "sinonimos": "gavilán, esparaván",
+        "coseno": 0.3994
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-01606978-n",
+        "sinonimos": "azor, gavilán",
+        "coseno": 0.486
+      }
+    }
+  },
+  {
+    "lema": "implicancia",
+    "grupo": "D_destino",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-11410625-n",
+        "sinonimos": "consecuencia, efecto, resultado",
+        "coseno": 0.7791
+      },
+      "glosa_es": {
+        "offset": "spa-30-13594585-n",
+        "sinonimos": "puntaje, puntuación, marcador, resultado",
+        "coseno": 0.3796
+      },
+      "glosa_en": {
+        "offset": "spa-30-11410625-n",
+        "sinonimos": "consecuencia, efecto, resultado",
+        "coseno": 0.5033
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-11416722-n",
+        "sinonimos": "repercusión, consecuencia",
+        "coseno": 0.6611
+      }
+    }
+  },
+  {
+    "lema": "agarrada",
+    "grupo": "D_destino",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-07184149-n",
+        "sinonimos": "altercado, camorra, dustup, encontrón, pelotera, reyerta, trifulca, riña, brega, disputa, palabras, pelea, pleito, roce, choque, discusión",
+        "coseno": 0.7395
+      },
+      "glosa_es": {
+        "offset": "spa-30-00959376-n",
+        "sinonimos": "escaramuza, refriega, trifulca, enfrentamiento, riña, zalagarda, roce, encuentro",
+        "coseno": 0.596
+      },
+      "glosa_en": {
+        "offset": "spa-30-01176335-n",
+        "sinonimos": "liza, algarada, reyerta, altercado, contienda, disturbio",
+        "coseno": 0.501
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-01170962-n",
+        "sinonimos": "brega, pelea, batalla, combate, lucha, acción",
+        "coseno": 0.6279
+      }
+    }
+  },
+  {
+    "lema": "maroca",
+    "grupo": "D_destino",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-10247358-n",
+        "sinonimos": "chavala, moza, rapaza, zagala, muchacha, chica, joven, niña",
+        "coseno": 0.6079
+      },
+      "glosa_es": {
+        "offset": "spa-30-10084295-n",
+        "sinonimos": "chavala, chiquitina, lola, moza, nena, pequeña, rapaza, zagala, chica, jovencita, muchacha, joven, niña",
+        "coseno": 0.5113
+      },
+      "glosa_en": {
+        "offset": "spa-30-09989045-n",
+        "sinonimos": "gachí, tía, muñeca, nena, polla, bomba, moza, muchacha, chica",
+        "coseno": 0.4817
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-09989045-n",
+        "sinonimos": "gachí, tía, muñeca, nena, polla, bomba, moza, muchacha, chica",
+        "coseno": 0.6545
+      }
+    }
+  },
+  {
+    "lema": "bollo",
+    "grupo": "D_destino",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-13393762-n",
+        "sinonimos": "billete, billete_de_banco",
+        "coseno": 0.5957
+      },
+      "glosa_es": {
+        "offset": "spa-30-13384557-n",
+        "sinonimos": "dinero, divisa",
+        "coseno": 0.469
+      },
+      "glosa_en": {
+        "offset": "spa-30-13393762-n",
+        "sinonimos": "billete, billete_de_banco",
+        "coseno": 0.4252
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-13393762-n",
+        "sinonimos": "billete, billete_de_banco",
+        "coseno": 0.5444
+      }
+    }
+  },
+  {
+    "lema": "pindingues",
+    "grupo": "D_destino",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-07336763-n",
+        "sinonimos": "apuro, infortunio, molestia, afán, dificultad, desgracia",
+        "coseno": 0.7305
+      },
+      "glosa_es": {
+        "offset": "spa-30-13936939-n",
+        "sinonimos": "impás, aprieto",
+        "coseno": 0.6258
+      },
+      "glosa_en": {
+        "offset": "spa-30-14408646-n",
+        "sinonimos": "aprieto, predicamento, brete, dilema, apuro",
+        "coseno": 0.4601
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-13936939-n",
+        "sinonimos": "impás, aprieto",
+        "coseno": 0.6354
+      }
+    }
+  },
+  {
+    "lema": "trozar",
+    "grupo": "D_destino",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-00335814-v",
+        "sinonimos": "trocear, partir",
+        "coseno": 0.7553
+      },
+      "glosa_es": {
+        "offset": "spa-30-00335814-v",
+        "sinonimos": "trocear, partir",
+        "coseno": 0.5718
+      },
+      "glosa_en": {
+        "offset": "spa-30-01258091-v",
+        "sinonimos": "tajar, picar, cortar",
+        "coseno": 0.4909
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-01255967-v",
+        "sinonimos": "trinchar, cortar",
+        "coseno": 0.6604
+      }
+    }
+  },
+  {
+    "lema": "achuncharse",
+    "grupo": "D_destino",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-01792287-v",
+        "sinonimos": "avergonzarse, abochornar, avergonzar",
+        "coseno": 0.6852
+      },
+      "glosa_en": {
+        "offset": "spa-30-01792287-v",
+        "sinonimos": "avergonzarse, abochornar, avergonzar",
+        "coseno": 0.4933
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-01792287-v",
+        "sinonimos": "avergonzarse, abochornar, avergonzar",
+        "coseno": 0.651
+      }
+    }
+  },
+  {
+    "lema": "higuerilla",
+    "grupo": "E_rica",
+    "coinciden": true,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-13112664-n",
+        "sinonimos": "arbusto, mata",
+        "coseno": 0.5911
+      },
+      "glosa_es": {
+        "offset": "spa-30-13112664-n",
+        "sinonimos": "arbusto, mata",
+        "coseno": 0.5687
+      },
+      "glosa_en": {
+        "offset": "spa-30-13112664-n",
+        "sinonimos": "arbusto, mata",
+        "coseno": 0.4477
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-13112664-n",
+        "sinonimos": "arbusto, mata",
+        "coseno": 0.6195
+      }
+    }
+  },
+  {
+    "lema": "panetela",
+    "grupo": "E_rica",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-07597365-n",
+        "sinonimos": "caramelo, dulce, golosina",
+        "coseno": 0.4866
+      },
+      "glosa_es": {
+        "offset": "spa-30-07597263-n",
+        "sinonimos": "dulce, golosina",
+        "coseno": 0.4707
+      },
+      "glosa_en": {
+        "offset": "spa-30-07597365-n",
+        "sinonimos": "caramelo, dulce, golosina",
+        "coseno": 0.4272
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-07597365-n",
+        "sinonimos": "caramelo, dulce, golosina",
+        "coseno": 0.5907
+      }
+    }
+  },
+  {
+    "lema": "tirante",
+    "grupo": "E_rica",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-04680465-n",
+        "sinonimos": "tira, faja",
+        "coseno": 0.4934
+      },
+      "glosa_es": {
+        "offset": "spa-30-00337210-n",
+        "sinonimos": "sacudida, lanzamiento, tira",
+        "coseno": 0.313
+      },
+      "glosa_en": {
+        "offset": "spa-30-03437941-n",
+        "sinonimos": "viga",
+        "coseno": 0.4239
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-04045644-n",
+        "sinonimos": "cabio, cabrio, contrapar, viga",
+        "coseno": 0.5747
+      }
+    }
+  },
+  {
+    "lema": "palizada",
+    "grupo": "E_rica",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-00372013-n",
+        "sinonimos": "acumulación",
+        "coseno": 0.4996
+      },
+      "glosa_es": {
+        "offset": "spa-30-07961480-n",
+        "sinonimos": "aglomerado, montículo, montón, pila, acumulación, cúmulo, montaña",
+        "coseno": 0.4373
+      },
+      "glosa_en": {
+        "offset": "spa-30-07961480-n",
+        "sinonimos": "aglomerado, montículo, montón, pila, acumulación, cúmulo, montaña",
+        "coseno": 0.2828
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-00372013-n",
+        "sinonimos": "acumulación",
+        "coseno": 0.4411
+      }
+    }
+  },
+  {
+    "lema": "vichayo",
+    "grupo": "E_rica",
+    "coinciden": true,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-13112664-n",
+        "sinonimos": "arbusto, mata",
+        "coseno": 0.5664
+      },
+      "glosa_es": {
+        "offset": "spa-30-13112664-n",
+        "sinonimos": "arbusto, mata",
+        "coseno": 0.564
+      },
+      "glosa_en": {
+        "offset": "spa-30-13112664-n",
+        "sinonimos": "arbusto, mata",
+        "coseno": 0.4164
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-13112664-n",
+        "sinonimos": "arbusto, mata",
+        "coseno": 0.5778
+      }
+    }
+  },
+  {
+    "lema": "yanaconaje",
+    "grupo": "E_rica",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-00577525-n",
+        "sinonimos": "prestación, servicio",
+        "coseno": 0.4455
+      },
+      "glosa_es": {
+        "offset": "spa-30-05179180-n",
+        "sinonimos": "servidumbre",
+        "coseno": 0.3343
+      },
+      "glosa_en": {
+        "offset": "spa-30-13998014-n",
+        "sinonimos": "servidumbre",
+        "coseno": 0.2816
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-13998014-n",
+        "sinonimos": "servidumbre",
+        "coseno": 0.4701
+      }
+    }
+  },
+  {
+    "lema": "cleta",
+    "grupo": "ancla",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-02834778-n",
+        "sinonimos": "bici, bicicleta, bicicletas",
+        "coseno": 0.6699
+      },
+      "glosa_en": {
+        "offset": "spa-30-02834778-n",
+        "sinonimos": "bici, bicicleta, bicicletas",
+        "coseno": 0.6079
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-02834778-n",
+        "sinonimos": "bici, bicicleta, bicicletas",
+        "coseno": 0.7604
+      }
+    }
+  },
+  {
+    "lema": "rondín",
+    "grupo": "ancla",
+    "coinciden": false,
+    "ganadores": {
+      "sinonimos": {
+        "offset": "spa-30-03494278-n",
+        "sinonimos": "armónica, harmónica, arpa, harpa",
+        "coseno": 0.7668
+      },
+      "glosa_es": {
+        "offset": "spa-30-01707925-v",
+        "sinonimos": "instrumentar, instrumento",
+        "coseno": 0.3903
+      },
+      "glosa_en": {
+        "offset": "spa-30-03494278-n",
+        "sinonimos": "armónica, harmónica, arpa, harpa",
+        "coseno": 0.4733
+      },
+      "glosa_en_traducida": {
+        "offset": "spa-30-03494278-n",
+        "sinonimos": "armónica, harmónica, arpa, harpa",
+        "coseno": 0.5781
+      }
+    }
+  }
+]
