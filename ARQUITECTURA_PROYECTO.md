@@ -1,6 +1,6 @@
 # 🗺️ Radiografía Estructural del Proyecto: `SINAPSIS`
 
-> **Fecha de escaneo:** 2026-07-03 23:32:59 UTC  
+> **Fecha de escaneo:** 2026-07-06 06:47:19 UTC  
 > **Módulo generador:** `mapeador_estructura.py`  
 > **Exclusiones aplicadas:** `venv/`, `.git/`, `__pycache__/`
 
@@ -18,25 +18,39 @@ SINAPSIS/
 │   │   ├── core/
 │   │   │   └── database.py
 │   │   ├── evaluation/
+│   │   │   ├── __init__.py
+│   │   │   ├── CU_calibracion_umbral.py
 │   │   │   └── mcr_baseline.py
 │   │   ├── maintenance/
+│   │   │   ├── reset_categorias_llm.py
 │   │   │   ├── reset_control_extraccion_lemas.py
 │   │   │   └── reset_registro_lexico_crudo.py
 │   │   ├── models/
 │   │   │   └── __init__.py
 │   │   ├── nlp/
-│   │   │   ├── embeddings.py
+│   │   │   ├── combinar_buscar_forma.py
+│   │   │   ├── combinar_clasificar_tipo.py
+│   │   │   ├── ensamblar_embedding_input.py
+│   │   │   ├── exp1_construir_referencias.py
+│   │   │   ├── exp2a_traducir_glosas.py
+│   │   │   ├── exp2b_comparar.py
 │   │   │   ├── indexer.py
-│   │   │   ├── pipeline.py
+│   │   │   ├── inferir_categorias_llm.py
+│   │   │   ├── poblar_referencia_mcr.py
+│   │   │   ├── poblar_uce.py
 │   │   │   ├── resolver_categorias.py
 │   │   │   ├── resolver_remisiones.py
-│   │   │   └── scraper.py
+│   │   │   ├── scraper.py
+│   │   │   ├── vectorizar_referencia_mcr.py
+│   │   │   └── vectorizar_uce.py
 │   │   └── services/
 │   ├── .env
 │   ├── baseline_mcr_20260617_2205.csv
 │   ├── baseline_mcr_20260624_1508.csv
-│   ├── diagnostico_id102.py
 │   ├── docker-compose.yml
+│   ├── experimento_referencias.json
+│   ├── experimento_referencias_acotado.json
+│   ├── experimento_resultados.json
 │   ├── main.py
 │   ├── registro_cpw_20260624_1508.csv
 │   ├── registro_prs_20260624_1508.csv
@@ -76,10 +90,18 @@ SINAPSIS/
 ├── frontend/
 │   ├── src/
 │   │   ├── app/
+│   │   │   ├── globals.css
+│   │   │   ├── layout.js
+│   │   │   └── page.js
 │   │   ├── components/
 │   │   ├── hooks/
 │   │   └── services/
+│   ├── .gitignore
+│   ├── jsconfig.json
+│   ├── next.config.js
+│   ├── package-lock.json
 │   ├── package.json
+│   ├── postcss.config.js
 │   └── tailwind.config.js
 ├── .gitignore
 └── README.md
@@ -90,24 +112,25 @@ SINAPSIS/
 | Métricas de Estructura | Cantidad |
 | :--- | :---: |
 | **Submódulos / Directorios** | 23 |
-| **Archivos de proyecto** | 50 |
-| **Total Nodos indexados** | 73 |
+| **Archivos de proyecto** | 72 |
+| **Total Nodos indexados** | 95 |
 
 ### Desglose Tecnológico (Por extensión)
 
 | Extensión | Naturaleza del archivo dentro del sistema | Cantidad |
 | :---: | :--- | :---: |
-| `.py` | Código fuente Python (Lógica de negocio / Scripts) | 15 |
+| `.py` | Código fuente Python (Lógica de negocio / Scripts) | 26 |
 | `.tsv` | Archivo genérico / de recurso secundario | 14 |
+| `.json` | Estructuras de intercambio de datos JSON | 6 |
 | `.sql` | Consultas y esquemas DDL de Base de Datos | 6 |
+| `.js` | Archivo genérico / de recurso secundario | 5 |
 | `.md` | Documentación y reportes de ejecución | 4 |
 | `.csv` | Conjuntos de datos estructurados (Respaldos léxicos) | 4 |
+| `.gitignore` | Reglas de exclusión de control de versiones | 2 |
 | `.txt` | Manifiestos de dependencias y texto plano | 2 |
-| `.gitignore` | Reglas de exclusión de control de versiones | 1 |
 | `.env` | Variables de entorno locales (Secretos) | 1 |
 | `.yml` | Orquestación de contenedores (Docker) | 1 |
-| `.json` | Estructuras de intercambio de datos JSON | 1 |
-| `.js` | Archivo genérico / de recurso secundario | 1 |
+| `.css` | Archivo genérico / de recurso secundario | 1 |
 
 ---
 *Generado automáticamente para el control de trazabilidad del SGC.*

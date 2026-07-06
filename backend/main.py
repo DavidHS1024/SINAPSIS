@@ -1,1 +1,11 @@
-# Código para main.py
+from fastapi.middleware.cors import CORSMiddleware
+from app.api import peruanismos
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://sinapsis-five.vercel.app", "http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+app.include_router(peruanismos.router)

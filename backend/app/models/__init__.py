@@ -18,7 +18,7 @@ La extensión debe estar habilitada en la base: CREATE EXTENSION vector;
 import uuid
 
 from sqlalchemy import (Column, String, DateTime, Integer, Text, ForeignKey,
-                        Boolean, UniqueConstraint)
+                        Boolean, UniqueConstraint, Float)
 from sqlalchemy.dialects.postgresql import UUID, JSONB
 from pgvector.sqlalchemy import Vector
 
@@ -129,11 +129,14 @@ class UnidadConocimientoExplicito(Base):
     glosa_origen          = Column(String)   # glosa_propia | glosa_referida
     marcas                = Column(JSONB)     # marcas_clasificadas (dominio/diatópica/registro...)
     ejemplo               = Column(Text)      # cita de uso cruda
+    forma_en_mcr          = Column(Boolean)   # criba simbólica: ¿la forma existe en el MCR?
+    candidatos_mcr        = Column(JSONB)     # offsets de los synsets de esa forma (mismo POS)
 
     # -- Bloque 3: andamiaje del pre-synset (en blanco para la Combinación) ---
     offset_mcr            = Column(String)                            # synset de enganche
     tipo_peruanismo       = Column(String, default="sin_clasificar")  # tipo_1_semantico | tipo_2_lexico | indeterminado
-    relaciones            = Column(JSONB, default=dict)               # relaciones semánticas (forma diferida)
+    relaciones            = Column(JSONB, default=dict),
+    sim_mcr               = Column(Float)     # coseno máximo contra sus candidatos (evidencia)               # relaciones semánticas (forma diferida)
 
     creado_en             = Column(DateTime(timezone=True), default=ahora_utc)
 
