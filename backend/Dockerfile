@@ -1,11 +1,10 @@
 # ============================================================
 # SINAPSIS API — Dockerfile de producción
 # ============================================================
-# Imagen ligera para servir SOLO la API de lectura.
-# No incluye dependencias del pipeline (Playwright, spaCy, etc.)
+# Imagen para servir la API de lectura y ejecutar el pipeline
 # ============================================================
 
-FROM python:3.11-slim
+FROM mcr.microsoft.com/playwright/python:v1.40.0-jammy
 
 WORKDIR /app
 
@@ -14,13 +13,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpq-dev gcc \
     && rm -rf /var/lib/apt/lists/*
 
-# Instalar dependencias Python (solo producción)
-COPY requirements-prod.txt .
-RUN pip install --no-cache-dir -r requirements-prod.txt
+# Instalar dependencias Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Instalar navegador para Playwright
+RUN playwright install chromium
+
+# Instalar modelo de spaCy
+RUN python -m spacy download es_core_news_md
 
 # Copiar código de la aplicación
-COPY main.py .
-COPY app/ app/
+COPY . .
 
 # Puerto
 EXPOSE 8000
