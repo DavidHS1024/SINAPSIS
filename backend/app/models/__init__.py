@@ -172,6 +172,12 @@ class ReferenciaMCR(Base):
     creado_en       = Column(DateTime(timezone=True), default=ahora_utc)
 
 
+# Habilita la extensión pgvector automáticamente si no existe (requiere permisos en PostgreSQL, los cuales Railway otorga por defecto)
+from sqlalchemy import text
+with engine.connect() as conn:
+    conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
+    conn.commit()
+
 # Crea las tablas que aún no existan (idempotente; no altera las existentes).
 Base.metadata.create_all(bind=engine)
 
