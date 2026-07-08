@@ -1,7 +1,7 @@
 import sys
 import os
 
-backend_dir = r"c:\Users\david\Desktop\PROYECTOS\SINAPSIS\backend"
+backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(backend_dir)
 os.chdir(backend_dir)
 
