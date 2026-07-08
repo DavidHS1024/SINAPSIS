@@ -135,8 +135,12 @@ class UnidadConocimientoExplicito(Base):
     # -- Bloque 3: andamiaje del pre-synset (en blanco para la Combinación) ---
     offset_mcr            = Column(String)                            # synset de enganche
     tipo_peruanismo       = Column(String, default="sin_clasificar")  # tipo_1_semantico | tipo_2_lexico | indeterminado
-    relaciones            = Column(JSONB, default=dict),
-    sim_mcr               = Column(Float)     # coseno máximo contra sus candidatos (evidencia)               # relaciones semánticas (forma diferida)
+    relaciones            = Column(JSONB, default=dict)               # relaciones semánticas (forma diferida)
+    sim_mcr               = Column(Float)                             # coseno máximo contra sus candidatos (evidencia)
+    
+    # -- Bloque 4: revisión humana (Lexicógrafo) ------------------------------
+    estado_revision       = Column(String, default="pendiente")       # pendiente | aceptado | rechazado | observado
+    notas_revision        = Column(Text)                              # comentarios del lexicógrafo
 
     creado_en             = Column(DateTime(timezone=True), default=ahora_utc)
 

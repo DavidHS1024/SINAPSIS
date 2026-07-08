@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useRole } from "@/context/RoleContext";
+import { useRouter } from "next/navigation";
 
 const ROLES = [
   {
@@ -39,17 +41,13 @@ const ROLES = [
 
 export default function AccesoPorRol() {
   const [rolActivo, setRolActivo] = useState(null);
+  const { setRol } = useRole();
+  const router = useRouter();
 
   const acceder = () => {
     if (!rolActivo) return;
-    // En producción, el rol se pasaría al sistema tras la autenticación del SSO corporativo.
-    // Aquí es una plantilla: se mostrará el rol seleccionado.
-    const rol = ROLES.find((r) => r.id === rolActivo);
-    alert(
-      `Acceso simulado como: ${rol.nombre}\n\n` +
-        `Nota: la autenticación real la delega el SSO corporativo de PerúNET. ` +
-        `Esta pantalla solo selecciona el perfil de trabajo.`
-    );
+    setRol(rolActivo);
+    router.push("/dashboard");
   };
 
   return (

@@ -26,9 +26,17 @@ DB_HOST     = os.getenv("DB_HOST", "localhost")
 DB_PORT     = os.getenv("DB_PORT", "5432")
 DB_NAME     = os.getenv("DB_NAME", "sinapsis_db")
 
-DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+)
 
-engine       = create_engine(DATABASE_URL)
+# Soporte SSL para PostgreSQL en la nube (Railway, Render, Neon)
+connect_args = {}
+if os.getenv("DB_SSLMODE"):
+    DATABASE_URL += f"?sslmode={os.getenv('DB_SSLMODE')}"
+
+engine       = create_engine(DATABASE_URL, connect_args=connect_args)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base         = declarative_base()
 
@@ -36,3 +44,10 @@ Base         = declarative_base()
 def ahora_utc():
     """Marca temporal UTC consciente de zona (reemplaza a datetime.utcnow, obsoleto en 3.12+)."""
     return datetime.now(timezone.utc)
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
