@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN playwright install chromium
 
 # Instalar modelo de spaCy
-RUN python -m spacy download es_core_news_md
+RUN pip install https://github.com/explosion/spacy-models/releases/download/es_core_news_md-3.7.0/es_core_news_md-3.7.0.tar.gz
 
 # Copiar código de la aplicación
 COPY . .
