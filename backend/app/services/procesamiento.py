@@ -84,8 +84,11 @@ class ProcesadorIndividual:
                     ac["glosa_referida"] = ac["remision"].get("glosa", "")
                     ac["remision_estado"] = "resuelta" if ac.get("glosa_referida") else "sin_glosa_referida"
                 
-                _clasificar_acepcion(ac, last_pos)
-                last_pos = ac.get("categoria_gramatical") or last_pos
+                campos, nuevo_last = _clasificar_acepcion(ac, last_pos)
+                for k, v in campos.items():
+                    ac[k] = v
+                last_pos = nuevo_last
+                
                 ac["estado_uce"] = _estado_uce(ac)
                 
                 if ac.get("pos_mcr_estado") == "mapeada" and ac.get("estado_uce") in ("apta_propia", "apta_referida"):
