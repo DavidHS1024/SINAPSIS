@@ -147,7 +147,7 @@ class ProcesadorIndividual:
                 if uce.vector is not None:
                     # Búsqueda en referencia_mcr
                     candidato = db.execute(text(f"""
-                        SELECT offset, 1 - (vector <=> :v) as sim
+                        SELECT "offset", 1 - (vector <=> :v) as sim
                         FROM referencia_mcr
                         WHERE pos = :pos AND vector IS NOT NULL
                         ORDER BY vector <=> :v LIMIT 1
