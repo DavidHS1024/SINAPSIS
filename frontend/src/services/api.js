@@ -54,8 +54,9 @@ export function fetchIncidencias({
 }
 
 // Ingeniero
-export function fetchIngenieroPendientes(page = 1, size = 20) {
-  return fetchJSON("/api/ingeniero/pendientes", { page, size });
+export function fetchIngenieroPendientes(params = {}) {
+  const { page = 1, size = 20, letra, id_exacto, id_desde, id_hasta, orden } = params;
+  return fetchJSON("/api/ingeniero/pendientes", { page, size, letra, id_exacto, id_desde, id_hasta, orden });
 }
 
 export async function extraerDiPeru(id_entrada, lema) {
@@ -69,8 +70,9 @@ export async function extraerDiPeru(id_entrada, lema) {
 }
 
 // Analista
-export function fetchAnalistaPendientes(page = 1, size = 20) {
-  return fetchJSON("/api/analista/pendientes", { page, size });
+export function fetchAnalistaPendientes(params = {}) {
+  const { page = 1, size = 20, lema, acepciones, fecha_desde, fecha_hasta } = params;
+  return fetchJSON("/api/analista/pendientes", { page, size, lema, acepciones, fecha_desde, fecha_hasta });
 }
 
 export async function procesarPipeline(id_rlc) {

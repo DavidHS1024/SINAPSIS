@@ -22,10 +22,23 @@ export default function AnalistaPage() {
   const [success, setSuccess] = useState("");
   const [completedSteps, setCompletedSteps] = useState([]);
 
+  const [page, setPage] = useState(1);
+  const [lema, setLema] = useState("");
+  const [acepciones, setAcepciones] = useState("");
+  const [fechaDesde, setFechaDesde] = useState("");
+  const [fechaHasta, setFechaHasta] = useState("");
+
   const loadData = async () => {
     setLoading(true);
     try {
-      const data = await fetchAnalistaPendientes(1, 20);
+      const data = await fetchAnalistaPendientes({
+        page,
+        size: 20,
+        lema: lema || undefined,
+        acepciones: acepciones ? parseInt(acepciones) : undefined,
+        fecha_desde: fechaDesde ? new Date(fechaDesde).toISOString() : undefined,
+        fecha_hasta: fechaHasta ? new Date(fechaHasta).toISOString() : undefined
+      });
       setPendientes(data.items || []);
     } catch (err) {
       setError("Error al cargar pendientes");
@@ -36,7 +49,21 @@ export default function AnalistaPage() {
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [page]);
+
+  const handleApplyFilters = () => {
+    setPage(1);
+    loadData();
+  };
+
+  const handleClearFilters = () => {
+    setLema("");
+    setAcepciones("");
+    setFechaDesde("");
+    setFechaHasta("");
+    setPage(1);
+    setTimeout(loadData, 0);
+  };
 
   const handleProcess = async (id_rlc) => {
     setProcessingId(id_rlc);
@@ -87,9 +114,52 @@ export default function AnalistaPage() {
       )}
 
       <div className="bg-marino-800 rounded-lg border border-marino-700 overflow-hidden">
-        <div className="p-4 border-b border-marino-700 bg-marino-900/50 flex justify-between items-center">
-          <h2 className="font-medium text-acento">RLCs Pendientes</h2>
-          <button onClick={loadData} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
+        <div className="p-4 border-b border-marino-700 bg-marino-900/50 flex flex-col gap-4">
+          <div className="flex justify-between items-center">
+            <h2 className="font-medium text-acento">RLCs Pendientes</h2>
+            <button onClick={loadData} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
+          </div>
+          
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <input 
+              type="text" 
+              placeholder="Buscar lema..." 
+              value={lema} 
+              onChange={e => setLema(e.target.value)}
+              className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-48"
+            />
+
+            <input 
+              type="number" 
+              placeholder="Acepciones" 
+              value={acepciones} 
+              onChange={e => setAcepciones(e.target.value)}
+              className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-28"
+            />
+
+            <input 
+              type="date" 
+              value={fechaDesde} 
+              onChange={e => setFechaDesde(e.target.value)}
+              className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none text-xs"
+              title="Desde"
+            />
+            <span className="text-niebla/50">-</span>
+            <input 
+              type="date" 
+              value={fechaHasta} 
+              onChange={e => setFechaHasta(e.target.value)}
+              className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none text-xs"
+              title="Hasta"
+            />
+
+            <button onClick={handleApplyFilters} className="bg-marino-600 hover:bg-marino-500 px-3 py-1.5 rounded transition-colors ml-auto">
+              Filtrar
+            </button>
+            <button onClick={handleClearFilters} className="text-niebla/50 hover:text-niebla px-2">
+              Limpiar
+            </button>
+          </div>
         </div>
         
         {loading ? (
@@ -125,6 +195,26 @@ export default function AnalistaPage() {
               ))}
             </tbody>
           </table>
+        )}
+        
+        {pendientes.length > 0 && (
+          <div className="p-4 border-t border-marino-700 bg-marino-900/50 flex justify-between items-center text-sm">
+            <button 
+              onClick={() => setPage(p => Math.max(1, p - 1))}
+              disabled={page === 1}
+              className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700"
+            >
+              Anterior
+            </button>
+            <span className="text-niebla/60">Página {page}</span>
+            <button 
+              onClick={() => setPage(p => p + 1)}
+              disabled={pendientes.length < 20}
+              className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700"
+            >
+              Siguiente
+            </button>
+          </div>
         )}
       </div>
     </div>

@@ -13,10 +13,25 @@ export default function IngenieroPage() {
   const [idEntrada, setIdEntrada] = useState("");
   const [lemaCustom, setLemaCustom] = useState("");
 
+  const [letra, setLetra] = useState("");
+  const [idExacto, setIdExacto] = useState("");
+  const [idDesde, setIdDesde] = useState("");
+  const [idHasta, setIdHasta] = useState("");
+  const [orden, setOrden] = useState("asc");
+  const [page, setPage] = useState(1);
+
   const loadData = async () => {
     setLoading(true);
     try {
-      const data = await fetchIngenieroPendientes(1, 20);
+      const data = await fetchIngenieroPendientes({
+        page,
+        size: 20,
+        letra: letra || undefined,
+        id_exacto: idExacto || undefined,
+        id_desde: idDesde || undefined,
+        id_hasta: idHasta || undefined,
+        orden
+      });
       setPendientes(data.items || []);
     } catch (err) {
       setError("Error al cargar pendientes");
@@ -27,7 +42,24 @@ export default function IngenieroPage() {
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [page, orden]); // Reload on page or sort change
+
+  const handleApplyFilters = () => {
+    setPage(1);
+    loadData();
+  };
+
+  const handleClearFilters = () => {
+    setLetra("");
+    setIdExacto("");
+    setIdDesde("");
+    setIdHasta("");
+    setOrden("asc");
+    setPage(1);
+    // Note: loadData will be called by useEffect if page or orden changes, 
+    // but if they were already 1 and asc, we need to call it manually.
+    setTimeout(loadData, 0);
+  };
 
   const handleExtract = async (id, lema) => {
     setExtractingId(id);
@@ -90,9 +122,65 @@ export default function IngenieroPage() {
       </div>
 
       <div className="bg-marino-800 rounded-lg border border-marino-700 overflow-hidden">
-        <div className="p-4 border-b border-marino-700 bg-marino-900/50 flex justify-between items-center">
-          <h2 className="font-medium text-acento">Lemas Pendientes (Control)</h2>
-          <button onClick={loadData} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
+        <div className="p-4 border-b border-marino-700 bg-marino-900/50 flex flex-col gap-4">
+          <div className="flex justify-between items-center">
+            <h2 className="font-medium text-acento">Lemas Pendientes (Control)</h2>
+            <button onClick={loadData} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
+          </div>
+          
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <select 
+              value={letra} 
+              onChange={e => setLetra(e.target.value)}
+              className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none"
+            >
+              <option value="">Cualquier letra</option>
+              {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(l => (
+                <option key={l} value={l}>{l}</option>
+              ))}
+            </select>
+
+            <input 
+              type="number" 
+              placeholder="ID Exacto" 
+              value={idExacto} 
+              onChange={e => setIdExacto(e.target.value)}
+              className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
+            />
+
+            <span className="text-niebla/50">o</span>
+
+            <input 
+              type="number" 
+              placeholder="Desde ID" 
+              value={idDesde} 
+              onChange={e => setIdDesde(e.target.value)}
+              className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
+            />
+            <input 
+              type="number" 
+              placeholder="Hasta ID" 
+              value={idHasta} 
+              onChange={e => setIdHasta(e.target.value)}
+              className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
+            />
+
+            <select 
+              value={orden} 
+              onChange={e => setOrden(e.target.value)}
+              className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none ml-auto"
+            >
+              <option value="asc">A-Z</option>
+              <option value="desc">Z-A</option>
+            </select>
+
+            <button onClick={handleApplyFilters} className="bg-marino-600 hover:bg-marino-500 px-3 py-1.5 rounded transition-colors">
+              Filtrar
+            </button>
+            <button onClick={handleClearFilters} className="text-niebla/50 hover:text-niebla px-2">
+              Limpiar
+            </button>
+          </div>
         </div>
         
         {loading ? (
@@ -143,6 +231,26 @@ export default function IngenieroPage() {
               })}
             </tbody>
           </table>
+        )}
+        
+        {pendientes.length > 0 && (
+          <div className="p-4 border-t border-marino-700 bg-marino-900/50 flex justify-between items-center text-sm">
+            <button 
+              onClick={() => setPage(p => Math.max(1, p - 1))}
+              disabled={page === 1}
+              className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700"
+            >
+              Anterior
+            </button>
+            <span className="text-niebla/60">Página {page}</span>
+            <button 
+              onClick={() => setPage(p => p + 1)}
+              disabled={pendientes.length < 20}
+              className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700"
+            >
+              Siguiente
+            </button>
+          </div>
         )}
       </div>
     </div>

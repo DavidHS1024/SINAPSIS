@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import text
-from typing import Any
+from typing import Any, Optional
+from datetime import datetime
 
 from app.core.database import get_db
 from app.models import RegistroLexicoCrudo, UnidadConocimientoExplicito
@@ -13,7 +14,11 @@ router = APIRouter()
 def get_pendientes(
     db: Session = Depends(get_db),
     page: int = Query(1, ge=1),
-    size: int = Query(20, ge=1, le=100)
+    size: int = Query(20, ge=1, le=100),
+    lema: Optional[str] = None,
+    acepciones: Optional[int] = None,
+    fecha_desde: Optional[datetime] = None,
+    fecha_hasta: Optional[datetime] = None
 ) -> Any:
     """Lista RLCs extraídos que aún no tienen UCEs (pendientes de procesar)."""
     # Buscamos RLCs cuyo id no esté en UCE
@@ -22,6 +27,16 @@ def get_pendientes(
             db.query(UnidadConocimientoExplicito.id_rlc)
         )
     )
+    
+    if lema:
+        query = query.filter(RegistroLexicoCrudo.lema.ilike(f"%{lema}%"))
+    if acepciones is not None:
+        query = query.filter(RegistroLexicoCrudo.num_acepciones == acepciones)
+    if fecha_desde:
+        query = query.filter(RegistroLexicoCrudo.fecha_extraccion >= fecha_desde)
+    if fecha_hasta:
+        query = query.filter(RegistroLexicoCrudo.fecha_extraccion <= fecha_hasta)
+        
     total = query.count()
     items = query.order_by(RegistroLexicoCrudo.fecha_extraccion.desc()).offset((page - 1) * size).limit(size).all()
     
