@@ -87,9 +87,11 @@ export default function PropuestaDetallePage({ params }) {
             <div>
               <h3 className="text-xs uppercase tracking-wider text-niebla/50 mb-2">Marcas</h3>
               <div className="flex flex-wrap gap-2">
-                {Object.entries(peruanismo.marcas).map(([k, v]) => (
+                {Object.entries(peruanismo.marcas)
+                  .filter(([k, v]) => Array.isArray(v) && v.length > 0)
+                  .map(([k, v]) => (
                   <span key={k} className="text-xs bg-marino-900 border border-marino-600 text-niebla/70 px-2 py-1 rounded">
-                    {k}: {v}
+                    <strong className="capitalize text-acento/80 font-medium">{k}:</strong> {v.map(m => m.abrev).join(", ")}
                   </span>
                 ))}
               </div>
