@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { fetchIngenieroPendientes, extraerDiPeru } from "@/services/api";
+import { fetchIngenieroPendientes, extraerDiPeru, fetchHtmlCrudo } from "@/services/api";
 
 export default function IngenieroPage() {
   const [pendientes, setPendientes] = useState([]);
@@ -10,8 +10,9 @@ export default function IngenieroPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-
-
+  const [htmlModalOpen, setHtmlModalOpen] = useState(false);
+  const [htmlContent, setHtmlContent] = useState("");
+  const [loadingHtmlId, setLoadingHtmlId] = useState(null);
   const [letra, setLetra] = useState("");
   const [idExacto, setIdExacto] = useState("");
   const [idDesde, setIdDesde] = useState("");
@@ -72,6 +73,20 @@ export default function IngenieroPage() {
       setError(`Error extrayendo ${id}: ${err.message}`);
     } finally {
       setExtractingId(null);
+    }
+  };
+
+  const handleViewHtml = async (id) => {
+    setLoadingHtmlId(id);
+    setError("");
+    try {
+      const res = await fetchHtmlCrudo(parseInt(id));
+      setHtmlContent(res.html);
+      setHtmlModalOpen(true);
+    } catch (err) {
+      setError(`Error obteniendo HTML: ${err.message}`);
+    } finally {
+      setLoadingHtmlId(null);
     }
   };
 
@@ -173,23 +188,48 @@ export default function IngenieroPage() {
                 return (
                   <tr key={p.id_lema} className="hover:bg-marino-700/20 transition-colors">
                     <td className="px-4 py-3 font-medium text-niebla">{p.lema}</td>
-                    <td className="px-4 py-3 text-niebla/60 truncate max-w-xs">{p.url_origen}</td>
-                    <td className="px-4 py-3 text-right">
-                      <button 
-                        onClick={() => handleExtract(id, p.lema)}
-                        disabled={!id || extractingId !== null}
-                        className="text-xs bg-marino-600 hover:bg-acento hover:text-marino-900 text-niebla px-3 py-1 rounded transition-colors disabled:opacity-50 inline-flex items-center justify-center min-w-[100px]"
+                      <a 
+                        href={p.url_origen} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-acento transition-colors underline decoration-niebla/30 underline-offset-2"
                       >
-                        {extractingId === id ? (
-                          <>
-                            <svg className="animate-spin -ml-1 mr-2 h-3 w-3 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            Extrayendo...
-                          </>
-                        ) : "Procesar RLC"}
-                      </button>
+                        {p.url_origen}
+                      </a>
+                    </td>
+                    <td className="px-4 py-3 text-right">
+                      <div className="flex justify-end gap-2">
+                        <button 
+                          onClick={() => handleViewHtml(id)}
+                          disabled={!id || loadingHtmlId !== null}
+                          className="text-xs bg-marino-700 hover:bg-marino-600 text-niebla px-3 py-1 rounded transition-colors disabled:opacity-50 inline-flex items-center justify-center min-w-[90px]"
+                        >
+                          {loadingHtmlId === id ? (
+                            <>
+                              <svg className="animate-spin -ml-1 mr-2 h-3 w-3 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Cargando...
+                            </>
+                          ) : "Ver HTML"}
+                        </button>
+                        <button 
+                          onClick={() => handleExtract(id, p.lema)}
+                          disabled={!id || extractingId !== null}
+                          className="text-xs bg-marino-600 hover:bg-acento hover:text-marino-900 text-niebla px-3 py-1 rounded transition-colors disabled:opacity-50 inline-flex items-center justify-center min-w-[100px]"
+                        >
+                          {extractingId === id ? (
+                            <>
+                              <svg className="animate-spin -ml-1 mr-2 h-3 w-3 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Extrayendo...
+                            </>
+                          ) : "Procesar RLC"}
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 );
@@ -218,6 +258,41 @@ export default function IngenieroPage() {
           </div>
         )}
       </div>
+
+      {htmlModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <div className="bg-[#1e1e1e] border border-marino-600 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col">
+            <div className="flex justify-between items-center p-4 border-b border-marino-700 bg-marino-900/80">
+              <h3 className="text-acento font-serif text-lg">Visor HTML (DiPerú)</h3>
+              <button 
+                onClick={() => setHtmlModalOpen(false)}
+                className="text-niebla/50 hover:text-red-400 transition-colors"
+              >
+                ✕ Cerrar
+              </button>
+            </div>
+            
+            <div className="flex-1 overflow-auto p-6 text-niebla">
+              {/* CSS inyectado para asegurar que los tags renderizados se vean bien sobre fondo oscuro */}
+              <style dangerouslySetInnerHTML={{__html: `
+                .html-preview-container { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
+                .html-preview-container h4 { color: #facc15; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+                .html-preview-container h5 { color: #60a5fa; font-size: 1.1rem; font-weight: 500; margin-top: 1rem; margin-bottom: 0.5rem; }
+                .html-preview-container p { margin-bottom: 0.5rem; }
+                .html-preview-container b { color: #fff; font-weight: 600; }
+                .html-preview-container em { font-style: italic; color: #a78bfa; }
+                .html-preview-container span { color: #94a3b8; }
+                .html-preview-container a { color: #38bdf8; text-decoration: underline; }
+                .html-preview-container sup { font-size: 0.75rem; color: #cbd5e1; }
+              `}} />
+              <div 
+                className="html-preview-container bg-[#121212] p-6 rounded border border-marino-700 shadow-inner"
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -58,6 +58,54 @@ def get_pendientes(
         ]
     }
 
+@router.post("/extraer/{id_entrada}")
+def procesar_lema(id_entrada: int, lema: str = None, db: Session = Depends(get_db)) -> Any:
+    """Ejecuta el pipeline SECI a partir de un ID de DiPerú."""
+    try:
+        procesador = ProcesadorIndividual(db)
+        # Si no se pasó lema, intentamos inferirlo
+        if not lema:
+            control = db.query(ControlExtraccionLema).filter(
+                ControlExtraccionLema.url_origen.like(f"%entrada={id_entrada}%")
+            ).first()
+            if control:
+                lema = control.lema
+            else:
+                lema = f"lema_desconocido_{id_entrada}"
+                
+        rlc, conteo_uces = procesador.procesar_lema_completo(id_entrada, lema)
+        return {
+            "status": "ok", 
+            "id_entrada": id_entrada, 
+            "lema": rlc.lema,
+            "rlc_json": rlc.rlc_json,
+            "uces_generados": conteo_uces
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+import subprocess
+import os
+import sys
+
+@router.get("/html/{id_entrada}")
+def get_html_crudo(id_entrada: int) -> Any:
+    """Obtiene el HTML limpio de una entrada específica llamando al script de Playwright."""
+    try:
+        script_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scripts", "fetch_html.py")
+        result = subprocess.run(
+            [sys.executable, script_path, str(id_entrada)],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        html_content = result.stdout.strip()
+        return {"html": html_content}
+    except subprocess.CalledProcessError as e:
+        raise HTTPException(status_code=500, detail=f"Error obteniendo HTML: {e.stderr}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 from pydantic import BaseModel
 class ExtraerRequest(BaseModel):
     id_entrada: int
