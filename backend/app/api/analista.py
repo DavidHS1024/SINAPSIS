@@ -45,6 +45,7 @@ def get_pendientes(
         "page": page,
         "size": size,
         "items": [
+            {
                 "id_rlc": str(i.id_rlc),
                 "lema": i.lema,
                 "num_acepciones": i.num_acepciones,
