@@ -69,6 +69,12 @@ export async function extraerDiPeru(id_entrada, lema) {
   return res.json();
 }
 
+export async function fetchHtmlCrudo(id_entrada) {
+  const res = await fetch(`${API_URL}/api/ingeniero/html/${id_entrada}`);
+  if (!res.ok) throw new Error("Fallo al obtener HTML");
+  return res.json();
+}
+
 // Analista
 export function fetchAnalistaPendientes(params = {}) {
   const { page = 1, size = 20, lema, acepciones, fecha_desde, fecha_hasta } = params;
