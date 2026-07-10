@@ -45,11 +45,62 @@ def get_pendientes(
         "page": page,
         "size": size,
         "items": [
-            {
                 "id_rlc": str(i.id_rlc),
                 "lema": i.lema,
                 "num_acepciones": i.num_acepciones,
-                "fecha_extraccion": i.fecha_extraccion
+                "fecha_extraccion": i.fecha_extraccion,
+                "rlc_json": i.rlc_json
+            } for i in items
+        ]
+    }
+
+@router.get("/procesados")
+def get_procesados(
+    db: Session = Depends(get_db),
+    page: int = Query(1, ge=1),
+    size: int = Query(20, ge=1, le=100),
+    lema: Optional[str] = None,
+    pos_mcr: Optional[str] = None,
+    tipo_peruanismo: Optional[str] = None
+) -> Any:
+    """Lista UCEs generados por el pipeline (Bandeja de Salida)."""
+    query = db.query(UnidadConocimientoExplicito)
+    
+    if lema:
+        query = query.filter(UnidadConocimientoExplicito.lema.ilike(f"%{lema}%"))
+    if pos_mcr:
+        query = query.filter(UnidadConocimientoExplicito.pos_mcr == pos_mcr)
+    if tipo_peruanismo:
+        query = query.filter(UnidadConocimientoExplicito.tipo_peruanismo == tipo_peruanismo)
+        
+    total = query.count()
+    items = query.order_by(UnidadConocimientoExplicito.lema.asc(), UnidadConocimientoExplicito.numero_acepcion.asc()).offset((page - 1) * size).limit(size).all()
+    
+    return {
+        "total": total,
+        "page": page,
+        "size": size,
+        "items": [
+            {
+                "id_uce": str(i.id_uce),
+                "id_rlc": str(i.id_rlc),
+                "lema": i.lema,
+                "numero_acepcion": i.numero_acepcion,
+                "pos_mcr": i.pos_mcr,
+                "tipo_peruanismo": i.tipo_peruanismo,
+                "base_gloss": i.base_gloss,
+                "uce_completo": {
+                    "lema": i.lema,
+                    "pos_mcr": i.pos_mcr,
+                    "numero_acepcion": i.numero_acepcion,
+                    "base_gloss": i.base_gloss,
+                    "embedding_input_gloss": i.embedding_input_gloss,
+                    "glosa_origen": i.glosa_origen,
+                    "marcas": i.marcas,
+                    "ejemplo": i.ejemplo,
+                    "forma_en_mcr": i.forma_en_mcr,
+                    "tipo_peruanismo": i.tipo_peruanismo
+                }
             } for i in items
         ]
     }

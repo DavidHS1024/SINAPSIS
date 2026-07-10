@@ -86,6 +86,11 @@ export function fetchAnalistaPendientes(params = {}) {
   return fetchJSON("/api/analista/pendientes", { page, size, lema, acepciones, fecha_desde, fecha_hasta });
 }
 
+export function fetchAnalistaProcesados(params = {}) {
+  const { page = 1, size = 20, lema, pos_mcr, tipo_peruanismo } = params;
+  return fetchJSON("/api/analista/procesados", { page, size, lema, pos_mcr, tipo_peruanismo });
+}
+
 export async function procesarPipeline(id_rlc) {
   const res = await fetch(`${API_URL}/api/analista/procesar/${id_rlc}`, {
     method: 'POST'
