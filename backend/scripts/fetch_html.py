@@ -51,10 +51,20 @@ def fetch_html(id_entrada: int):
         nav.decompose()
     for nav in cont.find_all("div", class_="col-sm-2 text-right"):
         nav.decompose()
-    for a in cont.find_all("a"):
-        if not a.get("href") or "buscar?entrada=" not in a.get("href"):
-            if a.parent:
-                a.decompose()
+    
+    # Eliminar navegacion anterior/siguiente y pie de página
+    for h5 in cont.find_all("h5", class_="text-red"):
+        if h5.parent and h5.parent.name == "a":
+            h5.parent.decompose()
+        else:
+            h5.decompose()
+            
+    for text_node in cont.find_all(string=lambda text: text and "Academia Peruana de la Lengua" in text):
+        if text_node.parent:
+            text_node.parent.decompose()
+            
+    for hr in cont.find_all("hr"):
+        hr.decompose()
             
     # Imprimir el HTML interno o externo del contenedor
     print(str(cont))

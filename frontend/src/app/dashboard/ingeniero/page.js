@@ -274,22 +274,11 @@ export default function IngenieroPage() {
             </div>
             
             <div className="flex-1 overflow-auto p-6 text-niebla">
-              {/* CSS inyectado para asegurar que los tags renderizados se vean bien sobre fondo oscuro */}
-              <style dangerouslySetInnerHTML={{__html: `
-                .html-preview-container { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
-                .html-preview-container h4 { color: #facc15; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
-                .html-preview-container h5 { color: #60a5fa; font-size: 1.1rem; font-weight: 500; margin-top: 1rem; margin-bottom: 0.5rem; }
-                .html-preview-container p { margin-bottom: 0.5rem; }
-                .html-preview-container b { color: #fff; font-weight: 600; }
-                .html-preview-container em { font-style: italic; color: #a78bfa; }
-                .html-preview-container span { color: #94a3b8; }
-                .html-preview-container a { color: #38bdf8; text-decoration: underline; }
-                .html-preview-container sup { font-size: 0.75rem; color: #cbd5e1; }
-              `}} />
-              <div 
-                className="html-preview-container bg-[#121212] p-6 rounded border border-marino-700 shadow-inner"
-                dangerouslySetInnerHTML={{ __html: htmlContent }}
-              />
+              <div className="bg-[#121212] p-4 rounded border border-marino-700 shadow-inner overflow-x-auto">
+                <pre className="font-mono text-sm text-acento-claro whitespace-pre-wrap break-words">
+                  {htmlContent}
+                </pre>
+              </div>
             </div>
           </div>
         </div>
