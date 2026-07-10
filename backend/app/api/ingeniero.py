@@ -92,24 +92,35 @@ def tarea_extraccion_background(ids_a_extraer: list[int]):
     
     import time
     from app.core.database import SessionLocal
-    from app.scripts.extract_single import extract_and_store_single
+    from app.services.procesamiento import ProcesadorIndividual
+    from app.models import ControlExtraccionLema
     
     db = SessionLocal()
     try:
-        config = db.query(ConfiguracionExtraccion).first()
-        base_url = config.url_origen if config else "https://diperu.apll.org.pe/lema/"
+        procesador = ProcesadorIndividual(db)
         
         for idx, id_lema in enumerate(ids_a_extraer):
             progreso_extraccion["actual"] = idx + 1
             progreso_extraccion["id_actual"] = id_lema
             progreso_extraccion["mensaje"] = f"Extrayendo ID {id_lema}..."
             
-            # Simulando retardo para no saturar el servidor y para testing
+            # Buscar el lema en control (opcional)
+            control = db.query(ControlExtraccionLema).filter(
+                ControlExtraccionLema.url_origen.like(f"%entrada={id_lema}%")
+            ).first()
+            lema = control.lema if control else f"lema_desconocido_{id_lema}"
+            
+            # Retardo para no saturar
             time.sleep(1)
             try:
-                extract_and_store_single(db, id_lema, base_url=base_url)
+                # Usar el ProcesadorIndividual para hacer la extracción a RLC
+                # No hacemos la generación de UCEs si el ingeniero solo extrae a RLC, 
+                # pero procesar_lema_completo hace todo, extrae de diperu y lo inserta en RLC.
+                procesador.extraer_diperu(id_lema, lema)
+                progreso_extraccion["mensaje"] = f"ID {id_lema} extraído correctamente."
             except Exception as e:
                 print(f"Error extrayendo {id_lema}: {e}")
+                progreso_extraccion["mensaje"] = f"Error en ID {id_lema}: {str(e)}"
                 
         progreso_extraccion["estado"] = "Completado"
         progreso_extraccion["mensaje"] = "Extracción masiva finalizada con éxito."

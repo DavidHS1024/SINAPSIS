@@ -295,7 +295,7 @@ export default function IngenieroPage() {
     <div className="space-y-6 relative">
       
       {/* Toast Notifications */}
-      <div className="fixed top-4 right-4 z-[100] flex flex-col gap-2">
+      <div className="fixed top-4 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2">
         {error && (
           <div className="bg-red-900/90 backdrop-blur text-red-400 px-4 py-3 rounded shadow-lg border border-red-900/50 flex items-center gap-3 animate-fade-in">
             <span>{error}</span>
@@ -444,6 +444,7 @@ export default function IngenieroPage() {
                   <thead className="bg-marino-900 text-niebla/70 text-xs uppercase">
                     <tr>
                       <th className="px-4 py-3 font-medium">Lema</th>
+                      <th className="px-4 py-3 font-medium">ID Entrada</th>
                       <th className="px-4 py-3 font-medium">URL Origen</th>
                       <th className="px-4 py-3 font-medium text-right">Acciones</th>
                     </tr>
@@ -458,6 +459,7 @@ export default function IngenieroPage() {
                       return (
                         <tr key={p.id_lema} className="hover:bg-marino-700/20 transition-colors">
                           <td className="px-4 py-3 font-medium text-niebla">{p.lema}</td>
+                          <td className="px-4 py-3 text-niebla/70 font-mono">{id}</td>
                           <td className="px-4 py-3 text-niebla/60 truncate max-w-xs">
                             <a 
                               href={p.url_origen} 
