@@ -58,6 +58,65 @@ def get_pendientes(
         ]
     }
 
+from app.models import RegistroLexicoCrudo
+
+@router.get("/extraidos")
+def get_extraidos(
+    db: Session = Depends(get_db),
+    page: int = Query(1, ge=1),
+    size: int = Query(20, ge=1, le=100),
+    letra: Optional[str] = None,
+    id_exacto: Optional[int] = None,
+    id_desde: Optional[int] = None,
+    id_hasta: Optional[int] = None,
+    acepciones_min: Optional[int] = None,
+    acepciones_max: Optional[int] = None,
+    orden: Optional[str] = "asc"
+) -> Any:
+    """Lista lemas ya extraídos (Bandeja de Salida)."""
+    query = db.query(RegistroLexicoCrudo)
+    
+    if letra:
+        query = query.filter(func.lower(func.substr(RegistroLexicoCrudo.lema, 1, 1)) == letra.lower())
+    
+    if id_exacto is not None:
+        query = query.filter(RegistroLexicoCrudo.id_entrada == id_exacto)
+    else:
+        if id_desde is not None:
+            query = query.filter(RegistroLexicoCrudo.id_entrada >= id_desde)
+        if id_hasta is not None:
+            query = query.filter(RegistroLexicoCrudo.id_entrada <= id_hasta)
+            
+    if acepciones_min is not None:
+        query = query.filter(RegistroLexicoCrudo.num_acepciones >= acepciones_min)
+    if acepciones_max is not None:
+        query = query.filter(RegistroLexicoCrudo.num_acepciones <= acepciones_max)
+
+    total = query.count()
+    
+    if orden == "desc":
+        query = query.order_by(RegistroLexicoCrudo.lema.desc())
+    else:
+        query = query.order_by(RegistroLexicoCrudo.lema.asc())
+        
+    items = query.offset((page - 1) * size).limit(size).all()
+    
+    return {
+        "total": total,
+        "page": page,
+        "size": size,
+        "items": [
+            {
+                "id_rlc": str(i.id_rlc),
+                "id_entrada": i.id_entrada,
+                "lema": i.lema,
+                "num_acepciones": i.num_acepciones,
+                "fecha_extraccion": i.fecha_extraccion.isoformat() if i.fecha_extraccion else None,
+                "rlc_json": i.rlc_json
+            } for i in items
+        ]
+    }
+
 @router.post("/extraer/{id_entrada}")
 def procesar_lema(id_entrada: int, lema: str = None, db: Session = Depends(get_db)) -> Any:
     """Ejecuta el pipeline SECI a partir de un ID de DiPerú."""

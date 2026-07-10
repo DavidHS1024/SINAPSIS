@@ -59,6 +59,11 @@ export function fetchIngenieroPendientes(params = {}) {
   return fetchJSON("/api/ingeniero/pendientes", { page, size, letra, id_exacto, id_desde, id_hasta, orden });
 }
 
+export function fetchIngenieroExtraidos(params = {}) {
+  const { page = 1, size = 20, letra, id_exacto, id_desde, id_hasta, acepciones_min, acepciones_max, orden } = params;
+  return fetchJSON("/api/ingeniero/extraidos", { page, size, letra, id_exacto, id_desde, id_hasta, acepciones_min, acepciones_max, orden });
+}
+
 export async function extraerDiPeru(id_entrada, lema) {
   const res = await fetch(`${API_URL}/api/ingeniero/extraer`, {
     method: 'POST',
