@@ -272,52 +272,48 @@ export default function IngenieroPage() {
     }
   };
 
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => setSuccess(""), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [success]);
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => setError(""), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
+
+  // Collapsible states
+  const [showConfig, setShowConfig] = useState(false);
+  const [showFiltersP, setShowFiltersP] = useState(false);
+  const [showFiltersE, setShowFiltersE] = useState(false);
+
   return (
-    <div className="space-y-6">
-      <header className="mb-8">
+    <div className="space-y-6 relative">
+      
+      {/* Toast Notifications */}
+      <div className="fixed top-4 right-4 z-[100] flex flex-col gap-2">
+        {error && (
+          <div className="bg-red-900/90 backdrop-blur text-red-400 px-4 py-3 rounded shadow-lg border border-red-900/50 flex items-center gap-3 animate-fade-in">
+            <span>{error}</span>
+            <button onClick={() => setError("")} className="text-red-400 hover:text-white">✕</button>
+          </div>
+        )}
+        {success && (
+          <div className="bg-green-900/90 backdrop-blur text-green-400 px-4 py-3 rounded shadow-lg border border-green-900/50 flex items-center gap-3 animate-fade-in">
+            <span>{success}</span>
+            <button onClick={() => setSuccess("")} className="text-green-400 hover:text-white">✕</button>
+          </div>
+        )}
+      </div>
+
+      <header className="mb-6">
         <h1 className="text-2xl font-serif text-acento mb-2">Ingeniería de Datos</h1>
         <p className="text-niebla/70">Gestión del ciclo de vida de los datos crudos: extracción, limpieza y empaquetado.</p>
       </header>
-
-      {error && <div className="bg-red-900/20 text-red-400 p-4 rounded-md border border-red-900/50 mb-4">{error}</div>}
-      {success && <div className="bg-green-900/20 text-green-400 p-4 rounded-md border border-green-900/50 mb-4">{success}</div>}
-
-      {/* Configuración de Fuente de Datos */}
-      <div className="bg-marino-800 rounded-lg border border-marino-700 overflow-hidden mb-6">
-        <div className="p-4 border-b border-marino-700 bg-marino-900/50">
-          <h2 className="font-medium text-acento">Configuración de Fuente de Datos</h2>
-        </div>
-        <div className="p-4 flex flex-wrap items-center gap-4">
-          <div className="flex-1 min-w-[300px]">
-            <label className="block text-xs text-niebla/60 mb-1">URL / Endpoint del DiPerú</label>
-            <input 
-              type="text" 
-              value={urlConfig}
-              onChange={e => setUrlConfig(e.target.value)}
-              className="w-full bg-marino-900 border border-marino-600 rounded px-3 py-2 text-niebla outline-none focus:border-acento transition-colors"
-            />
-          </div>
-          <div className="flex flex-col justify-end h-full pt-5">
-            <button 
-              onClick={handleSaveConfig}
-              disabled={savingConfig}
-              className="bg-marino-600 hover:bg-acento hover:text-marino-900 text-niebla px-4 py-2 rounded transition-colors disabled:opacity-50 font-medium"
-            >
-              {savingConfig ? "Validando..." : "Guardar y Probar Conexión"}
-            </button>
-          </div>
-          <div className="flex flex-col justify-end h-full pt-5 pl-4 border-l border-marino-700">
-            <span className="text-xs text-niebla/60 mb-1 block">Estado:</span>
-            <span className={`px-2 py-1 rounded text-xs font-bold ${
-              configStatus === 'Conectado' ? 'bg-green-900/40 text-green-400' :
-              configStatus === 'Fallo' ? 'bg-red-900/40 text-red-400' :
-              'bg-yellow-900/40 text-yellow-400'
-            }`}>
-              {configStatus}
-            </span>
-          </div>
-        </div>
-      </div>
 
       {/* Tabs */}
       <div className="flex border-b border-marino-700">
@@ -343,321 +339,391 @@ export default function IngenieroPage() {
         </button>
       </div>
 
-      <div className="bg-marino-800 rounded-lg border border-marino-700 overflow-hidden">
+      <div className="bg-marino-800 rounded-lg border border-marino-700 overflow-hidden shadow-xl">
         {/* ============================================================== */}
         {/* PENDIENTES TAB */}
         {/* ============================================================== */}
         {activeTab === "pendientes" && (
-          <>
-            <div className="p-4 border-b border-marino-700 bg-marino-900/50 flex flex-col gap-4">
+          <div className="flex flex-col">
+            <div className="p-4 border-b border-marino-700 bg-marino-900/50">
               <div className="flex justify-between items-center">
-                <h2 className="font-medium text-acento">Filtros de Búsqueda</h2>
                 <div className="flex gap-4 items-center">
                   <span className="text-sm font-bold text-niebla/80 bg-marino-800 px-3 py-1 rounded border border-marino-600">Total Pendientes: {totalPendientes}</span>
-                  <button onClick={loadPendientes} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap items-center gap-3 text-sm">
-                <select 
-                  value={letraP} 
-                  onChange={e => setLetraP(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none"
-                >
-                  <option value="">Cualquier letra</option>
-                  {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(l => (
-                    <option key={l} value={l}>{l}</option>
-                  ))}
-                </select>
-                <input 
-                  type="number" 
-                  placeholder="ID Exacto" 
-                  value={idExactoP} 
-                  onChange={e => setIdExactoP(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
-                />
-                <span className="text-niebla/50">o</span>
-                <input 
-                  type="number" 
-                  placeholder="Desde ID" 
-                  value={idDesdeP} 
-                  onChange={e => setIdDesdeP(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
-                />
-                <input 
-                  type="number" 
-                  placeholder="Hasta ID" 
-                  value={idHastaP} 
-                  onChange={e => setIdHastaP(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
-                />
-                <select 
-                  value={ordenP} 
-                  onChange={e => setOrdenP(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none ml-auto"
-                >
-                  <option value="asc">A-Z</option>
-                  <option value="desc">Z-A</option>
-                </select>
-                <button onClick={handleApplyFiltersP} className="bg-marino-600 hover:bg-marino-500 px-3 py-1.5 rounded transition-colors">
-                  Filtrar
-                </button>
-                <button onClick={handleClearFiltersP} className="text-niebla/50 hover:text-niebla px-2">
-                  Limpiar
-                </button>
-              </div>
-
-              {/* Ingesta Masiva */}
-              <div className="mt-2 p-3 bg-marino-900 rounded border border-marino-700 flex flex-wrap gap-4 items-center">
-                <div className="flex-1">
-                  <label className="text-xs text-niebla/60 block mb-1">Extracción Masiva Inteligente (ej. 1-50; 56; 67-78)</label>
-                  <input 
-                    type="text" 
-                    value={rangoExtraccion}
-                    onChange={e => setRangoExtraccion(e.target.value)}
-                    placeholder="Rangos de IDs separados por punto y coma..."
-                    className="w-full bg-marino-800 border border-marino-600 rounded px-3 py-1.5 text-sm text-niebla outline-none"
-                  />
+                  <button onClick={loadPendientes} className="text-xs text-niebla/60 hover:text-acento transition-colors">↻ Refrescar</button>
                 </div>
                 <button 
-                  onClick={handleExtraccionMasiva}
-                  disabled={!rangoExtraccion || (masivaProgress && masivaProgress.estado === "Procesando")}
-                  className="mt-5 bg-acento text-marino-900 font-bold px-4 py-1.5 rounded transition-colors disabled:opacity-50"
+                  onClick={() => setShowFiltersP(!showFiltersP)} 
+                  className="text-xs bg-marino-700 hover:bg-marino-600 text-niebla px-3 py-1.5 rounded transition-colors"
                 >
-                  Iniciar Extracción Lotes
+                  {showFiltersP ? "Ocultar Filtros y Herramientas" : "Mostrar Filtros y Herramientas"}
                 </button>
               </div>
+              
+              {showFiltersP && (
+                <div className="mt-4 pt-4 border-t border-marino-700/50 flex flex-col gap-4 animate-fade-in">
+                  <div className="flex flex-wrap items-center gap-3 text-sm">
+                    <select 
+                      value={letraP} 
+                      onChange={e => setLetraP(e.target.value)}
+                      className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none focus:border-acento"
+                    >
+                      <option value="">Cualquier letra</option>
+                      {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(l => (
+                        <option key={l} value={l}>{l}</option>
+                      ))}
+                    </select>
+                    <input 
+                      type="number" 
+                      placeholder="ID Exacto" 
+                      value={idExactoP} 
+                      onChange={e => setIdExactoP(e.target.value)}
+                      className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24 focus:border-acento"
+                    />
+                    <span className="text-niebla/50">o</span>
+                    <input 
+                      type="number" 
+                      placeholder="Desde ID" 
+                      value={idDesdeP} 
+                      onChange={e => setIdDesdeP(e.target.value)}
+                      className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24 focus:border-acento"
+                    />
+                    <input 
+                      type="number" 
+                      placeholder="Hasta ID" 
+                      value={idHastaP} 
+                      onChange={e => setIdHastaP(e.target.value)}
+                      className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24 focus:border-acento"
+                    />
+                    <select 
+                      value={ordenP} 
+                      onChange={e => setOrdenP(e.target.value)}
+                      className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none ml-auto focus:border-acento"
+                    >
+                      <option value="asc">A-Z</option>
+                      <option value="desc">Z-A</option>
+                    </select>
+                    <button onClick={handleApplyFiltersP} className="bg-marino-600 hover:bg-marino-500 px-3 py-1.5 rounded transition-colors">
+                      Filtrar
+                    </button>
+                    <button onClick={handleClearFiltersP} className="text-niebla/50 hover:text-niebla px-2">
+                      Limpiar
+                    </button>
+                  </div>
+
+                  {/* Ingesta Masiva */}
+                  <div className="p-3 bg-marino-900 rounded border border-marino-700 flex flex-wrap gap-4 items-end">
+                    <div className="flex-1">
+                      <label className="text-xs text-niebla/60 block mb-1">Extracción Masiva Inteligente (ej. 1-50; 56; 67-78)</label>
+                      <input 
+                        type="text" 
+                        value={rangoExtraccion}
+                        onChange={e => setRangoExtraccion(e.target.value)}
+                        placeholder="Rangos de IDs separados por punto y coma..."
+                        className="w-full bg-marino-800 border border-marino-600 rounded px-3 py-2 text-sm text-niebla outline-none focus:border-acento"
+                      />
+                    </div>
+                    <button 
+                      onClick={handleExtraccionMasiva}
+                      disabled={!rangoExtraccion || (masivaProgress && masivaProgress.estado === "Procesando")}
+                      className="bg-acento hover:bg-acento-claro text-marino-900 font-bold px-4 py-2 rounded transition-colors disabled:opacity-50 h-[38px]"
+                    >
+                      Iniciar Extracción Lotes
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
             
             {loadingPendientes ? (
-              <div className="p-8 text-center text-niebla/50">Cargando pendientes...</div>
+              <div className="p-8 text-center text-niebla/50 flex-1">Cargando pendientes...</div>
             ) : pendientes.length === 0 ? (
-              <div className="p-8 text-center text-niebla/50">No hay lemas pendientes en la cola con los filtros actuales.</div>
+              <div className="p-8 text-center text-niebla/50 flex-1">No hay lemas pendientes en la cola con los filtros actuales.</div>
             ) : (
-              <table className="w-full text-sm text-left">
-                <thead className="bg-marino-900 text-niebla/70 text-xs uppercase">
-                  <tr>
-                    <th className="px-4 py-3 font-medium">Lema</th>
-                    <th className="px-4 py-3 font-medium">URL Origen</th>
-                    <th className="px-4 py-3 font-medium text-right">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-marino-700/50">
-                  {pendientes.map((p) => {
-                    let id = "";
-                    try {
-                      const url = new URL(p.url_origen);
-                      id = url.searchParams.get("entrada");
-                    } catch(e) {}
-                    return (
-                      <tr key={p.id_lema} className="hover:bg-marino-700/20 transition-colors">
-                        <td className="px-4 py-3 font-medium text-niebla">{p.lema}</td>
-                        <td className="px-4 py-3 text-niebla/60 truncate max-w-xs">
-                          <a 
-                            href={p.url_origen} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="hover:text-acento transition-colors underline decoration-niebla/30 underline-offset-2"
-                          >
-                            {p.url_origen}
-                          </a>
-                        </td>
-                        <td className="px-4 py-3 text-right">
-                          <div className="flex justify-end gap-2">
-                            <button 
-                              onClick={() => handleViewHtml(id)}
-                              disabled={!id || loadingHtmlId !== null}
-                              className="text-xs bg-marino-700 hover:bg-marino-600 text-niebla px-3 py-1 rounded transition-colors disabled:opacity-50 inline-flex items-center justify-center min-w-[90px]"
+              <div className="overflow-x-auto flex-1">
+                <table className="w-full text-sm text-left">
+                  <thead className="bg-marino-900 text-niebla/70 text-xs uppercase">
+                    <tr>
+                      <th className="px-4 py-3 font-medium">Lema</th>
+                      <th className="px-4 py-3 font-medium">URL Origen</th>
+                      <th className="px-4 py-3 font-medium text-right">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-marino-700/50">
+                    {pendientes.map((p) => {
+                      let id = "";
+                      try {
+                        const url = new URL(p.url_origen);
+                        id = url.searchParams.get("entrada");
+                      } catch(e) {}
+                      return (
+                        <tr key={p.id_lema} className="hover:bg-marino-700/20 transition-colors">
+                          <td className="px-4 py-3 font-medium text-niebla">{p.lema}</td>
+                          <td className="px-4 py-3 text-niebla/60 truncate max-w-xs">
+                            <a 
+                              href={p.url_origen} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="hover:text-acento transition-colors underline decoration-niebla/30 underline-offset-2"
                             >
-                              {loadingHtmlId === id ? "Cargando..." : "Ver HTML"}
-                            </button>
-                            <button 
-                              onClick={() => handleExtract(id, p.lema)}
-                              disabled={!id || extractingId !== null}
-                              className="text-xs bg-marino-600 hover:bg-acento hover:text-marino-900 text-niebla px-3 py-1 rounded transition-colors disabled:opacity-50 inline-flex items-center justify-center min-w-[100px]"
-                            >
-                              {extractingId === id ? "Extrayendo..." : "Procesar RLC"}
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+                              {p.url_origen}
+                            </a>
+                          </td>
+                          <td className="px-4 py-3 text-right">
+                            <div className="flex justify-end gap-2">
+                              <button 
+                                onClick={() => handleViewHtml(id)}
+                                disabled={!id || loadingHtmlId !== null}
+                                className="text-xs bg-marino-700 hover:bg-marino-600 text-niebla px-3 py-1.5 rounded transition-colors disabled:opacity-50 inline-flex items-center justify-center min-w-[90px]"
+                              >
+                                {loadingHtmlId === id ? "Cargando..." : "Ver HTML"}
+                              </button>
+                              <button 
+                                onClick={() => handleExtract(id, p.lema)}
+                                disabled={!id || extractingId !== null}
+                                className="text-xs bg-marino-600 hover:bg-acento hover:text-marino-900 text-niebla font-medium px-3 py-1.5 rounded transition-colors disabled:opacity-50 inline-flex items-center justify-center min-w-[100px]"
+                              >
+                                {extractingId === id ? "Extrayendo..." : "Procesar RLC"}
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             )}
             
             {pendientes.length > 0 && (
-              <div className="p-4 border-t border-marino-700 bg-marino-900/50 flex justify-between items-center text-sm">
+              <div className="p-3 border-t border-marino-700 bg-marino-900/50 flex justify-between items-center text-sm mt-auto">
                 <button 
                   onClick={() => setPageP(p => Math.max(1, p - 1))}
                   disabled={pageP === 1}
-                  className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700"
+                  className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700 transition-colors"
                 >
                   Anterior
                 </button>
-                <span className="text-niebla/60">Página {pageP}</span>
+                <span className="text-niebla/60 font-medium">Página {pageP}</span>
                 <button 
                   onClick={() => setPageP(p => p + 1)}
                   disabled={pendientes.length < 20}
-                  className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700"
+                  className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700 transition-colors"
                 >
                   Siguiente
                 </button>
               </div>
             )}
-          </>
+          </div>
         )}
 
         {/* ============================================================== */}
         {/* EXTRAIDOS TAB */}
         {/* ============================================================== */}
         {activeTab === "extraidos" && (
-          <>
-            <div className="p-4 border-b border-marino-700 bg-marino-900/50 flex flex-col gap-4">
+          <div className="flex flex-col">
+            <div className="p-4 border-b border-marino-700 bg-marino-900/50">
               <div className="flex justify-between items-center">
-                <h2 className="font-medium text-acento">Filtros de Búsqueda</h2>
                 <div className="flex gap-4 items-center">
                   <span className="text-sm font-bold text-niebla/80 bg-marino-800 px-3 py-1 rounded border border-marino-600">Total Extraídos: {totalExtraidos}</span>
-                  <button onClick={loadExtraidos} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
+                  <button onClick={loadExtraidos} className="text-xs text-niebla/60 hover:text-acento transition-colors">↻ Refrescar</button>
                 </div>
+                <button 
+                  onClick={() => setShowFiltersE(!showFiltersE)} 
+                  className="text-xs bg-marino-700 hover:bg-marino-600 text-niebla px-3 py-1.5 rounded transition-colors"
+                >
+                  {showFiltersE ? "Ocultar Filtros" : "Mostrar Filtros"}
+                </button>
               </div>
               
-              <div className="flex flex-wrap items-center gap-3 text-sm">
-                <select 
-                  value={letraE} 
-                  onChange={e => setLetraE(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none"
-                >
-                  <option value="">Cualquier letra</option>
-                  {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(l => (
-                    <option key={l} value={l}>{l}</option>
-                  ))}
-                </select>
-                <input 
-                  type="number" 
-                  placeholder="ID Exacto" 
-                  value={idExactoE} 
-                  onChange={e => setIdExactoE(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
-                />
-                <span className="text-niebla/50">o</span>
-                <input 
-                  type="number" 
-                  placeholder="Desde ID" 
-                  value={idDesdeE} 
-                  onChange={e => setIdDesdeE(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
-                />
-                <input 
-                  type="number" 
-                  placeholder="Hasta ID" 
-                  value={idHastaE} 
-                  onChange={e => setIdHastaE(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
-                />
-                <div className="w-px h-6 bg-marino-600 mx-1"></div>
-                <input 
-                  type="number" 
-                  placeholder="Min Acepc." 
-                  value={minAcepciones} 
-                  onChange={e => setMinAcepciones(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
-                />
-                <input 
-                  type="number" 
-                  placeholder="Max Acepc." 
-                  value={maxAcepciones} 
-                  onChange={e => setMaxAcepciones(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24"
-                />
-                <select 
-                  value={ordenE} 
-                  onChange={e => setOrdenE(e.target.value)}
-                  className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none ml-auto"
-                >
-                  <option value="asc">A-Z</option>
-                  <option value="desc">Z-A</option>
-                </select>
-                <button onClick={handleApplyFiltersE} className="bg-marino-600 hover:bg-marino-500 px-3 py-1.5 rounded transition-colors">
-                  Filtrar
-                </button>
-                <button onClick={handleClearFiltersE} className="text-niebla/50 hover:text-niebla px-2">
-                  Limpiar
-                </button>
-              </div>
+              {showFiltersE && (
+                <div className="mt-4 pt-4 border-t border-marino-700/50 flex flex-wrap items-center gap-3 text-sm animate-fade-in">
+                  <select 
+                    value={letraE} 
+                    onChange={e => setLetraE(e.target.value)}
+                    className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none focus:border-acento"
+                  >
+                    <option value="">Cualquier letra</option>
+                    {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(l => (
+                      <option key={l} value={l}>{l}</option>
+                    ))}
+                  </select>
+                  <input 
+                    type="number" 
+                    placeholder="ID Exacto" 
+                    value={idExactoE} 
+                    onChange={e => setIdExactoE(e.target.value)}
+                    className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24 focus:border-acento"
+                  />
+                  <span className="text-niebla/50">o</span>
+                  <input 
+                    type="number" 
+                    placeholder="Desde ID" 
+                    value={idDesdeE} 
+                    onChange={e => setIdDesdeE(e.target.value)}
+                    className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24 focus:border-acento"
+                  />
+                  <input 
+                    type="number" 
+                    placeholder="Hasta ID" 
+                    value={idHastaE} 
+                    onChange={e => setIdHastaE(e.target.value)}
+                    className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24 focus:border-acento"
+                  />
+                  <div className="w-px h-6 bg-marino-600 mx-1"></div>
+                  <input 
+                    type="number" 
+                    placeholder="Min Acepc." 
+                    value={minAcepciones} 
+                    onChange={e => setMinAcepciones(e.target.value)}
+                    className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24 focus:border-acento"
+                  />
+                  <input 
+                    type="number" 
+                    placeholder="Max Acepc." 
+                    value={maxAcepciones} 
+                    onChange={e => setMaxAcepciones(e.target.value)}
+                    className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none w-24 focus:border-acento"
+                  />
+                  <select 
+                    value={ordenE} 
+                    onChange={e => setOrdenE(e.target.value)}
+                    className="bg-marino-800 border border-marino-600 rounded px-2 py-1.5 text-niebla outline-none ml-auto focus:border-acento"
+                  >
+                    <option value="asc">A-Z</option>
+                    <option value="desc">Z-A</option>
+                  </select>
+                  <button onClick={handleApplyFiltersE} className="bg-marino-600 hover:bg-marino-500 px-3 py-1.5 rounded transition-colors">
+                    Filtrar
+                  </button>
+                  <button onClick={handleClearFiltersE} className="text-niebla/50 hover:text-niebla px-2">
+                    Limpiar
+                  </button>
+                </div>
+              )}
             </div>
             
             {loadingExtraidos ? (
-              <div className="p-8 text-center text-niebla/50">Cargando extraídos...</div>
+              <div className="p-8 text-center text-niebla/50 flex-1">Cargando extraídos...</div>
             ) : extraidos.length === 0 ? (
-              <div className="p-8 text-center text-niebla/50">No hay lemas extraídos con los filtros actuales.</div>
+              <div className="p-8 text-center text-niebla/50 flex-1">No hay lemas extraídos con los filtros actuales.</div>
             ) : (
-              <table className="w-full text-sm text-left">
-                <thead className="bg-marino-900 text-niebla/70 text-xs uppercase">
-                  <tr>
-                    <th className="px-4 py-3 font-medium">Lema</th>
-                    <th className="px-4 py-3 font-medium">ID Entrada</th>
-                    <th className="px-4 py-3 font-medium text-center">Acepciones</th>
-                    <th className="px-4 py-3 font-medium text-center">Estado Limpieza</th>
-                    <th className="px-4 py-3 font-medium text-niebla/50">Fecha Extracción</th>
-                    <th className="px-4 py-3 font-medium text-right">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-marino-700/50">
-                  {extraidos.map((e) => (
-                    <tr key={e.id_rlc} className="hover:bg-marino-700/20 transition-colors">
-                      <td className="px-4 py-3 font-medium text-niebla">{e.lema}</td>
-                      <td className="px-4 py-3 text-niebla/70 font-mono">{e.id_entrada}</td>
-                      <td className="px-4 py-3 text-center">
-                        <span className="bg-marino-900 text-acento px-2 py-0.5 rounded-full text-xs font-bold border border-marino-600">
-                          {e.num_acepciones}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 text-center">
-                        {e.estado_limpieza === 'limpio' ? (
-                          <span className="bg-green-900/40 text-green-400 text-xs px-2 py-1 rounded">Limpio</span>
-                        ) : (
-                          <span className="bg-yellow-900/40 text-yellow-400 text-xs px-2 py-1 rounded">Crudo</span>
-                        )}
-                      </td>
-                      <td className="px-4 py-3 text-niebla/50 text-xs">
-                        {e.fecha_extraccion ? new Date(e.fecha_extraccion).toLocaleString() : '-'}
-                      </td>
-                      <td className="px-4 py-3 text-right">
-                        <button 
-                          onClick={() => handleViewRlc(e.id_rlc, e.rlc_json)}
-                          className="text-xs bg-marino-700 hover:bg-marino-600 text-niebla px-3 py-1 rounded transition-colors inline-flex items-center justify-center min-w-[90px]"
-                        >
-                          Ver RLC
-                        </button>
-                      </td>
+              <div className="overflow-x-auto flex-1">
+                <table className="w-full text-sm text-left">
+                  <thead className="bg-marino-900 text-niebla/70 text-xs uppercase">
+                    <tr>
+                      <th className="px-4 py-3 font-medium">Lema</th>
+                      <th className="px-4 py-3 font-medium">ID Entrada</th>
+                      <th className="px-4 py-3 font-medium text-center">Acepciones</th>
+                      <th className="px-4 py-3 font-medium text-center">Estado Limpieza</th>
+                      <th className="px-4 py-3 font-medium text-niebla/50">Fecha Extracción</th>
+                      <th className="px-4 py-3 font-medium text-right">Acciones</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-marino-700/50">
+                    {extraidos.map((e) => (
+                      <tr key={e.id_rlc} className="hover:bg-marino-700/20 transition-colors">
+                        <td className="px-4 py-3 font-medium text-niebla">{e.lema}</td>
+                        <td className="px-4 py-3 text-niebla/70 font-mono">{e.id_entrada}</td>
+                        <td className="px-4 py-3 text-center">
+                          <span className="bg-marino-900 text-acento px-2 py-0.5 rounded-full text-xs font-bold border border-marino-600">
+                            {e.num_acepciones}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 text-center">
+                          {e.estado_limpieza === 'limpio' ? (
+                            <span className="bg-green-900/40 text-green-400 text-xs px-2 py-1 rounded font-medium border border-green-900/50">Limpio</span>
+                          ) : (
+                            <span className="bg-yellow-900/40 text-yellow-400 text-xs px-2 py-1 rounded font-medium border border-yellow-900/50">Crudo</span>
+                          )}
+                        </td>
+                        <td className="px-4 py-3 text-niebla/50 text-xs">
+                          {e.fecha_extraccion ? new Date(e.fecha_extraccion).toLocaleString() : '-'}
+                        </td>
+                        <td className="px-4 py-3 text-right">
+                          <button 
+                            onClick={() => handleViewRlc(e.id_rlc, e.rlc_json)}
+                            className="text-xs bg-marino-700 hover:bg-marino-600 text-niebla px-3 py-1.5 rounded transition-colors inline-flex items-center justify-center min-w-[90px]"
+                          >
+                            Ver RLC
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )}
             
             {extraidos.length > 0 && (
-              <div className="p-4 border-t border-marino-700 bg-marino-900/50 flex justify-between items-center text-sm">
+              <div className="p-3 border-t border-marino-700 bg-marino-900/50 flex justify-between items-center text-sm mt-auto">
                 <button 
                   onClick={() => setPageE(p => Math.max(1, p - 1))}
                   disabled={pageE === 1}
-                  className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700"
+                  className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700 transition-colors"
                 >
                   Anterior
                 </button>
-                <span className="text-niebla/60">Página {pageE}</span>
+                <span className="text-niebla/60 font-medium">Página {pageE}</span>
                 <button 
                   onClick={() => setPageE(p => p + 1)}
                   disabled={extraidos.length < 20}
-                  className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700"
+                  className="px-3 py-1 bg-marino-800 rounded disabled:opacity-50 hover:bg-marino-700 transition-colors"
                 >
                   Siguiente
                 </button>
               </div>
             )}
-          </>
+          </div>
+        )}
+      </div>
+
+      {/* Configuración de Fuente de Datos (Oculta al fondo) */}
+      <div className="bg-marino-800 rounded-lg border border-marino-700 overflow-hidden shadow-md mt-8">
+        <button 
+          onClick={() => setShowConfig(!showConfig)}
+          className="w-full p-4 border-b border-marino-700 bg-marino-900/30 hover:bg-marino-900/70 transition-colors flex justify-between items-center"
+        >
+          <div className="flex items-center gap-3">
+            <span className="text-lg">⚙️</span>
+            <h2 className="font-medium text-niebla/80">Configuración Avanzada de Extracción</h2>
+          </div>
+          <span className="text-niebla/50 text-sm">{showConfig ? "Ocultar ▲" : "Mostrar ▼"}</span>
+        </button>
+        
+        {showConfig && (
+          <div className="p-5 flex flex-wrap items-center gap-5 animate-fade-in bg-marino-900/10">
+            <div className="flex-1 min-w-[300px]">
+              <label className="block text-xs font-medium text-niebla/60 mb-1.5 uppercase tracking-wider">URL / Endpoint del DiPerú</label>
+              <input 
+                type="text" 
+                value={urlConfig}
+                onChange={e => setUrlConfig(e.target.value)}
+                className="w-full bg-marino-900 border border-marino-600 rounded px-3 py-2.5 text-niebla outline-none focus:border-acento transition-colors shadow-inner"
+              />
+              <p className="text-[11px] text-niebla/40 mt-1">
+                Base URL utilizada por el Web Scraper para resolver y recolectar las entradas léxicas.
+              </p>
+            </div>
+            <div className="flex flex-col justify-end pt-5">
+              <button 
+                onClick={handleSaveConfig}
+                disabled={savingConfig}
+                className="bg-marino-600 hover:bg-acento hover:text-marino-900 text-niebla px-5 py-2.5 rounded transition-colors disabled:opacity-50 font-medium h-[46px]"
+              >
+                {savingConfig ? "Validando..." : "Guardar y Probar Conexión"}
+              </button>
+            </div>
+            <div className="flex flex-col justify-end pt-5 pl-5 border-l border-marino-700 h-[46px]">
+              <span className="text-xs font-medium text-niebla/60 mb-1 block uppercase tracking-wider">Estado Conexión</span>
+              <span className={`px-2.5 py-1 rounded text-xs font-bold border inline-block ${
+                configStatus === 'Conectado' ? 'bg-green-900/20 text-green-400 border-green-900/50' :
+                configStatus === 'Fallo' ? 'bg-red-900/20 text-red-400 border-red-900/50' :
+                'bg-yellow-900/20 text-yellow-400 border-yellow-900/50'
+              }`}>
+                {configStatus}
+              </span>
+            </div>
+          </div>
         )}
       </div>
 
