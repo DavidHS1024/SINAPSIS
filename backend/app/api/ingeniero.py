@@ -1,13 +1,148 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, BackgroundTasks
 from sqlalchemy.orm import Session
-from sqlalchemy import func, cast, Integer
-from typing import Any, Optional
+from sqlalchemy import func, cast, Integer, text
+from typing import Any, Optional, Dict
+from datetime import datetime
 
-from app.core.database import get_db
-from app.models import ControlExtraccionLema, ESTADO_PENDIENTE
+from app.core.database import get_db, engine
+from app.models import ControlExtraccionLema, ESTADO_PENDIENTE, RegistroLexicoCrudo, ConfiguracionExtraccion, Incidencia
 from app.services.procesamiento import ProcesadorIndividual
 
 router = APIRouter()
+
+@router.get("/init-db")
+def init_db_schema(db: Session = Depends(get_db)):
+    """Inicializa/Actualiza la base de datos con las nuevas tablas y columnas."""
+    try:
+        from app.models import Base
+        Base.metadata.create_all(bind=engine)
+        db.execute(text("ALTER TABLE registro_lexico_crudo ADD COLUMN IF NOT EXISTS estado_limpieza VARCHAR(20) DEFAULT 'crudo'"))
+        db.commit()
+        return {"status": "success", "message": "Schema updated"}
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/config")
+def get_config(db: Session = Depends(get_db)):
+    config = db.query(ConfiguracionExtraccion).first()
+    if not config:
+        return {"url_origen": "https://diperu.apll.org.pe/lema/", "estado_conexion": "Pendiente"}
+    return {"url_origen": config.url_origen, "estado_conexion": config.estado_conexion}
+
+@router.put("/config")
+def update_config(payload: Dict[str, str], db: Session = Depends(get_db)):
+    url = payload.get("url_origen")
+    if not url:
+        raise HTTPException(status_code=400, detail="URL origen es requerida")
+    
+    # Simple Ping to validate
+    import requests
+    try:
+        # We just do a HEAD or GET to see if it resolves
+        resp = requests.head(url, timeout=5)
+        estado = "Conectado" if resp.status_code < 400 else "Fallo"
+    except Exception:
+        estado = "Error de red"
+
+    config = db.query(ConfiguracionExtraccion).first()
+    if not config:
+        config = ConfiguracionExtraccion(url_origen=url, estado_conexion=estado)
+        db.add(config)
+    else:
+        config.url_origen = url
+        config.estado_conexion = estado
+    db.commit()
+    
+    if estado != "Conectado":
+        raise HTTPException(status_code=400, detail=f"No se pudo conectar a la URL. Estado: {estado}")
+    return {"status": "success", "url_origen": url, "estado_conexion": estado}
+
+# Global progress tracker for MVP
+progreso_extraccion = {
+    "estado": "Inactivo", # Inactivo, Procesando, Completado, Error
+    "total": 0,
+    "actual": 0,
+    "id_actual": None,
+    "mensaje": ""
+}
+
+def parsear_rangos(rangos_str: str) -> list[int]:
+    """Convierte '1-5; 8; 10-12' en [1,2,3,4,5,8,10,11,12]."""
+    ids = set()
+    for parte in rangos_str.split(';'):
+        parte = parte.strip()
+        if not parte: continue
+        if '-' in parte:
+            inicio, fin = parte.split('-', 1)
+            inicio = int(inicio.strip())
+            fin = int(fin.strip())
+            if inicio > fin:
+                raise ValueError(f"Rango ilógico: {inicio}-{fin}")
+            ids.update(range(inicio, fin + 1))
+        else:
+            ids.add(int(parte))
+    return sorted(list(ids))
+
+def tarea_extraccion_background(ids_a_extraer: list[int]):
+    global progreso_extraccion
+    progreso_extraccion["estado"] = "Procesando"
+    progreso_extraccion["total"] = len(ids_a_extraer)
+    progreso_extraccion["actual"] = 0
+    
+    import time
+    from app.core.database import SessionLocal
+    from app.scripts.extract_single import extract_and_store_single
+    
+    db = SessionLocal()
+    try:
+        config = db.query(ConfiguracionExtraccion).first()
+        base_url = config.url_origen if config else "https://diperu.apll.org.pe/lema/"
+        
+        for idx, id_lema in enumerate(ids_a_extraer):
+            progreso_extraccion["actual"] = idx + 1
+            progreso_extraccion["id_actual"] = id_lema
+            progreso_extraccion["mensaje"] = f"Extrayendo ID {id_lema}..."
+            
+            # Simulando retardo para no saturar el servidor y para testing
+            time.sleep(1)
+            try:
+                extract_and_store_single(db, id_lema, base_url=base_url)
+            except Exception as e:
+                print(f"Error extrayendo {id_lema}: {e}")
+                
+        progreso_extraccion["estado"] = "Completado"
+        progreso_extraccion["mensaje"] = "Extracción masiva finalizada con éxito."
+    except Exception as e:
+        progreso_extraccion["estado"] = "Error"
+        progreso_extraccion["mensaje"] = f"Error fatal: {str(e)}"
+    finally:
+        db.close()
+
+@router.post("/extraccion-masiva")
+def iniciar_extraccion_masiva(payload: Dict[str, str], background_tasks: BackgroundTasks):
+    rangos_str = payload.get("rangos", "")
+    try:
+        ids_a_extraer = parsear_rangos(rangos_str)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception:
+        raise HTTPException(status_code=400, detail="Formato de rangos inválido.")
+        
+    if not ids_a_extraer:
+        raise HTTPException(status_code=400, detail="No hay IDs válidos para extraer.")
+        
+    global progreso_extraccion
+    if progreso_extraccion["estado"] == "Procesando":
+        raise HTTPException(status_code=400, detail="Ya hay una extracción en curso.")
+        
+    background_tasks.add_task(tarea_extraccion_background, ids_a_extraer)
+    return {"status": "Iniciado", "total_estimado": len(ids_a_extraer)}
+
+@router.get("/progreso-extraccion")
+def get_progreso_extraccion():
+    global progreso_extraccion
+    return progreso_extraccion
 
 @router.get("/pendientes")
 def get_pendientes(
@@ -146,6 +281,37 @@ def procesar_lema(id_entrada: int, lema: str = None, db: Session = Depends(get_d
 import subprocess
 import os
 import sys
+
+@router.patch("/rlc/{id_rlc}/limpiar")
+def limpiar_rlc(id_rlc: str, payload: Dict[str, Any], db: Session = Depends(get_db)):
+    """Limpia manualmente un RLC editando su json y guardando incidencia."""
+    nuevo_json = payload.get("rlc_json")
+    motivo = payload.get("motivo")
+    
+    if not nuevo_json or not motivo:
+        raise HTTPException(status_code=400, detail="Falta JSON o motivo.")
+        
+    rlc = db.query(RegistroLexicoCrudo).filter(RegistroLexicoCrudo.id_rlc == id_rlc).first()
+    if not rlc:
+        raise HTTPException(status_code=404, detail="RLC no encontrado")
+        
+    # Guardar incidencia
+    incidencia = Incidencia(
+        fase="ingenieria_extraccion",
+        tipo="limpieza_manual_rlc",
+        id_entrada=rlc.id_entrada,
+        lema=rlc.lema,
+        justificacion=motivo,
+        detalle={"antes": rlc.rlc_json, "despues": nuevo_json}
+    )
+    db.add(incidencia)
+    
+    # Actualizar RLC
+    rlc.rlc_json = nuevo_json
+    rlc.estado_limpieza = "limpio"
+    
+    db.commit()
+    return {"status": "success", "message": "RLC limpiado correctamente."}
 
 @router.get("/html/{id_entrada}")
 def get_html_crudo(id_entrada: int) -> Any:

@@ -1,7 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { fetchIngenieroPendientes, fetchIngenieroExtraidos, extraerDiPeru, fetchHtmlCrudo } from "@/services/api";
+import { 
+  fetchIngenieroPendientes, 
+  fetchIngenieroExtraidos, 
+  extraerDiPeru, 
+  fetchHtmlCrudo,
+  iniciarExtraccionMasiva,
+  fetchProgresoExtraccion,
+  limpiarRlc
+} from "@/services/api";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 export default function IngenieroPage() {
   const [activeTab, setActiveTab] = useState("pendientes"); // "pendientes" | "extraidos"
@@ -12,6 +22,7 @@ export default function IngenieroPage() {
 
   // -- Estados de Pendientes --
   const [pendientes, setPendientes] = useState([]);
+  const [totalPendientes, setTotalPendientes] = useState(0);
   const [loadingPendientes, setLoadingPendientes] = useState(true);
   const [extractingId, setExtractingId] = useState(null);
   
@@ -22,8 +33,13 @@ export default function IngenieroPage() {
   const [ordenP, setOrdenP] = useState("asc");
   const [pageP, setPageP] = useState(1);
 
+  // Extracción Masiva
+  const [rangoExtraccion, setRangoExtraccion] = useState("");
+  const [masivaProgress, setMasivaProgress] = useState(null);
+
   // -- Estados de Extraídos --
   const [extraidos, setExtraidos] = useState([]);
+  const [totalExtraidos, setTotalExtraidos] = useState(0);
   const [loadingExtraidos, setLoadingExtraidos] = useState(true);
   
   const [letraE, setLetraE] = useState("");
@@ -42,6 +58,52 @@ export default function IngenieroPage() {
 
   const [rlcModalOpen, setRlcModalOpen] = useState(false);
   const [rlcContent, setRlcContent] = useState(null);
+  const [activeRlcId, setActiveRlcId] = useState(null);
+  
+  // Limpieza manual
+  const [isEditingRlc, setIsEditingRlc] = useState(false);
+  const [editableRlcJson, setEditableRlcJson] = useState("");
+  const [editMotivo, setEditMotivo] = useState("");
+  const [savingLimpio, setSavingLimpio] = useState(false);
+
+  // Configuración
+  const [urlConfig, setUrlConfig] = useState("https://diperu.apll.org.pe/lema/");
+  const [configStatus, setConfigStatus] = useState("Pendiente");
+  const [savingConfig, setSavingConfig] = useState(false);
+
+  // Load config on mount
+  useEffect(() => {
+    fetch(`${API_URL}/api/ingeniero/config`)
+      .then(r => r.json())
+      .then(data => {
+        if (data.url_origen) setUrlConfig(data.url_origen);
+        if (data.estado_conexion) setConfigStatus(data.estado_conexion);
+      })
+      .catch(err => console.error("Error loading config:", err));
+  }, []);
+
+  const handleSaveConfig = async () => {
+    setSavingConfig(true);
+    try {
+      const resp = await fetch(`${API_URL}/api/ingeniero/config`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url_origen: urlConfig })
+      });
+      if (!resp.ok) {
+        const errData = await resp.json();
+        throw new Error(errData.detail || "Error al conectar");
+      }
+      const data = await resp.json();
+      setConfigStatus(data.estado_conexion);
+      setSuccess("Conexión establecida correctamente.");
+    } catch (err) {
+      setError(`Fallo de conexión: ${err.message}`);
+      setConfigStatus("Fallo");
+    } finally {
+      setSavingConfig(false);
+    }
+  };
 
   const loadPendientes = async () => {
     setLoadingPendientes(true);
@@ -56,6 +118,7 @@ export default function IngenieroPage() {
         orden: ordenP
       });
       setPendientes(data.items || []);
+      setTotalPendientes(data.total || 0);
     } catch (err) {
       setError("Error al cargar pendientes");
     } finally {
@@ -78,6 +141,7 @@ export default function IngenieroPage() {
         orden: ordenE
       });
       setExtraidos(data.items || []);
+      setTotalExtraidos(data.total || 0);
     } catch (err) {
       setError("Error al cargar extraídos");
     } finally {
@@ -115,6 +179,44 @@ export default function IngenieroPage() {
     }
   };
 
+  // Extracción masiva
+  const handleExtraccionMasiva = async () => {
+    setError("");
+    setSuccess("");
+    try {
+      await iniciarExtraccionMasiva(rangoExtraccion);
+      setMasivaProgress({ estado: "Procesando", actual: 0, total: 100, mensaje: "Iniciando..." });
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  useEffect(() => {
+    let interval = null;
+    if (masivaProgress && masivaProgress.estado === "Procesando") {
+      interval = setInterval(async () => {
+        try {
+          const progreso = await fetchProgresoExtraccion();
+          setMasivaProgress(progreso);
+          if (progreso.estado === "Completado" || progreso.estado === "Error") {
+            clearInterval(interval);
+            if (progreso.estado === "Completado") {
+              setSuccess("Extracción masiva completada exitosamente.");
+              loadPendientes();
+            } else {
+              setError(`Error en extracción masiva: ${progreso.mensaje}`);
+            }
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }, 1000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [masivaProgress]);
+
   const handleViewHtml = async (id) => {
     setLoadingHtmlId(id);
     setError("");
@@ -136,20 +238,86 @@ export default function IngenieroPage() {
     setTimeout(loadExtraidos, 0);
   };
 
-  const handleViewRlc = (rlc_json) => {
+  const handleViewRlc = (id_rlc, rlc_json) => {
+    setActiveRlcId(id_rlc);
     setRlcContent(rlc_json);
+    setEditableRlcJson(JSON.stringify(rlc_json, null, 2));
+    setIsEditingRlc(false);
+    setEditMotivo("");
     setRlcModalOpen(true);
+  };
+
+  const handleSaveLimpieza = async () => {
+    if (!editMotivo.trim()) {
+      alert("El motivo de la edición es obligatorio.");
+      return;
+    }
+    try {
+      JSON.parse(editableRlcJson); // Validar JSON
+    } catch (e) {
+      alert("El JSON no es válido. Corrija los errores de formato.");
+      return;
+    }
+
+    setSavingLimpio(true);
+    try {
+      await limpiarRlc(activeRlcId, JSON.parse(editableRlcJson), editMotivo);
+      setSuccess("RLC limpiado y guardado correctamente.");
+      setRlcModalOpen(false);
+      loadExtraidos();
+    } catch (err) {
+      alert(`Error al limpiar: ${err.message}`);
+    } finally {
+      setSavingLimpio(false);
+    }
   };
 
   return (
     <div className="space-y-6">
       <header className="mb-8">
-        <h1 className="text-2xl font-serif text-acento mb-2">Panel de Control: Extracción</h1>
-        <p className="text-niebla/70">Gestiona la extracción del Registro Léxico Crudo (RLC) desde el DiPerú.</p>
+        <h1 className="text-2xl font-serif text-acento mb-2">Ingeniería de Datos</h1>
+        <p className="text-niebla/70">Gestión del ciclo de vida de los datos crudos: extracción, limpieza y empaquetado.</p>
       </header>
 
       {error && <div className="bg-red-900/20 text-red-400 p-4 rounded-md border border-red-900/50 mb-4">{error}</div>}
       {success && <div className="bg-green-900/20 text-green-400 p-4 rounded-md border border-green-900/50 mb-4">{success}</div>}
+
+      {/* Configuración de Fuente de Datos */}
+      <div className="bg-marino-800 rounded-lg border border-marino-700 overflow-hidden mb-6">
+        <div className="p-4 border-b border-marino-700 bg-marino-900/50">
+          <h2 className="font-medium text-acento">Configuración de Fuente de Datos</h2>
+        </div>
+        <div className="p-4 flex flex-wrap items-center gap-4">
+          <div className="flex-1 min-w-[300px]">
+            <label className="block text-xs text-niebla/60 mb-1">URL / Endpoint del DiPerú</label>
+            <input 
+              type="text" 
+              value={urlConfig}
+              onChange={e => setUrlConfig(e.target.value)}
+              className="w-full bg-marino-900 border border-marino-600 rounded px-3 py-2 text-niebla outline-none focus:border-acento transition-colors"
+            />
+          </div>
+          <div className="flex flex-col justify-end h-full pt-5">
+            <button 
+              onClick={handleSaveConfig}
+              disabled={savingConfig}
+              className="bg-marino-600 hover:bg-acento hover:text-marino-900 text-niebla px-4 py-2 rounded transition-colors disabled:opacity-50 font-medium"
+            >
+              {savingConfig ? "Validando..." : "Guardar y Probar Conexión"}
+            </button>
+          </div>
+          <div className="flex flex-col justify-end h-full pt-5 pl-4 border-l border-marino-700">
+            <span className="text-xs text-niebla/60 mb-1 block">Estado:</span>
+            <span className={`px-2 py-1 rounded text-xs font-bold ${
+              configStatus === 'Conectado' ? 'bg-green-900/40 text-green-400' :
+              configStatus === 'Fallo' ? 'bg-red-900/40 text-red-400' :
+              'bg-yellow-900/40 text-yellow-400'
+            }`}>
+              {configStatus}
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* Tabs */}
       <div className="flex border-b border-marino-700">
@@ -184,7 +352,10 @@ export default function IngenieroPage() {
             <div className="p-4 border-b border-marino-700 bg-marino-900/50 flex flex-col gap-4">
               <div className="flex justify-between items-center">
                 <h2 className="font-medium text-acento">Filtros de Búsqueda</h2>
-                <button onClick={loadPendientes} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
+                <div className="flex gap-4 items-center">
+                  <span className="text-sm font-bold text-niebla/80 bg-marino-800 px-3 py-1 rounded border border-marino-600">Total Pendientes: {totalPendientes}</span>
+                  <button onClick={loadPendientes} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
+                </div>
               </div>
               
               <div className="flex flex-wrap items-center gap-3 text-sm">
@@ -233,6 +404,27 @@ export default function IngenieroPage() {
                 </button>
                 <button onClick={handleClearFiltersP} className="text-niebla/50 hover:text-niebla px-2">
                   Limpiar
+                </button>
+              </div>
+
+              {/* Ingesta Masiva */}
+              <div className="mt-2 p-3 bg-marino-900 rounded border border-marino-700 flex flex-wrap gap-4 items-center">
+                <div className="flex-1">
+                  <label className="text-xs text-niebla/60 block mb-1">Extracción Masiva Inteligente (ej. 1-50; 56; 67-78)</label>
+                  <input 
+                    type="text" 
+                    value={rangoExtraccion}
+                    onChange={e => setRangoExtraccion(e.target.value)}
+                    placeholder="Rangos de IDs separados por punto y coma..."
+                    className="w-full bg-marino-800 border border-marino-600 rounded px-3 py-1.5 text-sm text-niebla outline-none"
+                  />
+                </div>
+                <button 
+                  onClick={handleExtraccionMasiva}
+                  disabled={!rangoExtraccion || (masivaProgress && masivaProgress.estado === "Procesando")}
+                  className="mt-5 bg-acento text-marino-900 font-bold px-4 py-1.5 rounded transition-colors disabled:opacity-50"
+                >
+                  Iniciar Extracción Lotes
                 </button>
               </div>
             </div>
@@ -325,7 +517,10 @@ export default function IngenieroPage() {
             <div className="p-4 border-b border-marino-700 bg-marino-900/50 flex flex-col gap-4">
               <div className="flex justify-between items-center">
                 <h2 className="font-medium text-acento">Filtros de Búsqueda</h2>
-                <button onClick={loadExtraidos} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
+                <div className="flex gap-4 items-center">
+                  <span className="text-sm font-bold text-niebla/80 bg-marino-800 px-3 py-1 rounded border border-marino-600">Total Extraídos: {totalExtraidos}</span>
+                  <button onClick={loadExtraidos} className="text-xs text-niebla/60 hover:text-acento">↻ Refrescar</button>
+                </div>
               </div>
               
               <div className="flex flex-wrap items-center gap-3 text-sm">
@@ -404,6 +599,7 @@ export default function IngenieroPage() {
                     <th className="px-4 py-3 font-medium">Lema</th>
                     <th className="px-4 py-3 font-medium">ID Entrada</th>
                     <th className="px-4 py-3 font-medium text-center">Acepciones</th>
+                    <th className="px-4 py-3 font-medium text-center">Estado Limpieza</th>
                     <th className="px-4 py-3 font-medium text-niebla/50">Fecha Extracción</th>
                     <th className="px-4 py-3 font-medium text-right">Acciones</th>
                   </tr>
@@ -418,12 +614,19 @@ export default function IngenieroPage() {
                           {e.num_acepciones}
                         </span>
                       </td>
+                      <td className="px-4 py-3 text-center">
+                        {e.estado_limpieza === 'limpio' ? (
+                          <span className="bg-green-900/40 text-green-400 text-xs px-2 py-1 rounded">Limpio</span>
+                        ) : (
+                          <span className="bg-yellow-900/40 text-yellow-400 text-xs px-2 py-1 rounded">Crudo</span>
+                        )}
+                      </td>
                       <td className="px-4 py-3 text-niebla/50 text-xs">
                         {e.fecha_extraccion ? new Date(e.fecha_extraccion).toLocaleString() : '-'}
                       </td>
                       <td className="px-4 py-3 text-right">
                         <button 
-                          onClick={() => handleViewRlc(e.rlc_json)}
+                          onClick={() => handleViewRlc(e.id_rlc, e.rlc_json)}
                           className="text-xs bg-marino-700 hover:bg-marino-600 text-niebla px-3 py-1 rounded transition-colors inline-flex items-center justify-center min-w-[90px]"
                         >
                           Ver RLC
@@ -477,21 +680,87 @@ export default function IngenieroPage() {
         </div>
       )}
 
-      {/* RLC Visor Modal */}
+      {/* RLC Visor / Editor Modal */}
       {rlcModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
           <div className="bg-[#1e1e1e] border border-marino-600 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col">
             <div className="flex justify-between items-center p-4 border-b border-marino-700 bg-marino-900/80">
               <h3 className="text-acento font-serif text-lg">Visor RLC (Registro Léxico Crudo)</h3>
-              <button onClick={() => setRlcModalOpen(false)} className="text-niebla/50 hover:text-red-400 transition-colors">✕ Cerrar</button>
-            </div>
-            <div className="flex-1 overflow-auto p-6 text-niebla">
-              <div className="bg-[#121212] p-4 rounded border border-marino-700 shadow-inner overflow-x-auto">
-                <pre className="font-mono text-sm text-acento-claro whitespace-pre-wrap">
-                  {JSON.stringify(rlcContent, null, 2)}
-                </pre>
+              <div className="flex gap-4">
+                {!isEditingRlc && (
+                  <button 
+                    onClick={() => setIsEditingRlc(true)} 
+                    className="text-xs bg-marino-600 text-niebla px-3 py-1 rounded hover:bg-acento hover:text-marino-900 transition-colors"
+                  >
+                    Editar y Limpiar RLC
+                  </button>
+                )}
+                <button onClick={() => setRlcModalOpen(false)} className="text-niebla/50 hover:text-red-400 transition-colors">✕ Cerrar</button>
               </div>
             </div>
+            
+            <div className="flex-1 overflow-auto p-6 text-niebla flex flex-col gap-4">
+              {isEditingRlc ? (
+                <>
+                  <div className="flex flex-col gap-2 flex-1">
+                    <label className="text-sm text-niebla/80">Editor JSON (asegúrese de mantener el formato válido)</label>
+                    <textarea 
+                      value={editableRlcJson}
+                      onChange={e => setEditableRlcJson(e.target.value)}
+                      className="w-full flex-1 min-h-[300px] bg-[#121212] text-acento-claro font-mono text-sm p-4 rounded border border-marino-700 outline-none focus:border-acento"
+                    />
+                  </div>
+                  <div className="bg-marino-800 p-4 rounded border border-marino-700 mt-2">
+                    <label className="block text-sm text-acento font-bold mb-2">Motivo de la Edición (Obligatorio)</label>
+                    <input 
+                      type="text" 
+                      value={editMotivo}
+                      onChange={e => setEditMotivo(e.target.value)}
+                      placeholder="Describa por qué se limpió manualmente este registro..."
+                      className="w-full bg-marino-900 border border-marino-600 rounded px-3 py-2 text-niebla outline-none focus:border-acento"
+                    />
+                  </div>
+                  <div className="flex justify-end gap-3 mt-2">
+                    <button 
+                      onClick={() => setIsEditingRlc(false)}
+                      className="px-4 py-2 bg-marino-700 rounded text-niebla hover:bg-marino-600"
+                    >
+                      Cancelar
+                    </button>
+                    <button 
+                      onClick={handleSaveLimpieza}
+                      disabled={savingLimpio || !editMotivo.trim()}
+                      className="px-4 py-2 bg-acento text-marino-900 font-bold rounded disabled:opacity-50 hover:bg-acento-claro"
+                    >
+                      {savingLimpio ? "Guardando..." : "Guardar Limpieza"}
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <div className="bg-[#121212] p-4 rounded border border-marino-700 shadow-inner overflow-x-auto flex-1">
+                  <pre className="font-mono text-sm text-acento-claro whitespace-pre-wrap">
+                    {JSON.stringify(rlcContent, null, 2)}
+                  </pre>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Progress Modal */}
+      {masivaProgress && masivaProgress.estado === "Procesando" && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <div className="bg-marino-800 border border-acento rounded-lg shadow-2xl w-full max-w-md p-6 text-center flex flex-col gap-4">
+            <h3 className="text-xl font-serif text-acento">Extracción Masiva en Curso</h3>
+            <p className="text-niebla/80">Procesando {masivaProgress.actual} de {masivaProgress.total} IDs</p>
+            <div className="w-full bg-marino-900 rounded-full h-4 border border-marino-700 overflow-hidden">
+              <div 
+                className="bg-acento h-4 transition-all duration-300"
+                style={{ width: `${(masivaProgress.actual / masivaProgress.total) * 100}%` }}
+              ></div>
+            </div>
+            <p className="text-sm font-mono text-acento-claro">{masivaProgress.mensaje}</p>
           </div>
         </div>
       )}

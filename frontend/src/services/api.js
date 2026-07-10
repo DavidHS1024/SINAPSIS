@@ -80,6 +80,37 @@ export async function fetchHtmlCrudo(id_entrada) {
   return res.json();
 }
 
+export async function iniciarExtraccionMasiva(rangos) {
+  const res = await fetch(`${API_URL}/api/ingeniero/extraccion-masiva`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ rangos }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Error al iniciar extracción masiva");
+  }
+  return res.json();
+}
+
+export async function fetchProgresoExtraccion() {
+  const res = await fetch(`${API_URL}/api/ingeniero/progreso-extraccion`);
+  return res.json();
+}
+
+export async function limpiarRlc(id_rlc, rlc_json, motivo) {
+  const res = await fetch(`${API_URL}/api/ingeniero/rlc/${id_rlc}/limpiar`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ rlc_json, motivo }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Error al limpiar RLC");
+  }
+  return res.json();
+}
+
 // Analista
 export function fetchAnalistaPendientes(params = {}) {
   const { page = 1, size = 20, lema, acepciones, fecha_desde, fecha_hasta } = params;

@@ -47,6 +47,17 @@ class ControlExtraccionLema(Base):
     reintentos_fallidos  = Column(Integer,  default=0)
 
 
+class ConfiguracionExtraccion(Base):
+    """
+    Configuración de la fuente de datos para la extracción (HU01).
+    """
+    __tablename__ = "configuracion_extraccion"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    url_origen = Column(String, nullable=False)
+    estado_conexion = Column(String, default="Pendiente")
+    actualizado_en = Column(DateTime(timezone=True), default=ahora_utc, onupdate=ahora_utc)
+
+
 class RegistroLexicoCrudo(Base):
     """
     Artefacto de la fase de Socialización: 1 RLC por entrada del DiPerú.
@@ -56,6 +67,7 @@ class RegistroLexicoCrudo(Base):
                        y alimentan CSP/PRS). Las locuciones quedan en el JSON
                        pero no se cuentan aquí, por la delimitación de unigramas.
     - texto_plano    : texto íntegro de la entrada, respaldo auditable.
+    - estado_limpieza: 'crudo' o 'limpio'.
 
     Es una tabla derivada: sus filas SÍ pueden vaciarse en un reset, porque
     se regeneran ejecutando de nuevo el scraper.
@@ -70,6 +82,7 @@ class RegistroLexicoCrudo(Base):
     num_acepciones   = Column(Integer, default=0)
     rlc_json         = Column(JSONB,   nullable=False)
     texto_plano      = Column(Text)
+    estado_limpieza  = Column(String(20), default="crudo")
     fecha_extraccion = Column(DateTime(timezone=True), default=ahora_utc)
 
 
