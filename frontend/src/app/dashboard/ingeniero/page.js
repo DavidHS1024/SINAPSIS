@@ -184,8 +184,8 @@ export default function IngenieroPage() {
     setError("");
     setSuccess("");
     try {
-      await iniciarExtraccionMasiva(rangoExtraccion);
-      setMasivaProgress({ estado: "Procesando", actual: 0, total: 100, mensaje: "Iniciando..." });
+      const resp = await iniciarExtraccionMasiva(rangoExtraccion);
+      setMasivaProgress({ estado: "Procesando", actual: 0, total: resp.total_estimado || 1, mensaje: "Iniciando..." });
     } catch (err) {
       setError(err.message);
     }
@@ -816,19 +816,21 @@ export default function IngenieroPage() {
         </div>
       )}
 
-      {/* Progress Modal */}
+      {/* Progress Floating Card */}
       {masivaProgress && masivaProgress.estado === "Procesando" && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="bg-marino-800 border border-acento rounded-lg shadow-2xl w-full max-w-md p-6 text-center flex flex-col gap-4">
-            <h3 className="text-xl font-serif text-acento">Extracción Masiva en Curso</h3>
-            <p className="text-niebla/80">Procesando {masivaProgress.actual} de {masivaProgress.total} IDs</p>
-            <div className="w-full bg-marino-900 rounded-full h-4 border border-marino-700 overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-[90] w-full max-w-sm animate-fade-in-up">
+          <div className="bg-marino-800 border-l-4 border-acento rounded-lg shadow-2xl p-5 flex flex-col gap-3">
+            <h3 className="font-serif text-acento text-lg">Extracción Masiva</h3>
+            <p className="text-niebla/80 text-sm">Procesando {masivaProgress.actual} de {masivaProgress.total} IDs</p>
+            <div className="w-full bg-marino-900 rounded-full h-2.5 border border-marino-700 overflow-hidden">
               <div 
-                className="bg-acento h-4 transition-all duration-300"
-                style={{ width: `${(masivaProgress.actual / masivaProgress.total) * 100}%` }}
-              ></div>
+                className="bg-acento h-full transition-all duration-300 relative overflow-hidden"
+                style={{ width: `${(masivaProgress.actual / Math.max(1, masivaProgress.total)) * 100}%` }}
+              >
+                <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+              </div>
             </div>
-            <p className="text-sm font-mono text-acento-claro">{masivaProgress.mensaje}</p>
+            <p className="text-xs font-mono text-acento-claro truncate">{masivaProgress.mensaje}</p>
           </div>
         </div>
       )}
