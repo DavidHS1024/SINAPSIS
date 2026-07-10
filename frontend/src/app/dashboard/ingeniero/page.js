@@ -188,6 +188,7 @@ export default function IngenieroPage() {
                 return (
                   <tr key={p.id_lema} className="hover:bg-marino-700/20 transition-colors">
                     <td className="px-4 py-3 font-medium text-niebla">{p.lema}</td>
+                    <td className="px-4 py-3 text-niebla/60 truncate max-w-xs">
                       <a 
                         href={p.url_origen} 
                         target="_blank" 
