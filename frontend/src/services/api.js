@@ -1,5 +1,14 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
+/**
+ * Ejecuta una petición HTTP al backend configurado.
+ * Añade parámetros de búsqueda automáticamente a la URL y maneja errores genéricos.
+ * 
+ * @param {string} path - Ruta de la API (ej. "/api/stats").
+ * @param {Object} [params={}] - Parámetros de consulta (Query params).
+ * @returns {Promise<any>} Respuesta parseada de JSON.
+ * @throws {Error} Si la respuesta HTTP no es ok (200-299).
+ */
 async function fetchJSON(path, params = {}) {
   const url = new URL(path, API_URL);
 
@@ -64,6 +73,13 @@ export function fetchIngenieroExtraidos(params = {}) {
   return fetchJSON("/api/ingeniero/extraidos", { page, size, letra, id_exacto, id_desde, id_hasta, acepciones_min, acepciones_max, orden });
 }
 
+/**
+ * Llama al backend para procesar en vivo una entrada de DiPerú (Ingeniero).
+ * 
+ * @param {number} id_entrada - ID interno en DiPerú.
+ * @param {string} lema - Lema a extraer.
+ * @returns {Promise<Object>}
+ */
 export async function extraerDiPeru(id_entrada, lema) {
   const res = await fetch(`${API_URL}/api/ingeniero/extraer`, {
     method: 'POST',
@@ -156,6 +172,15 @@ export function buscarSynsetsMCR(query) {
   return fetchJSON(`/api/lexicografo/buscar-synsets?q=${encodeURIComponent(query)}`);
 }
 
+/**
+ * Guarda la decisión curatorial del Lexicógrafo (Aceptar/Rechazar) y dispara la auditoría.
+ * 
+ * @param {string} id_uce - UUID de la propuesta a revisar.
+ * @param {string} decision - 'aceptar', 'rechazar' u 'observar'.
+ * @param {string} [notas=""] - Justificación o notas adicionales.
+ * @param {string} [nuevo_offset=null] - En caso de cambio manual de offset MCR.
+ * @returns {Promise<Object>}
+ */
 export async function revisarPropuesta(id_uce, decision, notas = "", nuevo_offset = null) {
   const res = await fetch(`${API_URL}/api/lexicografo/revisar/${id_uce}`, {
     method: 'POST',

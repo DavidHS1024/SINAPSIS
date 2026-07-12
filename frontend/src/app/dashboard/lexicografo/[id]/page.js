@@ -4,6 +4,20 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { fetchPropuestaDetalle, revisarPropuesta, buscarSynsetsMCR } from "@/services/api";
 
+/**
+ * Vista de Curaduría Lexicográfica (Detalle de Propuesta).
+ * 
+ * Permite a un lexicógrafo revisar el trabajo automatizado del pipeline SECI.
+ * Incluye funcionalidades para:
+ * - Visualizar la ficha de la palabra (lema, glosa, marcas, ejemplos).
+ * - Modificar el hiperónimo mapeado usando un buscador asíncrono con debounce (HU11).
+ * - Aceptar, Observar o Rechazar la propuesta (exigiendo justificación para el rechazo).
+ * 
+ * @param {Object} props
+ * @param {Object} props.params - Parámetros dinámicos de Next.js.
+ * @param {string} props.params.id - UUID de la UCE (Unidad de Conocimiento Explícito).
+ * @returns {React.ReactElement}
+ */
 export default function PropuestaDetallePage({ params }) {
   const router = useRouter();
   const { id } = params;

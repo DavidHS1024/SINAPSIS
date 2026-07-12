@@ -12,7 +12,18 @@ router = APIRouter()
 
 @router.get("/init-db")
 def init_db_schema(db: Session = Depends(get_db)):
-    """Inicializa/Actualiza la base de datos con las nuevas tablas y columnas."""
+    """Inicializa o actualiza el esquema de la base de datos de forma segura.
+
+    Verifica que todas las tablas definidas en los modelos SQLAlchemy existan en
+    la base de datos. Si no existen, las crea (idempotente). También ejecuta 
+    alteraciones menores en tablas existentes si faltan columnas específicas.
+
+    Args:
+        db (Session): Sesión transaccional de base de datos.
+
+    Returns:
+        dict: Estado del proceso y mensaje de confirmación.
+    """
     try:
         from app.models import Base
         Base.metadata.create_all(bind=engine)
@@ -25,6 +36,17 @@ def init_db_schema(db: Session = Depends(get_db)):
 
 @router.get("/config")
 def get_config(db: Session = Depends(get_db)):
+    """Obtiene la configuración actual de extracción.
+
+    Devuelve la URL base de DiPerú y el estado de la última conexión registrada.
+    Si no hay configuración previa, devuelve valores por defecto.
+
+    Args:
+        db (Session): Sesión de la base de datos.
+
+    Returns:
+        dict: Diccionario con 'url_origen' y 'estado_conexion'.
+    """
     config = db.query(ConfiguracionExtraccion).first()
     if not config:
         return {"url_origen": "https://diperu.apll.org.pe/lema/", "estado_conexion": "Pendiente"}
@@ -128,6 +150,23 @@ def tarea_extraccion_background(ids_a_extraer: list[int]):
 
 @router.post("/extraccion-masiva")
 def iniciar_extraccion_masiva(payload: Dict[str, str], background_tasks: BackgroundTasks):
+    """Inicia un proceso asíncrono de extracción por lotes.
+
+    Recibe una cadena con rangos de IDs (ej. "1-50; 60; 70-80"), los valida
+    y lanza una tarea en segundo plano que extraerá secuencialmente cada uno
+    desde DiPerú, previniendo cuellos de botella en la respuesta HTTP.
+
+    Args:
+        payload (dict): Contiene la clave 'rangos' con la cadena de texto.
+        background_tasks (BackgroundTasks): Gestor de tareas en 2do plano de FastAPI.
+
+    Returns:
+        dict: Estado de inicio y total de entradas estimadas a procesar.
+
+    Raises:
+        HTTPException (400): Si el formato del rango es inválido o si ya hay 
+        una extracción en curso.
+    """
     rangos_str = payload.get("rangos", "")
     try:
         ids_a_extraer = parsear_rangos(rangos_str)
@@ -162,7 +201,24 @@ def get_pendientes(
     id_hasta: Optional[int] = None,
     orden: Optional[str] = "asc"
 ) -> Any:
-    """Lista entradas pendientes de extracción."""
+    """Lista las entradas del diccionario que están pendientes de extracción.
+
+    Devuelve un listado paginado de los lemas descubiertos en la Fase 0 (Scraping de
+    índice) que todavía tienen estado 'PENDIENTE_EXTRACCION' y no han sido descargados.
+
+    Args:
+        db (Session): Sesión de base de datos.
+        page (int, optional): Número de página.
+        size (int, optional): Registros por página.
+        letra (str, optional): Filtrar lemas que empiecen con esta letra.
+        id_exacto (int, optional): Buscar un ID numérico exacto de DiPerú.
+        id_desde (int, optional): Límite inferior de rango de IDs.
+        id_hasta (int, optional): Límite superior de rango de IDs.
+        orden (str, optional): Ordenamiento ('asc' o 'desc').
+
+    Returns:
+        dict: Estructura paginada con total, página, tamaño y lista de lemas pendientes.
+    """
     query = db.query(ControlExtraccionLema).filter(ControlExtraccionLema.estado_seci == ESTADO_PENDIENTE)
     
     if letra:
@@ -215,7 +271,20 @@ def get_extraidos(
     acepciones_max: Optional[int] = None,
     orden: Optional[str] = "asc"
 ) -> Any:
-    """Lista lemas ya extraídos (Bandeja de Salida)."""
+    """Lista los lemas ya extraídos exitosamente (Bandeja de Salida).
+
+    Consulta la tabla RegistroLexicoCrudo (RLC) para mostrar las entradas que
+    fueron descargadas de DiPerú y convertidas a JSON, listas para que el Analista
+    las procese.
+
+    Args:
+        (Mismos argumentos de filtrado que get_pendientes)
+        acepciones_min (int, optional): Filtro mínimo de acepciones detectadas.
+        acepciones_max (int, optional): Filtro máximo de acepciones detectadas.
+
+    Returns:
+        dict: Estructura paginada con los Registros Léxicos Crudos (RLC).
+    """
     query = db.query(RegistroLexicoCrudo)
     
     if letra:
@@ -290,7 +359,23 @@ import sys
 
 @router.patch("/rlc/{id_rlc}/limpiar")
 def limpiar_rlc(id_rlc: str, payload: Dict[str, Any], db: Session = Depends(get_db)):
-    """Limpia manualmente un RLC editando su json y guardando incidencia."""
+    """Aplica limpieza manual a un Registro Léxico Crudo (RLC).
+
+    Sobrescribe el JSON crudo con uno corregido por el Ingeniero de Datos
+    (por ejemplo, para arreglar errores de parsing web). Deja un rastro auditable
+    en la tabla de Incidencias.
+
+    Args:
+        id_rlc (str): UUID del registro a modificar.
+        payload (dict): Diccionario con 'rlc_json' (nueva data) y 'motivo' (justificación).
+        db (Session): Sesión transaccional.
+
+    Returns:
+        dict: Mensaje de éxito.
+
+    Raises:
+        HTTPException (400/404): Si falta data o el ID no existe.
+    """
     nuevo_json = payload.get("rlc_json")
     motivo = payload.get("motivo")
     

@@ -17,7 +17,21 @@ def get_propuestas(
     page: int = Query(1, ge=1),
     size: int = Query(20, ge=1, le=100)
 ) -> Any:
-    """Lista UCEs clasificados que requieren revisión del lexicógrafo."""
+    """Lista las UCEs clasificadas que requieren revisión del lexicógrafo.
+
+    Devuelve la bandeja de entrada para el curador humano, filtrando las 
+    propuestas por estado y tipo de peruanismo.
+
+    Args:
+        db (Session): Sesión transaccional.
+        tipo (str, optional): Filtro por clasificación ('tipo_1_semantico', etc).
+        estado (str, optional): Filtro por estado ('pendiente', 'aceptar', etc).
+        page (int, optional): Número de página para la paginación.
+        size (int, optional): Límite de resultados por página.
+
+    Returns:
+        dict: Estructura paginada con la lista resumida de propuestas.
+    """
     query = db.query(UnidadConocimientoExplicito)
     if estado:
         query = query.filter(UnidadConocimientoExplicito.estado_revision == estado)
@@ -45,7 +59,22 @@ def get_propuestas(
 
 @router.get("/propuesta/{id_uce}")
 def get_propuesta_detalle(id_uce: str, db: Session = Depends(get_db)) -> Any:
-    """Ficha visual de la propuesta para el lexicógrafo."""
+    """Genera la ficha visual detallada de una propuesta para su curaduría.
+
+    Agrupa la información del RLC, la UCE procesada y el mapeo sugerido 
+    del WordNet MCR para que el Lexicógrafo pueda tomar una decisión informada.
+
+    Args:
+        id_uce (str): UUID de la Unidad de Conocimiento Explícito a revisar.
+        db (Session): Sesión de base de datos.
+
+    Returns:
+        dict: Estructura jerárquica con datos del peruanismo, clasificación, 
+        synset más cercano y el estado actual de la revisión.
+
+    Raises:
+        HTTPException (404): Si el UUID proporcionado no existe.
+    """
     uce = db.query(UnidadConocimientoExplicito).filter_by(id_uce=id_uce).first()
     if not uce:
         raise HTTPException(status_code=404, detail="UCE no encontrado")
@@ -93,7 +122,19 @@ def get_propuesta_detalle(id_uce: str, db: Session = Depends(get_db)) -> Any:
 
 @router.get("/buscar-synsets")
 def buscar_synsets(q: str = Query(..., min_length=2), db: Session = Depends(get_db)):
-    """Busca synsets en el MCR por coincidencia parcial de texto."""
+    """Busca synsets en el MCR por coincidencia parcial de texto (Autocomplete).
+
+    Permite al lexicógrafo buscar manualmente una alternativa si el mapeo
+    sugerido por el algoritmo (similitud coseno) es incorrecto. Busca
+    dentro del campo `sinonimos` usando ILIKE.
+
+    Args:
+        q (str): Texto a buscar (mínimo 2 caracteres).
+        db (Session): Sesión de base de datos.
+
+    Returns:
+        list: Lista de hasta 10 diccionarios con el offset, sinónimos y glosa.
+    """
     query_str = f"%{q}%"
     resultados = db.query(ReferenciaMCR).filter(
         ReferenciaMCR.sinonimos.ilike(query_str)
@@ -116,7 +157,25 @@ class RevisarRequest(BaseModel):
 
 @router.post("/revisar/{id_uce}")
 def revisar_propuesta(id_uce: str, req: RevisarRequest, db: Session = Depends(get_db)) -> Any:
-    """Guarda la decisión del lexicógrafo e inserta en auditoría si es aceptada."""
+    """Guarda la decisión del lexicógrafo e inserta en auditoría si es aceptada.
+
+    Ejecuta el flujo final del pipeline. Si la decisión es 'rechazar', exige 
+    un motivo. Si la decisión es 'aceptar', crea de forma transaccional un
+    registro inmutable en la tabla de AuditoriaValidacion (Cumpliendo HU10).
+
+    Args:
+        id_uce (str): UUID de la UCE.
+        req (RevisarRequest): Payload con 'decision', 'notas' y 'nuevo_offset'.
+        db (Session): Sesión transaccional.
+
+    Returns:
+        dict: Estado de éxito, ID y decisión final.
+
+    Raises:
+        HTTPException (400): Si la decisión es inválida o falta justificación.
+        HTTPException (404): Si no se encuentra la UCE.
+        HTTPException (500): Si falla la inserción transaccional.
+    """
     if req.decision not in ["aceptar", "rechazar", "observar"]:
         raise HTTPException(status_code=400, detail="Decisión inválida")
         

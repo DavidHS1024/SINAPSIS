@@ -31,11 +31,19 @@ ESTADO_ERROR     = "ERROR_EXTRACCION"
 
 
 class ControlExtraccionLema(Base):
-    """
-    Población indexada en Fase 0 y máquina de estados del pipeline.
+    """Población indexada en Fase 0 y máquina de estados del pipeline.
 
     Esta tabla es el activo de la Fase 0: sus filas (los lemas válidos)
     NO deben borrarse en un reset; lo que se reinicia es su estado_seci.
+    
+    Attributes:
+        id_lema (UUID): Identificador único del lema.
+        lema (str): Texto del lema extraído.
+        url_origen (str): URL de donde se extrajo (única).
+        estado_seci (str): Estado actual en el pipeline (e.g. PENDIENTE_EXTRACCION).
+        fecha_indexacion (datetime): Fecha en que se descubrió el lema.
+        ultima_actualizacion (datetime): Fecha del último cambio de estado.
+        reintentos_fallidos (int): Contador de intentos fallidos de scraping.
     """
     __tablename__ = "control_extraccion_lemas"
     id_lema              = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
@@ -59,18 +67,21 @@ class ConfiguracionExtraccion(Base):
 
 
 class RegistroLexicoCrudo(Base):
-    """
-    Artefacto de la fase de Socialización: 1 RLC por entrada del DiPerú.
-
-    - rlc_json       : captura estructurada (lema, acepciones, sublemas...).
-    - num_acepciones : acepciones del LEMA PRINCIPAL (las que generarán UCE
-                       y alimentan CSP/PRS). Las locuciones quedan en el JSON
-                       pero no se cuentan aquí, por la delimitación de unigramas.
-    - texto_plano    : texto íntegro de la entrada, respaldo auditable.
-    - estado_limpieza: 'crudo' o 'limpio'.
+    """Artefacto de la fase de Socialización: 1 RLC por entrada del DiPerú.
 
     Es una tabla derivada: sus filas SÍ pueden vaciarse en un reset, porque
     se regeneran ejecutando de nuevo el scraper.
+
+    Attributes:
+        id_rlc (UUID): Identificador único del registro.
+        id_lema (UUID): Referencia a control_extraccion_lemas (relación 1:1).
+        id_entrada (int): ID interno de DiPerú extraído de la URL.
+        lema (str): Texto del lema.
+        num_acepciones (int): Número de acepciones del lema principal que generarán UCEs.
+        rlc_json (dict): Captura estructurada (lema, acepciones, sublemas) en formato JSONB.
+        texto_plano (str): Texto íntegro de la entrada web como respaldo auditable.
+        estado_limpieza (str): Estado de la limpieza de datos ('crudo' o 'limpio').
+        fecha_extraccion (datetime): Fecha y hora en que se descargó la entrada.
     """
     __tablename__ = "registro_lexico_crudo"
     id_rlc           = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)

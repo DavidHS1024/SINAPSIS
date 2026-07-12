@@ -41,11 +41,29 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base         = declarative_base()
 
 
-def ahora_utc():
-    """Marca temporal UTC consciente de zona (reemplaza a datetime.utcnow, obsoleto en 3.12+)."""
+def ahora_utc() -> datetime:
+    """Obtiene la marca temporal actual en UTC consciente de zona.
+
+    Esta función reemplaza a `datetime.utcnow()`, el cual está obsoleto 
+    en Python 3.12+. Es utilizada como valor por defecto para todas las 
+    columnas de fecha y hora en los modelos SQLAlchemy.
+
+    Returns:
+        datetime: Objeto datetime con la hora actual y la zona horaria UTC.
+    """
     return datetime.now(timezone.utc)
 
 def get_db():
+    """Generador de dependencias para obtener una sesión de base de datos.
+
+    Instancia una nueva sesión de base de datos a través de `SessionLocal`.
+    Está diseñada para ser inyectada en los endpoints de FastAPI mediante
+    `Depends()`. Garantiza que la sesión se cierre correctamente tras
+    completarse la petición, previniendo fugas de conexiones.
+
+    Yields:
+        Session: Sesión activa de SQLAlchemy conectada a PostgreSQL.
+    """
     db = SessionLocal()
     try:
         yield db

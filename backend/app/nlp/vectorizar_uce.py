@@ -52,6 +52,13 @@ def _tandas(secuencia, n):
 
 
 def main():
+    """Ejecuta el pipeline de vectorización usando la API de OpenAI.
+
+    Encuentra todas las UCEs que no tengan vector, calcula una estimación 
+    de costo basado en los tokens, y tras confirmar en consola, hace
+    peticiones por lotes (batching) al modelo text-embedding-3-large,
+    persistiendo los resultados progresivamente en la base de datos.
+    """
     client = OpenAI()   # lee OPENAI_API_KEY del entorno
 
     with SessionLocal() as db:

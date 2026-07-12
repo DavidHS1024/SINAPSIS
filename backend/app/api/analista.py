@@ -20,7 +20,25 @@ def get_pendientes(
     fecha_desde: Optional[datetime] = None,
     fecha_hasta: Optional[datetime] = None
 ) -> Any:
-    """Lista RLCs extraídos que aún no tienen UCEs (pendientes de procesar)."""
+    """Lista los RLCs extraídos que aún están pendientes de procesar.
+
+    Recupera los Registros Léxicos Crudos (RLC) de la bandeja de entrada
+    del Analista que todavía no han sido transformados en UCEs (Unidades
+    de Conocimiento Explícito) por el pipeline SECI.
+
+    Args:
+        db (Session): Sesión de la base de datos inyectada por dependencias.
+        page (int, optional): Número de página para la paginación. Por defecto 1.
+        size (int, optional): Cantidad de registros por página. Por defecto 20.
+        lema (str, optional): Filtro de búsqueda parcial por lema.
+        acepciones (int, optional): Filtro exacto por cantidad de acepciones.
+        fecha_desde (datetime, optional): Filtro de fecha de inicio.
+        fecha_hasta (datetime, optional): Filtro de fecha fin.
+
+    Returns:
+        dict: Un diccionario paginado con 'total', 'page', 'size', y la lista 
+        de 'items' conteniendo la información de los RLCs.
+    """
     # Buscamos RLCs cuyo id no esté en UCE
     query = db.query(RegistroLexicoCrudo).filter(
         ~RegistroLexicoCrudo.id_rlc.in_(
@@ -64,7 +82,24 @@ def get_procesados(
     pos_mcr: Optional[str] = None,
     tipo_peruanismo: Optional[str] = None
 ) -> Any:
-    """Lista UCEs generados por el pipeline (Bandeja de Salida)."""
+    """Lista las UCEs generadas por el pipeline (Bandeja de Salida).
+
+    Devuelve las Unidades de Conocimiento Explícito que ya han pasado por
+    las fases de procesamiento y están listas para revisión. Excluye aquellas
+    que han sido rechazadas previamente.
+
+    Args:
+        db (Session): Sesión de base de datos.
+        page (int, optional): Número de página (offset = (page-1) * size).
+        size (int, optional): Límite de resultados por página.
+        lema (str, optional): Búsqueda parcial por lema.
+        pos_mcr (str, optional): Filtro por categoría gramatical (n, v, a, r).
+        tipo_peruanismo (str, optional): Filtro por clasificación de peruanismo.
+
+    Returns:
+        dict: Estructura paginada que incluye un desglose completo de la UCE
+        bajo el atributo `uce_completo`.
+    """
     query = db.query(UnidadConocimientoExplicito)
     
     if lema:
@@ -112,7 +147,20 @@ def get_procesados(
 
 @router.post("/procesar/{id_rlc}")
 def procesar_rlc(id_rlc: str) -> Any:
-    """Procesa un RLC por el pipeline SECI."""
+    """Procesa un RLC específico a través del pipeline SECI.
+
+    Invoca el `ProcesadorIndividual` para tomar un RLC crudo, pasarlo por 
+    la limpieza, inferencia y estructuración, y generar sus respectivas UCEs.
+
+    Args:
+        id_rlc (str): UUID del Registro Léxico Crudo a procesar.
+
+    Returns:
+        dict: Diccionario de resultados devuelto por el pipeline.
+
+    Raises:
+        HTTPException (500): Si falla cualquier paso del procesamiento.
+    """
     try:
         resultado = ProcesadorIndividual.procesar_pipeline(id_rlc)
         return resultado
@@ -127,7 +175,21 @@ class DescarteMasivoRequest(BaseModel):
 
 @router.post("/descartar-masivo")
 def descartar_masivo(req: DescarteMasivoRequest, db: Session = Depends(get_db)):
-    """Marca masivamente un conjunto de UCEs como rechazadas."""
+    """Marca masivamente un conjunto de UCEs como 'rechazado'.
+
+    Permite al analista hacer una criba rápida y descartar propuestas
+    que la IA generó erróneamente sin necesidad de entrar una por una.
+
+    Args:
+        req (DescarteMasivoRequest): Payload conteniendo la lista de `ids_uce`.
+        db (Session): Sesión transaccional de base de datos.
+
+    Returns:
+        dict: Estado de éxito y mensaje confirmando la cantidad descartada.
+
+    Raises:
+        HTTPException (500): Si hay error de conversión UUID o fallo SQL.
+    """
     try:
         from uuid import UUID
         ids_uuid = [UUID(uid) for uid in req.ids_uce]

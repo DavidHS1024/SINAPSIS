@@ -2,6 +2,15 @@
 
 import { useState, useEffect, useCallback } from "react";
 
+/**
+ * Hook personalizado para consumo de APIs con manejo de estado (loading, error, data).
+ * Incluye un flag de cancelación para evitar actualizaciones de estado en componentes
+ * desmontados.
+ * 
+ * @param {Function} fetchFn - Función asíncrona que retorna una Promesa (ej. de api.js).
+ * @param {Array} deps - Dependencias de useEffect (por defecto `[]`).
+ * @returns {{ data: any, loading: boolean, error: Error|null, refetch: Function }}
+ */
 export function useApi(fetchFn, deps = []) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);

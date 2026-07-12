@@ -3,6 +3,11 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+/**
+ * Definición global de perfiles de usuario y sus permisos conceptuales
+ * dentro del modelo SECI.
+ * @constant {Object}
+ */
 const ROLES = {
   ingeniero: {
     nombre: "Ingeniero de Datos",
@@ -36,6 +41,14 @@ const ROLES = {
 
 const RoleContext = createContext(null);
 
+/**
+ * Proveedor de estado global para la sesión del usuario.
+ * Persiste la selección del rol en `localStorage` para mantener la sesión
+ * activa entre recargas de página.
+ * 
+ * @param {Object} props - React props
+ * @param {React.ReactNode} props.children - Componentes hijos a renderizar.
+ */
 function RoleProvider({ children }) {
   const [rol, setRol] = useState(null);
   const router = useRouter();
@@ -75,6 +88,13 @@ function RoleProvider({ children }) {
   );
 }
 
+/**
+ * Hook para consumir el contexto de roles.
+ * Debe ser usado dentro de un `<RoleProvider>`.
+ * 
+ * @returns {{ rol: string|null, setRol: Function, rolInfo: Object|null, logout: Function }}
+ * @throws {Error} Si se usa fuera del RoleProvider.
+ */
 function useRole() {
   const context = useContext(RoleContext);
   if (!context) {

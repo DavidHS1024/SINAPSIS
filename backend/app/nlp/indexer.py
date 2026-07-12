@@ -148,10 +148,7 @@ class DiPeruIndexer:
     # 4.1 NORMALIZACIÓN DEL LEMA
     # ------------------------------------------------------
     def normalizar_lema(self, lema_crudo: str) -> str | None:
-        """
-        Convierte el texto crudo del lema a su forma canónica, o
-        retorna None si la entrada debe descartarse por incumplir
-        los criterios de inclusión (unigrama léxico simple).
+        """Convierte el texto crudo del lema a su forma canónica.
 
         Orden de operaciones (el orden es relevante):
           0.  Eliminar complementos argumentales      <...>
@@ -166,6 +163,13 @@ class DiPeruIndexer:
           B.  Filtro flexión de género sin separador
           C.  Filtro locuciones (espacio entre palabras)
           D.  Filtro longitud mínima (< 3 caracteres)
+
+        Args:
+            lema_crudo (str): Texto extraído directamente del DOM del DiPerú.
+
+        Returns:
+            str | None: El lema en minúsculas listo para indexarse, o None si 
+            incumple los criterios y debe descartarse.
         """
         lema = lema_crudo
 

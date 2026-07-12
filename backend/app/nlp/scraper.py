@@ -96,19 +96,19 @@ TIMEOUT_RENDER  = 4000       # ms de espera best-effort a que termine de renderi
 ENTRADA_SONDA   = 5376       # entrada conocida (pata) para verificar el acceso real
 
 
-def parsear_seleccion(spec):
-    """
-    Convierte una especificación de entradas en una lista ordenada y única de IDs.
+def parsear_seleccion(spec: str) -> list[int]:
+    """Convierte una especificación de entradas en una lista ordenada y única de IDs.
 
-    Es una función PURA (sin dependencias de CLI, base de datos ni Playwright):
-    el mismo contrato lo usa hoy la línea de comandos y mañana un endpoint de la
-    API que dispare el frontend en Vercel.
+    Es una función PURA (sin dependencias de CLI, base de datos ni Playwright).
 
-        "1-100"            -> [1, 2, ..., 100]
-        "1, 3, 6, 7"       -> [1, 3, 6, 7]
-        "1-100, 4567, 567" -> [1..100, 567, 4567]
+    Args:
+        spec (str): Especificación de IDs (ej. "1-100", "1, 3, 6, 7", "1-100, 4567").
 
-    Lanza ValueError ante tokens inválidos, para que una API pueda devolver 400.
+    Returns:
+        list[int]: Lista de identificadores únicos y ordenados.
+
+    Raises:
+        ValueError: Ante tokens inválidos (para que una API pueda devolver 400).
     """
     if spec is None or not str(spec).strip():
         raise ValueError("Selección vacía.")
@@ -269,8 +269,18 @@ def _parsear_acepcion(p, numero):
     }
 
 
-def parsear_entrada(html, id_entrada=None, lema_normalizado=None):
-    """Convierte el HTML de una entrada del DiPerú en un RLC estructurado."""
+def parsear_entrada(html: str, id_entrada: int = None, lema_normalizado: str = None) -> dict | None:
+    """Convierte el HTML de una entrada del DiPerú en un RLC estructurado.
+
+    Args:
+        html (str): Código HTML íntegro devuelto por el navegador.
+        id_entrada (int, optional): ID numérico de la entrada.
+        lema_normalizado (str, optional): Lema canónico calculado previamente.
+
+    Returns:
+        dict | None: Diccionario con la estructura del Registro Léxico Crudo (RLC)
+        o None si el HTML no contiene una entrada válida.
+    """
     soup = BeautifulSoup(html, "html.parser")
     cont = soup.find(id="ListaEntradaIndex")
     if cont is None:

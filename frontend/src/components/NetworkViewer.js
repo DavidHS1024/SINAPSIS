@@ -4,6 +4,15 @@ import React, { useMemo } from 'react';
 import ReactFlow, { Controls, Background, MarkerType } from 'reactflow';
 import 'reactflow/dist/style.css';
 
+/**
+ * Componente visualizador de grafos utilizando ReactFlow.
+ * Renderiza un mapa semántico de relaciones donde la UCE procesada es el nodo central,
+ * y los nodos periféricos representan hiperónimos y sinónimos conectados mediante aristas.
+ * 
+ * @param {Object} props
+ * @param {Object} props.uceData - Datos de la Unidad de Conocimiento Explícito incluyendo lema, POS y relaciones.
+ * @returns {React.ReactElement}
+ */
 export default function NetworkViewer({ uceData }) {
   // Construir nodos y edges dinámicamente desde uceData
   const { nodes, edges } = useMemo(() => {

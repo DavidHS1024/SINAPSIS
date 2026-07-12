@@ -33,6 +33,13 @@ def _pos_str(pos):
 
 
 def main():
+    """Ejecuta la migración de datos de RegistroLexicoCrudo a UCE.
+
+    Itera sobre todos los RLC, extrae las acepciones aptas para WordNet, y 
+    crea un registro en la tabla UnidadConocimientoExplicito por cada una.
+    Es un proceso idempotente que ignora las UCE ya existentes. Pide
+    confirmación interactiva por consola antes de hacer commit.
+    """
     with SessionLocal() as db:
         db.expire_on_commit = False
 
