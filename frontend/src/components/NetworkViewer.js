@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useMemo } from 'react';
-import { ReactFlow, Controls, Background, MarkerType } from '@xyflow/react';
-import '@xyflow/react/dist/style.css';
+import ReactFlow, { Controls, Background, MarkerType } from 'reactflow';
+import 'reactflow/dist/style.css';
 
 export default function NetworkViewer({ uceData }) {
   // Construir nodos y edges dinámicamente desde uceData
