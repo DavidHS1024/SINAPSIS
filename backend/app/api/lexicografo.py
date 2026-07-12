@@ -5,7 +5,7 @@ from typing import Any
 import json
 
 from app.core.database import get_db
-from app.models import UnidadConocimientoExplicito, ReferenciaMCR
+from app.models import UnidadConocimientoExplicito, ReferenciaMCR, AuditoriaValidacion
 
 router = APIRouter()
 
@@ -91,23 +91,62 @@ def get_propuesta_detalle(id_uce: str, db: Session = Depends(get_db)) -> Any:
         }
     }
 
+@router.get("/buscar-synsets")
+def buscar_synsets(q: str = Query(..., min_length=2), db: Session = Depends(get_db)):
+    """Busca synsets en el MCR por coincidencia parcial de texto."""
+    query_str = f"%{q}%"
+    resultados = db.query(ReferenciaMCR).filter(
+        ReferenciaMCR.sinonimos.ilike(query_str)
+    ).limit(10).all()
+    
+    return [
+        {
+            "offset": r.offset,
+            "sinonimos": r.sinonimos,
+            "pos": r.pos,
+            "glosa_es": r.glosa_es
+        } for r in resultados
+    ]
+
 from pydantic import BaseModel
 class RevisarRequest(BaseModel):
     decision: str
     notas: str = ""
+    nuevo_offset: str = None
 
 @router.post("/revisar/{id_uce}")
 def revisar_propuesta(id_uce: str, req: RevisarRequest, db: Session = Depends(get_db)) -> Any:
-    """Guarda la decisión del lexicógrafo."""
+    """Guarda la decisión del lexicógrafo e inserta en auditoría si es aceptada."""
     if req.decision not in ["aceptar", "rechazar", "observar"]:
         raise HTTPException(status_code=400, detail="Decisión inválida")
+        
+    if req.decision == "rechazar" and not req.notas.strip():
+        raise HTTPException(status_code=400, detail="Debe proveer un motivo al rechazar la propuesta")
         
     uce = db.query(UnidadConocimientoExplicito).filter_by(id_uce=id_uce).first()
     if not uce:
         raise HTTPException(status_code=404, detail="UCE no encontrado")
         
-    uce.estado_revision = req.decision
-    uce.notas_revision = req.notas
-    db.commit()
+    try:
+        uce.estado_revision = req.decision
+        uce.notas_revision = req.notas
+        
+        if req.nuevo_offset:
+            uce.offset_mcr = req.nuevo_offset
+            
+        if req.decision == "aceptar":
+            # Inserción Transaccional en Auditoria (HU10)
+            auditoria = AuditoriaValidacion(
+                id_uce=uce.id_uce,
+                decision=req.decision,
+                offset_final=uce.offset_mcr,
+                notas=req.notas
+            )
+            db.add(auditoria)
+            
+        db.commit()
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
     
     return {"status": "ok", "id_uce": id_uce, "estado": req.decision}

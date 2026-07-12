@@ -152,13 +152,24 @@ export function fetchPropuestaDetalle(id_uce) {
   return fetchJSON(`/api/lexicografo/propuesta/${id_uce}`);
 }
 
-export async function revisarPropuesta(id_uce, decision, notas = "") {
+export function buscarSynsetsMCR(query) {
+  return fetchJSON(`/api/lexicografo/buscar-synsets?q=${encodeURIComponent(query)}`);
+}
+
+export async function revisarPropuesta(id_uce, decision, notas = "", nuevo_offset = null) {
   const res = await fetch(`${API_URL}/api/lexicografo/revisar/${id_uce}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ decision, notas }),
+    body: JSON.stringify({ decision, notas, nuevo_offset }),
   });
-  if (!res.ok) throw new Error(await res.text());
+  if (!res.ok) {
+    let msg = "Error al revisar la propuesta";
+    try {
+      const data = await res.json();
+      msg = data.detail || msg;
+    } catch (e) {}
+    throw new Error(msg);
+  }
   return res.json();
 }
 

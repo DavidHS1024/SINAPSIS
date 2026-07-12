@@ -184,6 +184,19 @@ class ReferenciaMCR(Base):
     glosa_es_origen = Column(String(12))               # 'nativa' | 'traducida'
     creado_en       = Column(DateTime(timezone=True), default=ahora_utc)
 
+class AuditoriaValidacion(Base):
+    """
+    Registro transaccional de las aprobaciones del Lexicógrafo (HU10).
+    """
+    __tablename__ = "auditoria_validacion"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    id_uce = Column(UUID(as_uuid=True), nullable=False)
+    lexicografo_id = Column(String(50), default="lexicografo_demo")
+    decision = Column(String(20), nullable=False)
+    offset_final = Column(String(20))
+    notas = Column(Text)
+    creado_en = Column(DateTime(timezone=True), default=ahora_utc)
+
 
 # Habilita la extensión pgvector automáticamente si no existe (requiere permisos en PostgreSQL, los cuales Railway otorga por defecto)
 from sqlalchemy import text
@@ -197,6 +210,6 @@ Base.metadata.create_all(bind=engine)
 __all__ = [
     "Base", "engine", "SessionLocal", "ahora_utc",
     "ControlExtraccionLema", "RegistroLexicoCrudo", "Incidencia",
-    "UnidadConocimientoExplicito",
+    "UnidadConocimientoExplicito", "AuditoriaValidacion",
     "ESTADO_PENDIENTE", "ESTADO_COMPLETA", "ESTADO_ERROR", "ReferenciaMCR",
 ]
