@@ -74,6 +74,8 @@ def get_procesados(
     if tipo_peruanismo:
         query = query.filter(UnidadConocimientoExplicito.tipo_peruanismo == tipo_peruanismo)
         
+    query = query.filter(UnidadConocimientoExplicito.estado_revision != "rechazado")
+        
     total = query.count()
     items = query.order_by(UnidadConocimientoExplicito.lema.asc(), UnidadConocimientoExplicito.numero_acepcion.asc()).offset((page - 1) * size).limit(size).all()
     
@@ -100,7 +102,9 @@ def get_procesados(
                     "marcas": i.marcas,
                     "ejemplo": i.ejemplo,
                     "forma_en_mcr": i.forma_en_mcr,
-                    "tipo_peruanismo": i.tipo_peruanismo
+                    "tipo_peruanismo": i.tipo_peruanismo,
+                    "estado_revision": i.estado_revision,
+                    "relaciones": i.relaciones
                 }
             } for i in items
         ]
@@ -113,4 +117,27 @@ def procesar_rlc(id_rlc: str) -> Any:
         resultado = ProcesadorIndividual.procesar_pipeline(id_rlc)
         return resultado
     except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+from pydantic import BaseModel
+from typing import List
+
+class DescarteMasivoRequest(BaseModel):
+    ids_uce: List[str]
+
+@router.post("/descartar-masivo")
+def descartar_masivo(req: DescarteMasivoRequest, db: Session = Depends(get_db)):
+    """Marca masivamente un conjunto de UCEs como rechazadas."""
+    try:
+        from uuid import UUID
+        ids_uuid = [UUID(uid) for uid in req.ids_uce]
+        
+        db.query(UnidadConocimientoExplicito).filter(
+            UnidadConocimientoExplicito.id_uce.in_(ids_uuid)
+        ).update({"estado_revision": "rechazado"}, synchronize_session=False)
+        db.commit()
+        
+        return {"status": "ok", "message": f"{len(ids_uuid)} UCEs descartadas exitosamente."}
+    except Exception as e:
+        db.rollback()
         raise HTTPException(status_code=500, detail=str(e))

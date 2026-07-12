@@ -130,6 +130,19 @@ export async function procesarPipeline(id_rlc) {
   return res.json();
 }
 
+export async function descartarMasivo(ids_uce) {
+  const res = await fetch(`${API_URL}/api/analista/descartar-masivo`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ids_uce }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Error al descartar");
+  }
+  return res.json();
+}
+
 // Lexicógrafo
 export function fetchLexicografoPropuestas(tipo, estado = "pendiente", page = 1, size = 20) {
   return fetchJSON("/api/lexicografo/propuestas", { tipo, estado, page, size });

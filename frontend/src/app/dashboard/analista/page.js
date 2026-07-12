@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { fetchAnalistaPendientes, fetchAnalistaProcesados, procesarPipeline } from "@/services/api";
+import { fetchAnalistaPendientes, fetchAnalistaProcesados, procesarPipeline, descartarMasivo } from "@/services/api";
 import StepProgress from "@/components/StepProgress";
+import NetworkViewer from "@/components/NetworkViewer";
 
 const SECI_STEPS = [
   { id: "remisiones", label: "Remisiones" },
@@ -48,6 +49,9 @@ export default function AnalistaPage() {
 
   const [uceModalOpen, setUceModalOpen] = useState(false);
   const [uceContent, setUceContent] = useState(null);
+  const [uceTab, setUceTab] = useState("detalle"); // "detalle" | "grafo"
+  
+  const [selectedUces, setSelectedUces] = useState(new Set());
 
   const loadPendientes = async () => {
     setLoadingPendientes(true);
@@ -140,11 +144,38 @@ export default function AnalistaPage() {
   const handleApplyFiltersE = () => { setPageE(1); loadProcesados(); };
   const handleClearFiltersE = () => {
     setLemaE(""); setPosMcr(""); setTipoPeruanismo(""); setPageE(1);
+    setSelectedUces(new Set());
     setTimeout(loadProcesados, 0);
+  };
+
+  const handleSelectAll = (e) => {
+    if (e.target.checked) setSelectedUces(new Set(procesados.map(p => p.id_uce)));
+    else setSelectedUces(new Set());
+  };
+
+  const handleSelectOne = (id, checked) => {
+    const newSet = new Set(selectedUces);
+    if (checked) newSet.add(id);
+    else newSet.delete(id);
+    setSelectedUces(newSet);
+  };
+
+  const handleDescartarMasivo = async () => {
+    if (selectedUces.size === 0) return;
+    if (!confirm(`¿Estás seguro de descartar ${selectedUces.size} UCE(s)?`)) return;
+    try {
+      await descartarMasivo(Array.from(selectedUces));
+      setSuccess(`${selectedUces.size} UCE(s) descartadas con éxito.`);
+      setSelectedUces(new Set());
+      loadProcesados();
+    } catch (err) {
+      setError(`Error al descartar: ${err.message}`);
+    }
   };
 
   const handleViewUce = (uce_json) => {
     setUceContent(uce_json);
+    setUceTab("detalle");
     setUceModalOpen(true);
   };
 
@@ -355,6 +386,18 @@ export default function AnalistaPage() {
                   Limpiar
                 </button>
               </div>
+              
+              {selectedUces.size > 0 && (
+                <div className="flex items-center gap-4 bg-marino-700/50 p-2 rounded border border-marino-600 animate-fade-in-up">
+                  <span className="text-sm text-acento font-medium">{selectedUces.size} UCE(s) seleccionadas</span>
+                  <button 
+                    onClick={handleDescartarMasivo}
+                    className="text-sm bg-red-900/80 hover:bg-red-800 text-red-200 px-4 py-1.5 rounded transition-colors border border-red-800"
+                  >
+                    Descartar Seleccionados
+                  </button>
+                </div>
+              )}
             </div>
             
             {loadingProcesados ? (
@@ -365,6 +408,14 @@ export default function AnalistaPage() {
               <table className="w-full text-sm text-left">
                 <thead className="bg-marino-900 text-niebla/70 text-xs uppercase">
                   <tr>
+                    <th className="px-4 py-3 w-10 text-center">
+                      <input 
+                        type="checkbox" 
+                        className="rounded border-marino-600 bg-marino-800 text-acento focus:ring-acento/50"
+                        checked={procesados.length > 0 && selectedUces.size === procesados.length}
+                        onChange={handleSelectAll}
+                      />
+                    </th>
                     <th className="px-4 py-3 font-medium">Lema</th>
                     <th className="px-4 py-3 font-medium">Acep.</th>
                     <th className="px-4 py-3 font-medium text-center">POS</th>
@@ -375,6 +426,14 @@ export default function AnalistaPage() {
                 <tbody className="divide-y divide-marino-700/50">
                   {procesados.map((u) => (
                     <tr key={u.id_uce} className="hover:bg-marino-700/20 transition-colors">
+                      <td className="px-4 py-3 text-center">
+                        <input 
+                          type="checkbox" 
+                          className="rounded border-marino-600 bg-marino-800 text-acento focus:ring-acento/50"
+                          checked={selectedUces.has(u.id_uce)}
+                          onChange={(e) => handleSelectOne(u.id_uce, e.target.checked)}
+                        />
+                      </td>
                       <td className="px-4 py-3 font-medium text-niebla">{u.lema}</td>
                       <td className="px-4 py-3 text-niebla/70 font-mono">#{u.numero_acepcion}</td>
                       <td className="px-4 py-3 text-center">
@@ -445,17 +504,39 @@ export default function AnalistaPage() {
       {/* UCE Visor Modal */}
       {uceModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="bg-[#1e1e1e] border border-marino-600 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col">
+          <div className="bg-[#1e1e1e] border border-marino-600 rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col h-[80vh]">
             <div className="flex justify-between items-center p-4 border-b border-marino-700 bg-marino-900/80">
-              <h3 className="text-acento font-serif text-lg">Visor UCE (Unidad de Conocimiento Explícito)</h3>
+              <div className="flex items-center gap-6">
+                <h3 className="text-acento font-serif text-lg">Visor UCE</h3>
+                <div className="flex gap-2">
+                  <button 
+                    onClick={() => setUceTab("detalle")}
+                    className={`px-3 py-1 text-sm rounded-full transition-colors ${uceTab === "detalle" ? "bg-acento text-marino-900 font-bold" : "bg-marino-800 text-niebla/70 hover:text-niebla"}`}
+                  >
+                    Detalle Textual
+                  </button>
+                  <button 
+                    onClick={() => setUceTab("grafo")}
+                    className={`px-3 py-1 text-sm rounded-full transition-colors ${uceTab === "grafo" ? "bg-acento text-marino-900 font-bold" : "bg-marino-800 text-niebla/70 hover:text-niebla"}`}
+                  >
+                    Grafo Semántico
+                  </button>
+                </div>
+              </div>
               <button onClick={() => setUceModalOpen(false)} className="text-niebla/50 hover:text-red-400 transition-colors">✕ Cerrar</button>
             </div>
-            <div className="flex-1 overflow-auto p-6 text-niebla">
-              <div className="bg-[#121212] p-4 rounded border border-marino-700 shadow-inner overflow-x-auto">
-                <pre className="font-mono text-sm text-acento-claro whitespace-pre-wrap">
-                  {JSON.stringify(uceContent, null, 2)}
-                </pre>
-              </div>
+            <div className="flex-1 overflow-auto p-6 text-niebla flex flex-col">
+              {uceTab === "detalle" ? (
+                <div className="bg-[#121212] p-4 rounded border border-marino-700 shadow-inner overflow-x-auto flex-1">
+                  <pre className="font-mono text-sm text-acento-claro whitespace-pre-wrap">
+                    {JSON.stringify(uceContent, null, 2)}
+                  </pre>
+                </div>
+              ) : (
+                <div className="flex-1 border border-marino-700 rounded overflow-hidden">
+                  <NetworkViewer uceData={uceContent} />
+                </div>
+              )}
             </div>
           </div>
         </div>
