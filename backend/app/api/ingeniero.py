@@ -97,8 +97,6 @@ def tarea_extraccion_background(ids_a_extraer: list[int]):
     
     db = SessionLocal()
     try:
-        procesador = ProcesadorIndividual(db)
-        
         for idx, id_lema in enumerate(ids_a_extraer):
             progreso_extraccion["actual"] = idx + 1
             progreso_extraccion["id_actual"] = id_lema
@@ -113,10 +111,8 @@ def tarea_extraccion_background(ids_a_extraer: list[int]):
             # Retardo para no saturar
             time.sleep(1)
             try:
-                # Usar el ProcesadorIndividual para hacer la extracción a RLC
-                # No hacemos la generación de UCEs si el ingeniero solo extrae a RLC, 
-                # pero procesar_lema_completo hace todo, extrae de diperu y lo inserta en RLC.
-                procesador.extraer_diperu(id_lema, lema)
+                # Usar el ProcesadorIndividual estático
+                ProcesadorIndividual.extraer_diperu(id_lema, lema)
                 progreso_extraccion["mensaje"] = f"ID {id_lema} extraído correctamente."
             except Exception as e:
                 print(f"Error extrayendo {id_lema}: {e}")
@@ -267,7 +263,6 @@ def get_extraidos(
 def procesar_lema(id_entrada: int, lema: str = None, db: Session = Depends(get_db)) -> Any:
     """Ejecuta el pipeline SECI a partir de un ID de DiPerú."""
     try:
-        procesador = ProcesadorIndividual(db)
         # Si no se pasó lema, intentamos inferirlo
         if not lema:
             control = db.query(ControlExtraccionLema).filter(
@@ -278,13 +273,13 @@ def procesar_lema(id_entrada: int, lema: str = None, db: Session = Depends(get_d
             else:
                 lema = f"lema_desconocido_{id_entrada}"
                 
-        rlc, conteo_uces = procesador.procesar_lema_completo(id_entrada, lema)
+        resultado = ProcesadorIndividual.extraer_diperu(id_entrada, lema)
         return {
             "status": "ok", 
             "id_entrada": id_entrada, 
-            "lema": rlc.lema,
-            "rlc_json": rlc.rlc_json,
-            "uces_generados": conteo_uces
+            "lema": resultado["lema"],
+            "rlc_json": resultado["rlc_json"],
+            "uces_generados": 0
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
