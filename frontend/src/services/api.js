@@ -191,7 +191,12 @@ export async function revisarPropuesta(id_uce, decision, notas = "", nuevo_offse
     let msg = "Error al revisar la propuesta";
     try {
       const data = await res.json();
-      msg = data.detail || msg;
+      // data.detail puede ser string (error 400/500) o array de objetos (error 422 de Pydantic)
+      if (typeof data.detail === 'string') {
+        msg = data.detail;
+      } else if (Array.isArray(data.detail)) {
+        msg = data.detail.map(e => e.msg || JSON.stringify(e)).join('; ');
+      }
     } catch (e) {}
     throw new Error(msg);
   }

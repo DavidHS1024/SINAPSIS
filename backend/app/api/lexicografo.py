@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import text
-from typing import Any
+from typing import Any, Optional
 import json
 
 from app.core.database import get_db
@@ -153,7 +153,7 @@ from pydantic import BaseModel
 class RevisarRequest(BaseModel):
     decision: str
     notas: str = ""
-    nuevo_offset: str = None
+    nuevo_offset: Optional[str] = None
 
 @router.post("/revisar/{id_uce}")
 def revisar_propuesta(id_uce: str, req: RevisarRequest, db: Session = Depends(get_db)) -> Any:
