@@ -3,13 +3,13 @@ import Providers from "./providers";
 
 export const metadata = {
   title: "SINAPSIS",
-  description: "Plataforma inteligente para la gestión y curaduría del ciclo de vida de los peruanismos. Desarrollada para PerúNET.",
+  description: "Sistema de Ingesta, Normalización y Análisis de Peruanismos para Synsets en Integración Semántica. Plataforma de curaduría léxica desarrollada para PerúNET.",
   icons: {
     icon: '/icon.svg',
   },
   openGraph: {
-    title: 'SINAPSIS - Gestión Lexicográfica',
-    description: 'Plataforma inteligente para la gestión y curaduría del ciclo de vida de los peruanismos.',
+    title: 'SINAPSIS — Sistema de Ingesta, Normalización y Análisis de Peruanismos para Synsets en Integración Semántica',
+    description: 'Plataforma de curaduría léxica para la gestión y destilación del conocimiento léxico peruano hacia WordNet. Desarrollada para PerúNET.',
     siteName: 'SINAPSIS',
     locale: 'es_PE',
     type: 'website',

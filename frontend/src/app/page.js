@@ -61,8 +61,9 @@ export default function AccesoPorRol() {
             </div>
             <div className="leading-tight">
               <p className="font-display text-lg tracking-wide">SINAPSIS</p>
-              <p className="text-[11px] text-niebla/50 tracking-widest uppercase">
-                PerúNET · Curaduría Léxica
+              <p className="text-[10px] text-niebla/45 leading-tight max-w-[260px]">
+                Sistema de Ingesta, Normalización y Análisis de Peruanismos<br />
+                para Synsets en Integración Semántica
               </p>
             </div>
           </div>
