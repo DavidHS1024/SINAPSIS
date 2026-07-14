@@ -176,7 +176,15 @@ def revisar_propuesta(id_uce: str, req: RevisarRequest, db: Session = Depends(ge
         HTTPException (404): Si no se encuentra la UCE.
         HTTPException (500): Si falla la inserción transaccional.
     """
-    if req.decision not in ["aceptar", "rechazar", "observar"]:
+    # La API recibe el VERBO (aceptar); la DB guarda el PARTICIPIO (aceptado)
+    # Esto es crítico: analista.py filtra por "rechazado", no por "rechazar"
+    DECISION_A_ESTADO = {
+        "aceptar":  "aceptado",
+        "rechazar": "rechazado",
+        "observar": "observado",
+    }
+
+    if req.decision not in DECISION_A_ESTADO:
         raise HTTPException(status_code=400, detail="Decisión inválida")
         
     if req.decision == "rechazar" and not req.notas.strip():
@@ -187,7 +195,9 @@ def revisar_propuesta(id_uce: str, req: RevisarRequest, db: Session = Depends(ge
         raise HTTPException(status_code=404, detail="UCE no encontrado")
         
     try:
-        uce.estado_revision = req.decision
+        import uuid as _uuid
+        estado = DECISION_A_ESTADO[req.decision]
+        uce.estado_revision = estado
         uce.notas_revision = req.notas
         
         if req.nuevo_offset:
@@ -195,8 +205,9 @@ def revisar_propuesta(id_uce: str, req: RevisarRequest, db: Session = Depends(ge
             
         if req.decision == "aceptar":
             # Inserción Transaccional en Auditoria (HU10)
+            # Se convierte id_uce a UUID explícitamente para evitar error de tipo
             auditoria = AuditoriaValidacion(
-                id_uce=uce.id_uce,
+                id_uce=_uuid.UUID(str(uce.id_uce)),
                 decision=req.decision,
                 offset_final=uce.offset_mcr,
                 notas=req.notas
@@ -208,4 +219,4 @@ def revisar_propuesta(id_uce: str, req: RevisarRequest, db: Session = Depends(ge
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
     
-    return {"status": "ok", "id_uce": id_uce, "estado": req.decision}
+    return {"status": "ok", "id_uce": id_uce, "estado": estado}
