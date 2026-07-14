@@ -101,17 +101,17 @@ export default function PipelinePage() {
           number={3}
           name="Combinación"
           subtitle="Clasificación frente a WordNet/MCR"
-          status={totalClasificados > 0 ? "parcial" : "pendiente"}
+          status={totalClasificados > 0 ? "completa" : "pendiente"}
           metric={totalClasificados}
           metricLabel="Acepciones clasificadas"
         />
         <PhaseCard
           number={4}
           name="Internalización"
-          subtitle="Presentación para lectura humana"
-          status="pendiente"
-          metric="—"
-          metricLabel="Próxima fase"
+          subtitle="Validación lexicográfica y cierre del ciclo"
+          status={e.uces_aceptadas > 0 ? "completa" : "pendiente"}
+          metric={e.uces_aceptadas ?? 0}
+          metricLabel="Propuestas aceptadas"
         />
       </div>
 

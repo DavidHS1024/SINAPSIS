@@ -86,11 +86,19 @@ def embudo(db=Depends(get_db)):
         .scalar() or 0
     )
 
+    # Internalización: UCEs validadas y aceptadas por el Lexicógrafo
+    uces_aceptadas = (
+        db.query(func.count(U.id_uce))
+        .filter(U.estado_revision == "aceptado")
+        .scalar() or 0
+    )
+
     return {
         "lemas_indexados": lemas_indexados,
         "rlc_extraidos": rlc_extraidos,
         "acepciones_brutas": acepciones_brutas,
         "uce_integrables": uce_total,
+        "uces_aceptadas": uces_aceptadas,
         "clasificacion": clasificacion,
         "por_pos": por_pos,
         "forma_en_mcr": {
